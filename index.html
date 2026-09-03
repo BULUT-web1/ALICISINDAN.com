@@ -3,4733 +3,617 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ALICISINDAN.com</title>
-
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 15% 20%, rgba(37,99,235,.08), transparent 25%),
-        radial-gradient(circle at 85% 10%, rgba(255,196,0,.12), transparent 25%),
-        #f6f8fc;
-    color: #111827;
-}
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-}
-
-/* HEADER */
-
-header {
-    background: rgba(11,18,32,.97);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    box-shadow: 0 6px 30px rgba(0,0,0,.14);
-}
-
-.header-inner {
-    max-width: 1180px;
-    margin: auto;
-    min-height: 82px;
-    padding: 0 24px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 29px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    color: white;
-}
-
-.logo span {
-    color: #ffc400;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.talepleri-gor {
-    color: #d7deea;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 13px 18px;
-}
-
-.talep-btn {
-    border: 0;
-    background: linear-gradient(135deg, #ffd000, #ffb800);
-    color: #101828;
-
-    padding: 15px 22px;
-    border-radius: 12px;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    cursor: pointer;
-
-    box-shadow: 0 10px 25px rgba(255,196,0,.25);
-    transition: .2s;
-}
-
-.talep-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* HERO */
-
-.hero {
-    max-width: 1180px;
-    margin: auto;
-    padding: 85px 24px 70px;
-
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 45px;
-    align-items: center;
-}
-
-.badge {
-    display: inline-flex;
-    background: #e8f0ff;
-    color: #1557c0;
-
-    padding: 9px 14px;
-    border-radius: 50px;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(44px, 6vw, 72px);
-    line-height: .98;
-    margin: 0;
-
-    letter-spacing: -3px;
-    max-width: 760px;
-}
-
-.hero h1 span {
-    color: #2563eb;
-}
-
-.hero p {
-    max-width: 690px;
-
-    margin: 25px 0 30px;
-
-    color: #5d6676;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.primary {
-    border: none;
-    border-radius: 13px;
-
-    padding: 17px 25px;
-
-    background: #101828;
-    color: white;
-
-    font-size: 16px;
-    font-weight: 800;
-
-    cursor: pointer;
-}
-
-.secondary {
-    border: 1px solid #d9deea;
-    border-radius: 13px;
-
-    padding: 17px 25px;
-
-    background: white;
-    color: #111827;
-
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 800;
-}
-
-/* HERO SIDE CARD */
-
-.hero-card {
-    background: #101828;
-    color: white;
-
-    border-radius: 28px;
-    padding: 30px;
-
-    box-shadow: 0 25px 70px rgba(16,24,40,.22);
-
-    transform: rotate(1.5deg);
-}
-
-.hero-card-label {
-    color: #94a3b8;
-    font-size: 13px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.hero-card h3 {
-    font-size: 25px;
-    margin: 18px 0 12px;
-}
-
-.hero-card p {
-    color: #cbd5e1;
-    font-size: 15px;
-    margin: 0 0 22px;
-}
-
-.fake-tag {
-    display: inline-block;
-    background: #1e293b;
-
-    border: 1px solid #334155;
-
-    padding: 9px 11px;
-    border-radius: 9px;
-
-    margin: 5px 4px 0 0;
-
-    font-size: 13px;
-}
-
-.offer-count {
-    margin-top: 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: #ffc400;
-    color: #101828;
-
-    padding: 14px;
-    border-radius: 12px;
-
-    font-weight: 900;
-}
-
-/* MAIN */
-
-.container {
-    max-width: 1180px;
-    margin: auto;
-    padding: 15px 24px 80px;
-}
-
-.section-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-
-    margin-bottom: 25px;
-}
-
-.section-top h2 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: -1px;
-}
-
-.section-top p {
-    margin: 7px 0 0;
-    color: #667085;
-}
-
-.live {
-    background: #e8fff0;
-    color: #087a3c;
-
-    padding: 9px 13px;
-    border-radius: 30px;
-
-    font-weight: 800;
-    font-size: 13px;
-}
-
-/* TALEPLER */
-
-#talepListesi {
-    display: grid;
-    gap: 17px;
-}
-
-.talep {
-    position: relative;
-
-    background: rgba(255,255,255,.94);
-
-    border: 1px solid #e8ebf2;
-    border-radius: 20px;
-
-    padding: 26px 28px;
-
-    box-shadow: 0 8px 30px rgba(16,24,40,.06);
-
-    overflow: hidden;
-
-    transition: .2s;
-}
-
-.talep:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 35px rgba(16,24,40,.10);
-}
-
-.talep::before {
-    content: "";
-    width: 5px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-
-    background: #2563eb;
-}
-
-.talep.arac::before {
-    background: #ffc400;
-}
-
-.talep-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.talep h3 {
-    font-size: 21px;
-    margin: 0 0 9px;
-}
-
-.talep-aciklama {
-    color: #5e6878;
-    line-height: 1.65;
-    margin: 0 0 18px;
-}
-
-.yeni {
-    background: #ecfdf3;
-    color: #067647;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    padding: 7px 10px;
-    border-radius: 30px;
-
-    height: fit-content;
-}
-
-.etiketler {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.etiket {
-    background: #f2f4f7;
-    border: 1px solid #e4e7ec;
-
-    padding: 9px 12px;
-    border-radius: 9px;
-
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.teklif {
-    margin-top: 20px;
-
-    border: none;
-    border-radius: 10px;
-
-    padding: 12px 19px;
-
-    background: #101828;
-    color: white;
-
-    font-weight: 800;
-    cursor: pointer;
-}
-
-/* MODAL */
-
-.modal {
-    position: fixed;
-    inset: 0;
-
-    background: rgba(5,12,25,.72);
-    backdrop-filter: blur(7px);
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    padding: 25px;
-
-    z-index: 200;
-}
-
-.modal.aktif {
-    display: flex;
-}
-
-.modal-card {
-    width: min(850px, 100%);
-    max-height: 92vh;
-    overflow-y: auto;
-
-    background: white;
-
-    border-radius: 26px;
-
-    box-shadow: 0 30px 100px rgba(0,0,0,.35);
-
-    animation: acilis .22s ease;
-}
-
-@keyframes acilis {
-    from {
-        opacity: 0;
-        transform: scale(.96) translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.modal-header {
-    padding: 28px 32px 23px;
-
-    border-bottom: 1px solid #edf0f4;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-}
-
-.modal-header h2 {
-    margin: 0;
-    font-size: 29px;
-    letter-spacing: -1px;
-}
-
-.modal-header p {
-    margin: 7px 0 0;
-    color: #667085;
-}
-
-.kapat {
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: #f2f4f7;
-
-    font-size: 21px;
-
-    cursor: pointer;
-}
-
-.form-body {
-    padding: 28px 32px 32px;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.field.full {
-    grid-column: 1 / -1;
-}
-
-.field label {
-    font-size: 14px;
-    font-weight: 900;
-    color: #344054;
-}
-
-.field input,
-.field select,
-.field textarea {
-    width: 100%;
-
-    border: 1px solid #d8dde7;
-
-    background: #fbfcfe;
-
-    border-radius: 12px;
-
-    padding: 15px 16px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition: .15s;
-}
-
-.field textarea {
-    min-height: 125px;
-    resize: vertical;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-    border-color: #2563eb;
-
-    background: white;
-
-    box-shadow: 0 0 0 4px rgba(37,99,235,.10);
-}
-
-.field small {
-    color: #7c8798;
-}
-
-.form-note {
-    margin-top: 22px;
-
-    padding: 14px 16px;
-
-    border-radius: 12px;
-
-    background: #f0f6ff;
-    color: #345275;
-
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.publish {
-    width: 100%;
-
-    margin-top: 20px;
-
-    border: none;
-    border-radius: 13px;
-
-    padding: 17px;
-
-    background: linear-gradient(135deg, #2563eb, #1454d9);
-    color: white;
-
-    font-size: 17px;
-    font-weight: 900;
-
-    cursor: pointer;
-
-    box-shadow: 0 12px 25px rgba(37,99,235,.20);
-}
-
-.publish:hover {
-    filter: brightness(.96);
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .header-inner {
-        min-height: 70px;
-        padding: 0 16px;
-    }
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .talepleri-gor {
-        display: none;
-    }
-
-    .talep-btn {
-        padding: 12px 14px;
-        font-size: 13px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 55px 20px 45px;
-    }
-
-    .hero h1 {
-        font-size: 47px;
-        letter-spacing: -2px;
-    }
-
-    .hero-card {
-        display: none;
-    }
-
-    .container {
-        padding: 10px 16px 60px;
-    }
-
-    .section-top {
-        align-items: start;
-        gap: 10px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .field.full {
-        grid-column: auto;
-    }
-
-    .modal {
-        padding: 10px;
-        align-items: end;
-    }
-
-    .modal-card {
-        border-radius: 24px 24px 12px 12px;
-        max-height: 94vh;
-    }
-
-    .modal-header,
-    .form-body {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-</style>
+<meta name="description" content="ALICISINDAN.com - Daire, arazi veya araç talebinizi ücretsiz yayınlayın; doğrulanmış profesyoneller size ulaşsın.">
+<title>ALICISINDAN.com | Aradığını ilan et</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<style>
+:root{
+  --navy:#081426;
+  --navy2:#10233f;
+  --blue:#2563eb;
+  --blue2:#0ea5e9;
+  --yellow:#ffc400;
+  --orange:#ff7a00;
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --text:#101828;
+  --muted:#667085;
+  --line:#e4e9f2;
+  --danger:#dc2626;
+  --ok:#0a7a46;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:
+radial-gradient(circle at 10% 0%,rgba(37,99,235,.13),transparent 28%),
+radial-gradient(circle at 90% 8%,rgba(255,196,0,.16),transparent 24%),var(--bg)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:50;background:rgba(8,20,38,.96);backdrop-filter:blur(14px);box-shadow:0 8px 28px rgba(0,0,0,.14)}
+.header-inner{max-width:1180px;margin:auto;min-height:78px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-weight:950;font-size:28px;color:#fff;letter-spacing:-1px;white-space:nowrap}.logo span{color:var(--yellow)}
+.header-actions{display:flex;align-items:center;gap:10px}.header-link{color:#d5deea;text-decoration:none;font-weight:800;padding:12px 14px;border-radius:10px}.header-link:hover{background:rgba(255,255,255,.07)}
+.header-primary{border:0;background:linear-gradient(135deg,var(--yellow),#ffad00);color:#111827;padding:13px 18px;border-radius:12px;font-weight:900;box-shadow:0 10px 25px rgba(255,196,0,.22)}
+.auth-area{display:flex;align-items:center}.google-btn{display:flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.18);background:#fff;color:#111827;padding:10px 13px;border-radius:11px;font-size:13px;font-weight:900}.google-dot{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#f1f5f9;color:#4285f4;font-weight:950}
+.user-panel{display:flex;align-items:center;gap:9px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 8px;border-radius:13px}.user-avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--yellow)}.user-meta{display:flex;flex-direction:column;max-width:180px}.user-meta strong,.user-meta span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.user-meta strong{font-size:12px}.user-meta span{font-size:10px;color:#cbd5e1;margin-top:2px}.logout{border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:8px;padding:7px 9px;font-size:11px;font-weight:800}
+.hero{max-width:1180px;margin:auto;padding:78px 22px 58px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}.hero-badge{display:inline-flex;padding:8px 13px;border-radius:999px;background:#eaf1ff;color:#1757bd;font-size:13px;font-weight:900;margin-bottom:18px}.hero h1{font-size:clamp(46px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:0}.hero h1 em{font-style:normal;color:var(--blue)}.hero p{font-size:19px;line-height:1.65;color:#596579;max-width:720px;margin:24px 0 28px}.hero-actions{display:flex;gap:11px;flex-wrap:wrap}.hero-primary,.hero-secondary{border-radius:13px;padding:16px 22px;font-size:15px;font-weight:900}.hero-primary{border:0;background:linear-gradient(135deg,var(--blue),#174fd1);color:#fff;box-shadow:0 14px 30px rgba(37,99,235,.24)}.hero-secondary{border:1px solid #dbe2ed;background:#fff;color:#172033;text-decoration:none}
+.hero-visual{min-height:360px;position:relative;display:grid;place-items:center}.orb{position:absolute;border-radius:50%;filter:blur(1px);animation:float 5s ease-in-out infinite}.orb.one{width:130px;height:130px;background:linear-gradient(135deg,#2563eb,#0ea5e9);top:20px;right:25px;opacity:.22}.orb.two{width:95px;height:95px;background:linear-gradient(135deg,#ffc400,#ff7a00);bottom:20px;left:20px;opacity:.3;animation-delay:-1.8s}@keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
+.demand-preview{position:relative;width:min(410px,100%);background:linear-gradient(145deg,#081426,#122744);color:#fff;border-radius:28px;padding:27px;box-shadow:0 30px 75px rgba(8,20,38,.28);transform:rotate(1.2deg)}.preview-kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:#9fb0c7;font-weight:900}.demand-preview h3{font-size:25px;margin:16px 0 9px}.demand-preview p{margin:0;color:#cad5e4;font-size:14px}.preview-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.preview-tag{padding:8px 10px;border-radius:9px;background:#172f50;border:1px solid #24476f;font-size:12px}.preview-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:21px;background:var(--yellow);color:#111827;padding:12px 13px;border-radius:11px;font-weight:900;font-size:13px}
+.container{max-width:1180px;margin:auto;padding:20px 22px 80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{margin:0;font-size:31px;letter-spacing:-1px}.section-head p{margin:7px 0 0;color:var(--muted)}.live-pill{padding:8px 12px;border-radius:999px;background:#e9fff3;color:var(--ok);font-size:12px;font-weight:900;white-space:nowrap}
+#talepListesi{display:grid;gap:16px}.talep-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px 25px;box-shadow:0 8px 28px rgba(16,24,40,.055);overflow:hidden}.talep-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--blue)}.talep-card.arac:before{background:var(--yellow)}.talep-top{display:flex;justify-content:space-between;gap:18px}.talep-card h3{margin:0 0 7px;font-size:20px}.talep-card p{margin:0;color:#5c687a;line-height:1.55}.talep-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.tag{background:#f4f6f9;border:1px solid #e4e8ef;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:800}.offer-btn{margin-top:17px;border:0;background:var(--navy);color:#fff;border-radius:9px;padding:11px 15px;font-weight:900}.empty-state{background:#fff;border:1px dashed #cfd7e3;border-radius:18px;padding:32px;text-align:center;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:200;background:rgba(4,12,25,.68);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:24px}.modal.aktif{display:flex}.modal-card{width:min(790px,calc(100vw - 30px));max-height:86vh;background:#fff;border-radius:22px;box-shadow:0 30px 100px rgba(0,0,0,.3);overflow:hidden;animation:pop .2s ease}@keyframes pop{from{opacity:0;transform:scale(.97) translateY(10px)}to{opacity:1;transform:none}}.modal-header{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid #edf0f4;padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.modal-header h2{margin:0;font-size:26px;letter-spacing:-.6px}.modal-header p{margin:6px 0 0;color:var(--muted);font-size:14px}.modal-close{flex:none;width:38px;height:38px;border:0;border-radius:50%;background:#eef2f7;color:#111827;font-size:22px;line-height:1}.modal-close:hover{background:#fee2e2;color:#b91c1c}.form-body{padding:24px 26px 28px;max-height:calc(86vh - 92px);overflow:auto}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label,.mini-title{font-size:13px;font-weight:900;color:#344054}.field small{color:#7b8798;line-height:1.45}.field input,.field select,.field textarea{width:100%;border:1px solid #d7dee9;background:#fbfcfe;border-radius:11px;padding:13px 14px;font-size:15px;outline:none;transition:.15s}.field textarea{min-height:108px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.09)}.field-error{border-color:#ef4444!important;box-shadow:0 0 0 3px rgba(239,68,68,.08)!important}
+.compact-select{position:relative}.compact-select-trigger{width:100%;border:1px solid #d7dee9;background:#fbfcfe;border-radius:11px;padding:13px 14px;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;color:#111827}.compact-select-trigger:hover{background:#fff}.compact-select-trigger.open{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.09)}.compact-select-arrow{font-size:16px;color:#667085;transition:.15s}.compact-select-trigger.open .compact-select-arrow{transform:rotate(180deg)}.compact-select-menu{position:absolute;left:0;right:0;top:calc(100% + 7px);z-index:80;display:none;background:#fff;border:1px solid #dce3ed;border-radius:13px;box-shadow:0 16px 38px rgba(16,24,40,.15);padding:9px}.compact-select-menu.open{display:block}.compact-select-search{width:100%;border:1px solid #d7dee9!important;background:#f8fafc!important;border-radius:9px!important;padding:10px 11px!important;font-size:14px!important;margin-bottom:7px}.compact-select-options{max-height:220px;overflow-y:auto;overscroll-behavior:contain;padding-right:3px}.compact-select-option{width:100%;border:0;background:#fff;border-radius:8px;padding:9px 10px;text-align:left;font-size:14px;color:#344054;cursor:pointer}.compact-select-option:hover,.compact-select-option.active{background:#eff6ff;color:#174ea6}.compact-select-empty{padding:12px 10px;color:#667085;font-size:13px;text-align:center}@media(max-width:700px){.compact-select-options{max-height:190px}.compact-select-menu{z-index:120}}
+.dynamic-area{grid-column:1/-1}.choice-panel{background:linear-gradient(145deg,#f9fbff,#fff);border:1px solid #e3e9f2;border-radius:17px;padding:18px}.choice-panel h3{margin:0 0 5px;font-size:18px}.choice-panel>p{margin:0 0 15px;color:var(--muted);font-size:13px}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice-grid.two{grid-template-columns:1fr 1fr}.choice-card{border:2px solid #e9edf4;background:#fff;border-radius:14px;padding:16px;min-height:93px;text-align:left;transition:.16s}.choice-card:hover{border-color:#9dbcf9;transform:translateY(-1px)}.choice-card.selected{border-color:var(--blue);background:#eff6ff}.choice-icon{display:block;font-size:24px;margin-bottom:7px}.choice-card strong{display:block;font-size:15px}.choice-card small{display:block;margin-top:4px;color:var(--muted);font-size:11px}.subpanel{margin-top:16px;padding-top:16px;border-top:1px solid #e7ebf2}.pill-row{display:flex;flex-wrap:wrap;gap:8px}.select-pill{position:relative}.select-pill input{position:absolute;opacity:0;pointer-events:none}.select-pill span,.single-pill{display:inline-block;border:1px solid #dce3ed;background:#fff;border-radius:9px;padding:9px 11px;font-size:12px;font-weight:800}.select-pill input:checked+span,.single-pill.selected{background:var(--navy);border-color:var(--navy);color:#fff}.single-pill{cursor:pointer}.single-pill.blue.selected{background:var(--blue);border-color:var(--blue)}
+.info{display:inline-flex;position:relative;margin-left:4px;vertical-align:middle}.info-btn{width:18px;height:18px;border:0;border-radius:50%;background:#e7efff;color:var(--blue);font-size:11px;font-weight:950;padding:0;display:grid;place-items:center}.info-pop{position:absolute;z-index:30;left:50%;bottom:27px;transform:translateX(-50%) translateY(4px);width:245px;max-width:calc(100vw - 35px);background:var(--navy);color:#fff;border-radius:10px;padding:10px 11px;font-size:11px;font-weight:500;line-height:1.5;opacity:0;visibility:hidden;pointer-events:none;transition:.15s;box-shadow:0 12px 30px rgba(0,0,0,.22)}.info:hover .info-pop,.info.open .info-pop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.highlight-box{margin-top:16px;background:linear-gradient(135deg,#fff8d9,#fffdf3);border:1px solid #ffe18a;border-radius:14px;padding:15px}.highlight-box strong{display:block;color:#493b00;margin-bottom:6px}.highlight-box p{margin:0 0 9px;color:#6b5b1e;font-size:12px;line-height:1.5}.highlight-check{display:flex;align-items:flex-start;gap:9px;color:#4b3d00;font-size:12px;font-weight:850}.highlight-check input{width:18px;height:18px;margin:0}.form-note{margin-top:18px;border-radius:12px;background:#eef5ff;border:1px solid #d4e3ff;padding:12px 14px;color:#3a587f;font-size:12px;line-height:1.5}.publish{width:100%;border:0;border-radius:12px;background:linear-gradient(135deg,var(--blue),#174fd1);color:#fff;padding:15px;font-size:15px;font-weight:950;margin-top:16px;box-shadow:0 12px 24px rgba(37,99,235,.2)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:52px}.hero-visual{display:none}.header-link{display:none}.user-meta{display:none}.form-grid{grid-template-columns:1fr}.field.full,.dynamic-area{grid-column:auto}.choice-grid,.choice-grid.two{grid-template-columns:1fr}.modal{padding:10px}.modal-card{width:calc(100vw - 16px);max-height:92vh}.form-body{max-height:calc(92vh - 88px);padding:18px}.modal-header{padding:18px}.hero h1{font-size:48px}.section-head{align-items:flex-start}.header-inner{padding:0 14px}.logo{font-size:22px}.header-primary{padding:11px 12px;font-size:12px}.google-btn span:last-child{display:none}.google-btn{padding:7px}.user-panel{padding:5px}.logout{display:none}}
 
+
+/* ===== FINAL PRODUCT LAYER ===== */
+body{overflow-x:hidden}
+button:disabled{opacity:.55;cursor:not-allowed}
+.nav-pill{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;padding:11px 13px;border-radius:11px;font-weight:850;font-size:12px}
+.nav-pill:hover{background:rgba(255,255,255,.13)}
+.hero{padding-top:68px}
+.hero-copy{position:relative;z-index:2}
+.hero-free{display:inline-flex;align-items:center;gap:7px;margin-top:14px;color:#166534;background:#ecfdf3;border:1px solid #bbf7d0;border-radius:999px;padding:8px 11px;font-weight:900;font-size:12px}
+.rotator{height:36px;overflow:hidden;margin:18px 0 5px;font-weight:950;color:#0f4fbd;font-size:18px}
+.rotator-track{animation:rotateWords 12s cubic-bezier(.68,-.55,.27,1.55) infinite}
+.rotator-track span{display:block;height:36px;line-height:36px}
+@keyframes rotateWords{0%,18%{transform:translateY(0)}25%,43%{transform:translateY(-36px)}50%,68%{transform:translateY(-72px)}75%,93%{transform:translateY(-108px)}100%{transform:translateY(-144px)}}
+.hero-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;transform:rotate(1deg)}
+.visual-card{position:relative;overflow:hidden;min-height:165px;border-radius:22px;padding:18px;color:#fff;box-shadow:0 20px 50px rgba(8,20,38,.17)}
+.visual-card:nth-child(1){background:linear-gradient(145deg,#1d4ed8,#0ea5e9)}
+.visual-card:nth-child(2){background:linear-gradient(145deg,#0f766e,#22c55e)}
+.visual-card:nth-child(3){background:linear-gradient(145deg,#111827,#475569)}
+.visual-card:nth-child(4){background:linear-gradient(145deg,#92400e,#f59e0b)}
+.visual-card strong{position:relative;z-index:2;font-size:18px}.visual-card small{position:relative;z-index:2;display:block;margin-top:5px;color:rgba(255,255,255,.82)}
+.visual-card svg{position:absolute;width:145px;height:105px;right:-12px;bottom:-8px;opacity:.9;filter:drop-shadow(0 10px 20px rgba(0,0,0,.18))}
+.ticker{background:#081426;color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-block;padding:13px 0;animation:ticker 24s linear infinite;font-weight:850;color:#dbeafe}
+.ticker-track span{margin:0 26px}.ticker-track b{color:#ffc400}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.info-strip,.grow-section,.pro-section,.about-section,.feedback-section{max-width:1180px;margin:0 auto;padding:68px 22px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 10px 30px rgba(16,24,40,.055)}
+.info-card .num{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:#eaf1ff;color:#1d4ed8;font-weight:950;margin-bottom:14px}
+.info-card h3{margin:0 0 8px}.info-card p{margin:0;color:#667085;line-height:1.65;font-size:14px}
+
+.pro-section{padding-top:10px}.pro-shell{background:linear-gradient(135deg,#071426,#102b4a);border-radius:30px;padding:34px;color:#fff;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;box-shadow:0 30px 80px rgba(8,20,38,.22)}
+.pro-shell h2{font-size:34px;margin:0 0 11px;letter-spacing:-1px}.pro-shell p{color:#cbd5e1;line-height:1.7}.pro-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.free-pro-btn{border:0;border-radius:12px;padding:14px 18px;background:#ffc400;color:#111827;font-weight:950}.ghost-btn{border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:14px 18px;background:rgba(255,255,255,.06);color:#fff;font-weight:900}
+.pro-checks{display:grid;gap:10px}.pro-check{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:13px 15px;font-weight:800;color:#e2e8f0}
+
+.lock-note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:14px;padding:13px 15px;margin-bottom:15px;font-size:13px;line-height:1.55}
+.talep-card.locked{background:linear-gradient(145deg,#fff,#f9fbff)}
+.talep-card.locked p,.talep-card.locked .talep-tags{display:none}
+.locked-box{margin-top:15px;border:1px dashed #cbd5e1;background:#f8fafc;border-radius:12px;padding:13px;color:#64748b;font-size:12px;line-height:1.5}
+.lock-cta{margin-top:12px;border:0;border-radius:10px;background:#2563eb;color:#fff;padding:11px 14px;font-weight:900}
+.owner-pill,.verified-pill,.pending-pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:900}
+.owner-pill{background:#eef2ff;color:#4338ca}.verified-pill{background:#ecfdf3;color:#047857}.pending-pill{background:#fff7ed;color:#c2410c}
+
+.grow-section{padding-top:24px}.grow-card{border-radius:26px;padding:32px;background:linear-gradient(145deg,#eff6ff,#fffdf0);border:1px solid #dce8ff;display:flex;align-items:center;justify-content:space-between;gap:25px}.grow-card h2{margin:0 0 8px;font-size:30px}.grow-card p{margin:0;color:#5d6676;line-height:1.65;max-width:720px}.grow-badge{flex:none;background:#081426;color:#fff;border-radius:18px;padding:18px 22px;text-align:center;font-weight:900}.grow-badge b{display:block;font-size:25px;color:#ffc400;margin-bottom:3px}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.about-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(16,24,40,.05)}.about-card h2,.about-card h3{margin-top:0}.founder{display:flex;gap:16px;align-items:flex-start}.founder-avatar{width:76px;height:76px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#2563eb,#0ea5e9);color:#fff;font-size:31px;font-weight:950;flex:none}.contact-lines{display:grid;gap:7px;color:#475569;font-size:13px;line-height:1.5}.contact-lines a{color:#1d4ed8;text-decoration:none;font-weight:800}
+
+.feedback-section{padding-top:0}.feedback-box{background:#081426;color:#fff;border-radius:27px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:24px}.feedback-box p{color:#cbd5e1;max-width:700px;line-height:1.65}.feedback-btn{border:0;border-radius:12px;padding:14px 18px;background:#fff;color:#111827;font-weight:950;white-space:nowrap}
+footer{background:#050d18;color:#cbd5e1;padding:34px 22px}.footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:25px}.footer-brand{font-size:23px;font-weight:950;color:#fff}.footer-brand span{color:#ffc400}.footer-small{font-size:12px;line-height:1.7;color:#94a3b8}.footer-links{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}.footer-links button,.footer-links a{border:0;background:#0f1d30;color:#dbeafe;border-radius:9px;padding:9px 11px;text-decoration:none;font-weight:800;font-size:12px}
+
+/* modal extras */
+.app-modal{position:fixed;inset:0;z-index:9000;background:rgba(4,12,25,.72);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px}.app-modal.open{display:flex}.app-card{width:min(780px,100%);max-height:90vh;background:#fff;border-radius:23px;overflow:hidden;box-shadow:0 35px 100px rgba(0,0,0,.35)}.app-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:20px 22px;border-bottom:1px solid #e8edf4}.app-head h2{margin:0;font-size:24px}.app-head p{margin:6px 0 0;color:#667085;font-size:13px}.app-x{border:0;width:38px;height:38px;border-radius:50%;font-size:22px;background:#eef2f7}.app-body{padding:20px 22px;max-height:calc(90vh - 82px);overflow:auto}.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.app-field{display:flex;flex-direction:column;gap:7px}.app-field.full{grid-column:1/-1}.app-field label{font-size:13px;font-weight:900;color:#344054}.app-field input,.app-field select,.app-field textarea{width:100%;border:1px solid #d7dee9;border-radius:11px;padding:12px 13px;background:#fbfcfe;outline:none}.app-field textarea{min-height:100px;resize:vertical}.app-help{font-size:11px;color:#7b8798;line-height:1.45}.app-submit{width:100%;margin-top:16px;border:0;border-radius:12px;background:#2563eb;color:#fff;padding:14px;font-weight:950}.app-secondary{border:1px solid #d7dee9;background:#fff;border-radius:11px;padding:11px 13px;font-weight:850}.upload-box{border:1px dashed #bdc7d6;border-radius:14px;padding:14px;background:#f8fafc}.scan-status{margin-top:9px;padding:10px 12px;border-radius:10px;background:#eef5ff;color:#355678;font-size:12px;line-height:1.45}.scan-status.ok{background:#ecfdf3;color:#166534}.scan-status.warn{background:#fff7ed;color:#9a3412}.status-panel{border-radius:15px;padding:15px;margin-bottom:16px;background:#f8fafc;border:1px solid #e4e9f2}.profile-preview{display:flex;gap:13px;align-items:center;margin-bottom:15px}.profile-preview img,.profile-fallback{width:64px;height:64px;border-radius:18px;object-fit:cover}.profile-fallback{display:grid;place-items:center;background:#2563eb;color:#fff;font-weight:950;font-size:24px}.avatar-small{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#e2e8f0}.profile-summary{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:#f8fafc;margin-bottom:13px}.profile-summary strong{display:block}.profile-summary small{display:block;color:#667085;margin-top:3px}.report-btn{border:0;background:#fff1f2;color:#be123c;border-radius:9px;padding:8px 10px;font-weight:850;font-size:11px;margin-left:auto}
+
+/* chat */
+#asMesajBtn{position:fixed;right:22px;bottom:22px;z-index:500;border:0;border-radius:50px;padding:13px 18px;background:#101828;color:#fff;font-weight:900;box-shadow:0 15px 40px rgba(0,0,0,.25);display:none}.as-chat-overlay{display:none;position:fixed;inset:0;z-index:10000;background:rgba(4,12,25,.72);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:18px}.as-chat-overlay.acik{display:flex}.as-chat-card{width:min(680px,100%);max-height:88vh;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.35)}.as-chat-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #e5e7eb}.as-chat-head h3{margin:0;font-size:19px}.as-chat-x{width:36px;height:36px;border:0;border-radius:50%;font-size:22px}#asChatBody{padding:20px;max-height:70vh;overflow-y:auto}.as-hazir{width:100%;text-align:left;margin:6px 0;padding:14px 15px;border:1px solid #dce3ee;border-radius:12px;background:#fff;font-weight:700}.as-hazir:hover{border-color:#2563eb;background:#f5f8ff}.as-konusma{padding:14px;border:1px solid #e5e7eb;border-radius:14px;margin-bottom:10px}.as-konusma:hover{background:#f8fafc}.as-bubble{max-width:82%;padding:11px 13px;margin:8px 0;border-radius:14px;background:#f1f5f9;line-height:1.45}.as-bubble.benim{margin-left:auto;background:#dbeafe}.as-system{margin:12px 0;padding:11px 13px;text-align:center;background:#f0fdf4;color:#166534;border-radius:12px;font-weight:800}.as-warning{margin:12px 0;padding:12px;background:#fff7ed;color:#9a3412;border-radius:12px;font-weight:800}.as-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.as-ok,.as-no{border:0;border-radius:11px;padding:12px 15px;font-weight:900}.as-ok{background:#16a34a;color:#fff}.as-no{background:#fee2e2;color:#991b1b}.as-contact{margin-top:16px;padding:15px;border-radius:14px;background:#ecfdf3;border:1px solid #bbf7d0}.as-contact strong{display:block;margin-bottom:6px}.as-send{display:flex;gap:8px;margin-top:15px}.as-send input{flex:1;padding:13px;border:1px solid #d1d5db;border-radius:11px;font-size:15px}.as-send button{border:0;border-radius:11px;padding:0 18px;background:#2563eb;color:#fff;font-weight:900}
+.toast{position:fixed;left:50%;bottom:24px;z-index:20000;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#101828;color:#fff;padding:12px 15px;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,.25);transition:.2s;font-size:13px;font-weight:800}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:900px){.pro-shell,.about-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.hero-gallery{grid-template-columns:1fr 1fr}.grow-card,.feedback-box{align-items:flex-start;flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+@media(max-width:650px){.hero-gallery{grid-template-columns:1fr 1fr}.visual-card{min-height:130px;padding:14px}.visual-card svg{width:110px;height:82px}.app-grid{grid-template-columns:1fr}.app-field.full{grid-column:auto}.nav-pill{display:none}.pro-shell{padding:23px}.pro-shell h2{font-size:28px}.about-section,.info-strip,.grow-section,.pro-section,.feedback-section{padding-left:15px;padding-right:15px}.hero h1{font-size:45px}.footer-inner{display:block}.footer-links{margin-top:18px}}
+</style>
+</head>
 <body>
 
 <header>
-    <div class="header-inner">
-
-        <div class="logo">
-            ALICISINDAN<span>.com</span>
-        </div>
-
-        <div class="header-actions">
-<button class="talep-btn" onclick="googleIleGiris()">Google ile Giriş</button>
-            <a href="#talepler" class="talepleri-gor">
-                Talepleri Gör
-            </a>
-
-            <button
-                class="talep-btn"
-                onclick="talepFormunuAc()"
-            >
-                + Talep Oluştur
-            </button>
-
-        </div>
-
+  <div class="header-inner">
+    <div class="logo">ALICISINDAN<span>.com</span></div>
+    <div class="header-actions">
+      <a class="header-link" href="#talepler">Talepleri Gör</a>
+      <button class="nav-pill" type="button" onclick="profesyonelAkis()">Profesyonel Hesap</button>
+      <div id="authArea" class="auth-area"></div>
+      <button class="header-primary" type="button" onclick="talepFormunuAc()">+ Talep Oluştur</button>
     </div>
+  </div>
 </header>
 
 
 <section class="hero">
-
-    <div>
-
-        <div class="badge">
-            ⚡ Alıcı talebini yayınlar, satıcı teklif verir
-        </div>
-
-        <h1>
-            Aradığını bulmak için
-            <span>ilan arama.</span><br>
-            Aradığını ilan et.
-        </h1>
-
-        <p>
-            Ev, arsa veya araç aradığını bize söyle.
-            Talebin profesyonellerin önüne düşsün,
-            uygun ürünü olanlar sana teklif versin.
-        </p>
-
-        <div class="hero-buttons">
-
-            <button
-                class="primary"
-                onclick="talepFormunuAc()"
-            >
-                Talebimi Oluştur →
-            </button>
-
-            <a
-                class="secondary"
-                href="#talepler"
-            >
-                Aktif Talepleri Gör
-            </a>
-
-        </div>
-
+  <div class="hero-copy">
+    <div class="hero-badge">🚀 Yeni nesil talep platformu • Kayıt ücretsiz</div>
+    <h1>İlan peşinde koşma.<br><em>Aradığını söyle, onlar seni bulsun.</em></h1>
+    <div class="rotator"><div class="rotator-track"><span>🏢 Daire arıyorsun.</span><span>🌳 Arazi arıyorsun.</span><span>🚗 Araç arıyorsun.</span><span>🤝 Doğru profesyoneli arıyorsun.</span><span>🏢 Daire arıyorsun.</span></div></div>
+    <p>Ne istediğini ücretsiz yayınla. Doğrulanmış emlak danışmanları ve galericiler talebine karşılık versin. İletişim bilgileriniz yalnızca karşılıklı onaydan sonra açılır.</p>
+    <div class="hero-actions">
+      <button class="hero-primary" type="button" onclick="talepFormunuAc()">Ücretsiz Talep Oluştur →</button>
+      <button class="hero-secondary" type="button" onclick="profesyonelAkis()">Ücretsiz Profesyonel Hesap Oluştur</button>
     </div>
-
-
-    <div class="hero-card">
-
-        <div class="hero-card-label">
-            Örnek aktif talep
-        </div>
-
-        <h3>
-            🚗 Audi A3 aranıyor
-        </h3>
-
-        <p>
-            2020 ve üzeri, ağır hasarsız,
-            düşük kilometre araç arıyorum.
-        </p>
-
-        <span class="fake-tag">
-            📍 İstanbul
-        </span>
-
-        <span class="fake-tag">
-            💰 1.500.000 TL
-        </span>
-
-        <span class="fake-tag">
-            🚘 150.000 km altı
-        </span>
-
-        <div class="offer-count">
-            <span>Aktif talep</span>
-            <span>7 teklif →</span>
-        </div>
-
+    <div class="hero-free">✓ Talep oluşturmak ücretsiz • Profesyonel başvuru ücretsiz</div>
+  </div>
+  <div class="hero-visual" style="display:block;min-height:auto">
+    <div class="hero-gallery">
+      <div class="visual-card"><strong>Daire</strong><small>İhtiyacını tek talepte anlat</small><svg viewBox="0 0 160 110" fill="none"><rect x="22" y="31" width="78" height="66" rx="8" fill="white" fill-opacity=".92"/><rect x="35" y="46" width="16" height="16" rx="3" fill="#93c5fd"/><rect x="61" y="46" width="16" height="16" rx="3" fill="#93c5fd"/><rect x="35" y="70" width="16" height="16" rx="3" fill="#93c5fd"/><rect x="62" y="69" width="25" height="28" rx="4" fill="#1e3a8a"/><rect x="97" y="55" width="40" height="42" rx="7" fill="white" fill-opacity=".75"/></svg></div>
+      <div class="visual-card"><strong>Arazi</strong><small>Bütçeni ve kriterini paylaş</small><svg viewBox="0 0 160 110" fill="none"><path d="M8 95L44 47L69 70L92 35L151 95H8Z" fill="white" fill-opacity=".28"/><path d="M9 94C39 77 64 80 86 90C105 98 131 95 153 80V108H9V94Z" fill="white" fill-opacity=".9"/><circle cx="115" cy="28" r="14" fill="#fde68a"/><path d="M29 93L46 70L63 93H29Z" fill="#166534"/><rect x="44" y="91" width="4" height="13" fill="#78350f"/></svg></div>
+      <div class="visual-card"><strong>Araç</strong><small>Marka, model ve beklentini yaz</small><svg viewBox="0 0 160 110" fill="none"><path d="M28 69L41 46C45 39 52 35 61 35H102C111 35 119 40 124 48L137 69" stroke="white" stroke-width="7" stroke-linecap="round"/><rect x="22" y="65" width="120" height="31" rx="12" fill="white" fill-opacity=".93"/><circle cx="48" cy="96" r="11" fill="#0f172a"/><circle cx="118" cy="96" r="11" fill="#0f172a"/><path d="M50 45H107L118 65H39L50 45Z" fill="#93c5fd"/></svg></div>
+      <div class="visual-card"><strong>Profesyonel</strong><small>Müşterini talebinden bul</small><svg viewBox="0 0 160 110" fill="none"><rect x="23" y="40" width="111" height="58" rx="8" fill="white" fill-opacity=".9"/><path d="M14 42L32 20H126L145 42H14Z" fill="#fef3c7"/><rect x="34" y="57" width="30" height="41" rx="5" fill="#78350f"/><rect x="76" y="57" width="45" height="24" rx="5" fill="#fdba74"/><circle cx="87" cy="86" r="7" fill="#111827"/><circle cx="112" cy="86" r="7" fill="#111827"/></svg></div>
     </div>
+  </div>
+</section>
+<div class="ticker"><div class="ticker-track"><span><b>ÜCRETSİZ</b> talep oluştur</span><span>Doğrulanmış profesyonellerden teklif al</span><span>Numaran karşılıklı onaya kadar gizli kalsın</span><span><b>ÜCRETSİZ</b> profesyonel başvuru</span><span>Yeni platform • birlikte büyüyelim</span><span><b>ÜCRETSİZ</b> talep oluştur</span><span>Doğrulanmış profesyonellerden teklif al</span><span>Numaran karşılıklı onaya kadar gizli kalsın</span><span><b>ÜCRETSİZ</b> profesyonel başvuru</span><span>Yeni platform • birlikte büyüyelim</span></div></div>
 
+
+<section class="info-strip">
+  <div class="section-head"><div><h2>Nasıl çalışır?</h2><p>İki taraf için de kısa ve kontrollü bir süreç.</p></div></div>
+  <div class="info-grid">
+    <div class="info-card"><div class="num">1</div><h3>Talebini ücretsiz yayınla</h3><p>Daire, arazi veya araç için kriterlerini gir. Telefon ve e-posta gibi iletişim bilgilerin talep kartında gösterilmez.</p></div>
+    <div class="info-card"><div class="num">2</div><h3>Profesyoneller cevap versin</h3><p>Vergi levhası ön kontrolünden ve hesap incelemesinden geçen emlakçı veya galericiler talebine hazır mesajlarla karşılık verir.</p></div>
+    <div class="info-card"><div class="num">3</div><h3>Karşılıklı onayla iletişimi aç</h3><p>“Evet, ilgilenirim” sonrası iki taraf etkileşimi onaylarsa telefon ve e-posta bilgileri açılır, mesajlaşma serbestçe devam eder.</p></div>
+  </div>
 </section>
 
-
-<main
-    class="container"
-    id="talepler"
->
-
-    <div class="section-top">
-
-        <div>
-            <h2>Son Talepler</h2>
-            <p>
-                İnsanların şu anda ne aradığını keşfet.
-            </p>
-        </div>
-
-        <span class="live">
-            ● Canlı Talepler
-        </span>
-
+<section class="pro-section">
+  <div class="pro-shell">
+    <div>
+      <span class="verified-pill">✓ Profesyoneller için ücretsiz</span>
+      <h2>Müşteriyi aramakla vakit kaybetmeyin. Talebi olan müşteri sizi bulsun.</h2>
+      <p>Emlakçı ve galericiler için vergi levhası doğrulaması gereklidir. Belge otomatik olarak okunur ve format ön kontrolünden geçirilir; hesap yaklaşık 1 saatlik inceleme hedefiyle onay sürecine alınır.</p>
+      <div class="pro-cta"><button class="free-pro-btn" onclick="profesyonelAkis()">Ücretsiz Profesyonel Hesap Oluştur →</button><button class="ghost-btn" onclick="document.getElementById('talepler').scrollIntoView({behavior:'smooth'})">Talep Vitrinini Gör</button></div>
     </div>
+    <div class="pro-checks"><div class="pro-check">🧾 Vergi levhası yükleme • zorunlu</div><div class="pro-check">💳 Kartvizit • isteğe bağlı</div><div class="pro-check">🧠 Otomatik OCR belge ön kontrolü</div><div class="pro-check">🔒 Detaylı talepler yalnızca onaylı profesyonellere</div><div class="pro-check">💬 Mesaj + karşılıklı iletişim onayı</div></div>
+  </div>
+</section>
 
-
-    <div id="talepListesi">
-
-        <article class="talep">
-
-            <div class="talep-top">
-
-                <div>
-                    <h3>
-                        🏡 Arnavutköy'de arsa aranıyor
-                    </h3>
-
-                    <p class="talep-aciklama">
-                        Yatırım amaçlı, gelişime açık bölgede
-                        uygun bir arsa arıyorum.
-                    </p>
-                </div>
-
-                <span class="yeni">
-                    YENİ
-                </span>
-
-            </div>
-
-            <div class="etiketler">
-
-                <span class="etiket">
-                    📍 İstanbul / Arnavutköy
-                </span>
-
-                <span class="etiket">
-                    💰 3.500.000 TL'ye kadar
-                </span>
-
-                <span class="etiket">
-                    🏡 Emlak
-                </span>
-
-            </div>
-
-            <button
-                class="teklif"
-                onclick="teklifVer()"
-            >
-                Uygun yerim var → Teklif Ver
-            </button>
-
-        </article>
-
-
-        <article class="talep arac">
-
-            <div class="talep-top">
-
-                <div>
-                    <h3>
-                        🚗 Audi A3 aranıyor
-                    </h3>
-
-                    <p class="talep-aciklama">
-                        2020 ve üzeri, ağır hasar kaydı olmayan,
-                        temiz araç arıyorum.
-                    </p>
-                </div>
-
-                <span class="yeni">
-                    AKTİF
-                </span>
-
-            </div>
-
-            <div class="etiketler">
-
-                <span class="etiket">
-                    📍 İstanbul
-                </span>
-
-                <span class="etiket">
-                    💰 1.500.000 TL'ye kadar
-                </span>
-
-                <span class="etiket">
-                    🚘 Araç
-                </span>
-
-            </div>
-
-            <button
-                class="teklif"
-                onclick="teklifVer()"
-            >
-                Uygun aracım var → Teklif Ver
-            </button>
-
-        </article>
-
-
-        <article class="talep">
-
-            <div class="talep-top">
-
-                <div>
-                    <h3>
-                        🏢 Başakşehir'de kiralık işyeri aranıyor
-                    </h3>
-
-                    <p class="talep-aciklama">
-                        Cadde üzerinde veya yoğun yaya trafiği
-                        bulunan bölgede işyeri arıyorum.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="etiketler">
-
-                <span class="etiket">
-                    📍 İstanbul / Başakşehir
-                </span>
-
-                <span class="etiket">
-                    💰 40.000 TL / ay
-                </span>
-
-                <span class="etiket">
-                    🏢 Emlak
-                </span>
-
-            </div>
-
-            <button
-                class="teklif"
-                onclick="teklifVer()"
-            >
-                Uygun yerim var → Teklif Ver
-            </button>
-
-        </article>
-
-    </div>
-
+<main id="talepler" class="container">
+  <div class="section-head"><div><h2>Talep Vitrini</h2><p>Başlıklar herkese açık; bütçe ve talep detayları doğrulanmış profesyonellere açılır.</p></div><span class="live-pill">● Gerçek Talepler</span></div>
+  <div id="talepAccessNote"></div>
+  <div id="talepListesi"><div class="empty-state">Talepler yükleniyor...</div></div>
 </main>
 
+<section class="grow-section">
+  <div class="grow-card"><div><h2>Yeni bir sistem kuruyoruz. Birlikte büyüyelim.</h2><p>ALICISINDAN.com henüz yolun başında. Amacımız alıcıyı ilan kalabalığından kurtarmak, profesyoneli de gerçek talebe daha hızlı ulaştırmak. Her geri bildirim ürünü biraz daha iyi hale getiriyor.</p></div><div class="grow-badge"><b>Birlikte</b> büyüyelim • kazanalım</div></div>
+</section>
 
-<!-- TALEP OLUŞTUR PENCERESİ -->
+<section id="hakkimizda" class="about-section">
+  <div class="about-grid">
+    <div class="about-card"><h2>Hakkımızda</h2><p>ALICISINDAN.com, klasik ilan mantığını tersine çeviren bir talep platformu fikridir. Alıcı ne aradığını söyler; uygun portföyü veya aracı olan doğrulanmış profesyonel karşılık verir. Hedefimiz daha az zaman kaybı, daha doğru eşleşme ve kontrollü iletişimdir.</p><p>Sistemi adım adım geliştiriyor; güvenli profil yapısı, belge kontrolü, mesajlaşma, karşılıklı onay ve kullanıcı geri bildirimlerini aynı ürün içinde birleştiriyoruz.</p></div>
+    <div class="about-card"><div class="founder"><div class="founder-avatar">YA</div><div><h3>Yusuf Akmercan</h3><p style="margin-top:5px;color:#667085;line-height:1.6">24 yaşında genç girişimci. Gayrimenkul, dijital ürünler, teknoloji ve yapay zekâ destekli iş modelleri üzerinde çalışıyor. ALICISINDAN.com fikrini alıcı ile profesyonel arasındaki süreci daha hızlı ve daha güvenli hale getirmek amacıyla geliştiriyor.</p></div></div><div class="contact-lines"><div>📞 <a href="tel:+905530132524">0553 013 25 24</a></div><div>📍 Arnavutköy Merkez</div><div>✉️ <a href="mailto:yusufakmercan1@gmail.com">yusufakmercan1@gmail.com</a></div><div>✉️ <a href="mailto:yusufakmercan2@gmail.com">yusufakmercan2@gmail.com</a></div></div></div>
+  </div>
+</section>
 
-<div
-    class="modal"
-    id="talepModal"
-    onclick="arkaPlanKontrol(event)"
->
+<section class="feedback-section"><div class="feedback-box"><div><h2 style="margin:0 0 8px">Soru, öneri ve şikayetleriniz bizim için çok önemli.</h2><p>Bir fikir, hata, şikayet veya geliştirme öneriniz varsa doğrudan bize iletin. Sistemin doğru büyümesi için geri bildirimlerinizi kayıt altına alıyoruz.</p></div><button class="feedback-btn" onclick="geriBildirimAc('Soru / Öneri')">Soru veya Öneri Gönder →</button></div></section>
 
-    <div class="modal-card">
+<footer><div class="footer-inner"><div><div class="footer-brand">ALICISINDAN<span>.com</span></div><p class="footer-small">Alıcı talebini yayınlar, doğrulanmış profesyonel karşılık verir. İletişim bilgileri karşılıklı onay tamamlanana kadar gizli tutulur.</p><p class="footer-small">Kurucu: Yusuf Akmercan • 0553 013 25 24 • yusufakmercan1@gmail.com • yusufakmercan2@gmail.com</p></div><div class="footer-links"><button onclick="geriBildirimAc('Soru')">Soru Sor</button><button onclick="geriBildirimAc('Öneri')">Öneri Yap</button><button onclick="geriBildirimAc('Şikayet')">Şikayet Et</button><a href="#hakkimizda">Hakkımızda</a><button onclick="profesyonelAkis()">Ücretsiz Profesyonel Hesap</button></div></div></footer>
 
-        <div class="modal-header">
-
-            <div>
-
-                <h2>
-                    Talebini Oluştur
-                </h2>
-
-                <p>
-                    Ne aradığını anlat, uygun satıcılar seni bulsun.
-                </p>
-
-            </div>
-
-            <button
-                class="kapat"
-                onclick="talepFormunuKapat()"
-                type="button"
-            >
-                ×
-            </button>
-
+<div class="modal" id="talepModal" onclick="arkaPlanKontrol(event)">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div><h2>Talebini Oluştur</h2><p>Seçim yaptıkça yalnızca gerekli alanlar açılır.</p></div>
+      <button class="modal-close" type="button" onclick="talepFormunuKapat()" aria-label="Kapat">×</button>
+    </div>
+    <form id="talepForm" class="form-body" onsubmit="talepYayinla(event)">
+      <div class="form-grid">
+        <div class="field full">
+          <label>Kategori *</label>
+          <select id="kategori" required>
+            <option value="">Kategori seç</option>
+            <option value="Emlak">🏡 Emlak</option>
+            <option value="Araç">🚗 Araç</option>
+          </select>
         </div>
 
+        <div id="dynamicArea" class="dynamic-area"></div>
 
-        <form
-            class="form-body"
-            id="talepForm"
-            onsubmit="talepYayinla(event)"
-        >
-
-            <div class="form-grid">
-
-                <div class="field">
-
-                    <label>
-                        Kategori *
-                    </label>
-
-                    <select
-                        id="kategori"
-                        required
-                    >
-                        <option value="">
-                            Kategori seç
-                        </option>
-
-                        <option value="Emlak">
-                            🏡 Emlak
-                        </option>
-
-                        <option value="Araç">
-                            🚗 Araç
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Ne arıyorsun? *
-                    </label>
-
-                    <input
-                        id="baslik"
-                        type="text"
-                        required
-                        placeholder="Örn: Yatırımlık arsa / Audi A3"
-                    >
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        İl *
-                    </label>
-
-                    <select
-                        id="il"
-                        required
-                        onchange="ilceleriYukle()"
-                    >
-
-                        <option value="">
-                            İller yükleniyor...
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        İlçe
-                    </label>
-
-                    <select
-                        id="ilce"
-                        disabled
-                    >
-
-                        <option value="">
-                            Önce il seç
-                        </option>
-
-                    </select>
-
-                    <small>
-                        İlçe seçmek zorunlu değil.
-                        İl geneli olarak da yayınlayabilirsin.
-                    </small>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Bütçe
-                    </label>
-
-                    <input
-                        id="butce"
-                        type="text"
-                        placeholder="Örn: 3.500.000 TL'ye kadar"
-                    >
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Ad Soyad *
-                    </label>
-
-                    <input
-                        id="adSoyad"
-                        type="text"
-                        required
-                        placeholder="Adın ve soyadın"
-                    >
-
-                </div>
-
-
-                <div class="field full">
-
-                    <label>
-                        Telefon *
-                    </label>
-
-                    <input
-                        id="telefon"
-                        type="tel"
-                        required
-                        placeholder="05xx xxx xx xx"
-                    >
-
-                    <small>
-                        Telefon numaran ilan ekranında
-                        herkese açık gösterilmeyecek.
-                    </small>
-
-                </div>
-
-
-                <div class="field full">
-
-                    <label>
-                        Aradığını detaylandır
-                    </label>
-
-                    <textarea
-                        id="aciklama"
-                        placeholder="Örn: Arnavutköy'de yatırım amaçlı, yola yakın, gelişime açık bölgede arsa arıyorum..."
-                    ></textarea>
-
-                </div>
-
-            </div>
-
-
-            <div class="form-note">
-                🔒 İlk prototipte talebin bu sayfaya eklenecek.
-                Daha sonra hesap sistemi, telefon doğrulama,
-                veritabanı ve profesyonel teklif sistemi ekleyeceğiz.
-            </div>
-
-
-            <button
-                class="publish"
-                type="submit"
-            >
-                Talebimi Yayınla →
+        <div class="field">
+          <label>İl *</label>
+          <div class="compact-select" id="ilCompact">
+            <button type="button" class="compact-select-trigger" id="ilTrigger" aria-expanded="false">
+              <span id="ilTriggerText">İller yükleniyor...</span>
+              <span class="compact-select-arrow">⌄</span>
             </button>
+            <div class="compact-select-menu" id="ilMenu">
+              <input type="text" id="ilSearch" class="compact-select-search" placeholder="İl ara..." autocomplete="off">
+              <div class="compact-select-options" id="ilOptions"></div>
+            </div>
+          </div>
+          <select id="il" aria-hidden="true" tabindex="-1" style="display:none"><option value="">İller yükleniyor...</option></select>
+        </div>
+        <div class="field">
+          <label>İlçe <span style="color:#98a2b3;font-weight:500">(İsteğe bağlı)</span></label>
+          <select id="ilce" disabled><option value="">Önce il seç</option></select>
+          <small>İlçe seçmezsen talep il geneli olarak yayınlanır.</small>
+        </div>
 
-        </form>
+        <div class="field">
+          <label>Ad Soyad *</label>
+          <input id="adSoyad" type="text" required autocomplete="name" placeholder="Adınız ve soyadınız">
+        </div>
+        <div class="field">
+          <label>Telefon *</label>
+          <input id="telefon" type="tel" inputmode="numeric" required autocomplete="tel" placeholder="05XX XXX XX XX">
+          <small>Numaran ilan kartında herkese açık gösterilmez.</small>
+        </div>
 
-    </div>
-
+        <div class="field full">
+          <label>Açıklamanızı detaylandırabilirsiniz <span class="info"><button class="info-btn" type="button">i</button><span class="info-pop">Talebinizi kısa ama net anlatmanız, profesyonellerin ihtiyacınızı daha doğru anlamasına ve daha isabetli teklifler sunmasına yardımcı olur.</span></span></label>
+          <textarea id="aciklama" placeholder="Örn: Özellikle toplu ulaşıma yakın, sakin bir bölgede seçenekleri değerlendirmek istiyorum..."></textarea>
+        </div>
+      </div>
+      <div class="form-note">🔒 Talep yayınlamak için giriş gerekir. Ad, telefon ve iletişim bilgileriniz herkese açık olarak gösterilmez.</div>
+      <button class="publish" type="submit">Talebimi Yayınla →</button>
+    </form>
+  </div>
 </div>
 
+<!-- PROFESSIONAL MODAL -->
+<div id="proModal" class="app-modal" onclick="appModalBack(event,'proModal')"><div class="app-card"><div class="app-head"><div><h2>Ücretsiz Profesyonel Hesap</h2><p>Emlakçı ve galericiler için vergi levhası doğrulaması gereklidir.</p></div><button class="app-x" onclick="appModalKapat('proModal')">×</button></div><div class="app-body"><div id="proStatus"></div><form id="proForm" onsubmit="profesyonelBasvuruGonder(event)"><div class="app-grid">
+<div class="app-field"><label>Sektör *</label><select id="proSektor" required><option value="">Seçiniz</option><option value="Emlak">🏡 Emlak</option><option value="Otomotiv">🚗 Otomotiv / Galeri</option></select></div>
+<div class="app-field"><label>Ad Soyad *</label><input id="proAd" required autocomplete="name"></div>
+<div class="app-field"><label>İşletme / Ofis Adı *</label><input id="proIsletme" required placeholder="Örn: Akmercan Gayrimenkul"></div>
+<div class="app-field"><label>Telefon *</label><input id="proTelefon" required inputmode="numeric" placeholder="05XX XXX XX XX"></div>
+<div class="app-field"><label>İl *</label><input id="proSehir" required placeholder="Örn: İstanbul"></div>
+<div class="app-field"><label>İlçe</label><input id="proIlce" placeholder="Örn: Arnavutköy"></div>
+<div class="app-field full"><label>Ofis Adresi *</label><input id="proAdres" required placeholder="Mahalle, cadde/sokak ve ofis bilgisi"></div>
+<div class="app-field full"><label>Profil Açıklaması *</label><textarea id="proBio" required placeholder="Hangi bölgelerde ve hangi tür portföylerde çalıştığınızı kısaca anlatın."></textarea></div>
+<div class="app-field"><label>Profil Fotoğrafı</label><input id="proAvatar" type="file" accept="image/*"><span class="app-help">Alıcı ve profesyonel profillerinde fotoğraf kullanılabilir.</span></div>
+<div class="app-field"><label>Kartvizit <span style="font-weight:500;color:#98a2b3">(İsteğe bağlı)</span></label><input id="proKartvizit" type="file" accept="image/*"></div>
+<div class="app-field full"><label>Vergi Levhası Fotoğrafı *</label><div class="upload-box"><input id="proVergi" type="file" accept="image/png,image/jpeg,image/webp" required><div class="app-help">JPG, PNG veya WebP yükleyin. Belge private alanda saklanır. Sistem önce metni okuyup vergi levhası formatına benzeyip benzemediğini kontrol eder; bu işlem resmi kurum doğrulaması değildir.</div><div id="ocrStatus" class="scan-status">Belge seçildiğinde başvuru sırasında otomatik ön kontrol yapılacak.</div></div></div>
+</div><button class="app-submit" id="proSubmit" type="submit">Başvuruyu Gönder • Ücretsiz</button></form></div></div></div>
+
+<!-- PROFILE MODAL -->
+<div id="profileModal" class="app-modal" onclick="appModalBack(event,'profileModal')"><div class="app-card"><div class="app-head"><div><h2>Profilim</h2><p>Alıcı veya profesyonel profil fotoğrafınızı ve iletişim bilgilerinizi düzenleyin.</p></div><button class="app-x" onclick="appModalKapat('profileModal')">×</button></div><div class="app-body"><div id="profilePreview"></div><form id="profileForm" onsubmit="profilKaydet(event)"><div class="app-grid"><div class="app-field"><label>Ad Soyad</label><input id="profileName" required></div><div class="app-field"><label>Google / Gmail</label><input id="profileEmail" readonly></div><div class="app-field"><label>Telefon</label><input id="profilePhone" inputmode="numeric" placeholder="05XX XXX XX XX"></div><div class="app-field"><label>Profil Fotoğrafı</label><input id="profileAvatar" type="file" accept="image/*"></div><div class="app-field full"><label>Kısa Biyografi</label><textarea id="profileBio" placeholder="Kendinizle ilgili kısa bir bilgi..."></textarea></div></div><button class="app-submit">Profili Kaydet</button></form></div></div></div>
+
+<!-- FEEDBACK MODAL -->
+<div id="feedbackModal" class="app-modal" onclick="appModalBack(event,'feedbackModal')"><div class="app-card" style="width:min(620px,100%)"><div class="app-head"><div><h2>Soru / Öneri / Şikayet</h2><p>Mesajınız sistemimize kaydedilir. İsterseniz ardından Gmail üzerinden de gönderebilirsiniz.</p></div><button class="app-x" onclick="appModalKapat('feedbackModal')">×</button></div><div class="app-body"><form onsubmit="geriBildirimGonder(event)"><input id="feedbackTarget" type="hidden"><div class="app-grid"><div class="app-field"><label>Tür</label><select id="feedbackType"><option>Soru</option><option>Öneri</option><option>Şikayet</option><option>Profil Şikayeti</option></select></div><div class="app-field"><label>E-posta</label><input id="feedbackEmail" type="email" placeholder="size@ornek.com"></div><div class="app-field full"><label>Konu</label><input id="feedbackSubject" required></div><div class="app-field full"><label>Mesajınız</label><textarea id="feedbackMessage" required></textarea></div></div><button class="app-submit">Gönder</button></form></div></div></div>
+
+<button id="asMesajBtn" type="button">💬 Mesajlar</button>
+<div id="asChatModal" class="as-chat-overlay"><div class="as-chat-card"><div class="as-chat-head"><h3 id="asChatTitle">Mesajlar</h3><button class="as-chat-x" onclick="asChatKapat()">×</button></div><div id="asChatBody"></div></div></div>
+<div id="toast" class="toast"></div>
 
 <script>
 
-const API = "https://api.turkiyeapi.dev/v2";
-
-
-function talepFormunuAc() {
-
-    document
-        .getElementById("talepModal")
-        .classList.add("aktif");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function talepFormunuKapat() {
-
-    document
-        .getElementById("talepModal")
-        .classList.remove("aktif");
-
-    document.body.style.overflow = "";
-
-}
-
-
-function arkaPlanKontrol(event) {
-
-    if (event.target.id === "talepModal") {
-        talepFormunuKapat();
-    }
-
-}
-
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        talepFormunuKapat();
-    }
-
-});
-
-
-async function illeriYukle() {
-
-    const ilSelect =
-        document.getElementById("il");
-
-    try {
-
-        const response =
-            await fetch(
-                `${API}/provinces?fields=id,name&sort=name&limit=100`
-            );
-
-        const sonuc =
-            await response.json();
-
-        ilSelect.innerHTML =
-            `<option value="">İl seç</option>`;
-
-        sonuc.data.forEach(il => {
-
-            const option =
-                document.createElement("option");
-
-            option.value = il.id;
-            option.textContent = il.name;
-
-            ilSelect.appendChild(option);
-
-        });
-
-    }
-
-    catch (error) {
-
-        ilSelect.innerHTML =
-            `<option value="">İller yüklenemedi</option>`;
-
-        console.error(
-            "İl listesi yüklenemedi:",
-            error
-        );
-
-    }
-
-}
-
-
-async function ilceleriYukle() {
-
-    const ilSelect =
-        document.getElementById("il");
-
-    const ilceSelect =
-        document.getElementById("ilce");
-
-    const ilId =
-        ilSelect.value;
-
-    if (!ilId) {
-
-        ilceSelect.disabled = true;
-
-        ilceSelect.innerHTML =
-            `<option value="">Önce il seç</option>`;
-
-        return;
-
-    }
-
-
-    ilceSelect.disabled = true;
-
-    ilceSelect.innerHTML =
-        `<option value="">İlçeler yükleniyor...</option>`;
-
-
-    try {
-
-        const response =
-            await fetch(
-                `${API}/districts?provinceId=${ilId}&fields=id,name&sort=name&limit=1000`
-            );
-
-        const sonuc =
-            await response.json();
-
-
-        ilceSelect.innerHTML =
-            `<option value="">İl geneli — İlçe seçmek istemiyorum</option>`;
-
-
-        sonuc.data.forEach(ilce => {
-
-            const option =
-                document.createElement("option");
-
-            option.value = ilce.name;
-            option.textContent = ilce.name;
-
-            ilceSelect.appendChild(option);
-
-        });
-
-
-        ilceSelect.disabled = false;
-
-    }
-
-    catch (error) {
-
-        ilceSelect.innerHTML =
-            `<option value="">İlçeler yüklenemedi</option>`;
-
-        console.error(
-            "İlçe listesi yüklenemedi:",
-            error
-        );
-
-    }
-
-}
-
-
-function talepYayinla(event) {
-
-    event.preventDefault();
-
-
-    const kategori =
-        document.getElementById("kategori").value;
-
-    const baslik =
-        document.getElementById("baslik").value.trim();
-
-    const ilSelect =
-        document.getElementById("il");
-
-    const il =
-        ilSelect.options[
-            ilSelect.selectedIndex
-        ].text;
-
-    const ilce =
-        document.getElementById("ilce").value;
-
-    const butce =
-        document.getElementById("butce").value.trim();
-
-    const aciklama =
-        document.getElementById("aciklama").value.trim();
-
-
-    const kart =
-        document.createElement("article");
-
-
-    kart.className =
-        kategori === "Araç"
-        ? "talep arac"
-        : "talep";
-
-
-    const top =
-        document.createElement("div");
-
-    top.className = "talep-top";
-
-
-    const bilgi =
-        document.createElement("div");
-
-
-    const h3 =
-        document.createElement("h3");
-
-
-    h3.textContent =
-        `${kategori === "Araç" ? "🚗" : "🏡"} ${baslik}`;
-
-
-    const p =
-        document.createElement("p");
-
-    p.className =
-        "talep-aciklama";
-
-    p.textContent =
-        aciklama ||
-        "Yeni bir alıcı talebi oluşturuldu.";
-
-
-    bilgi.appendChild(h3);
-    bilgi.appendChild(p);
-
-
-    const yeni =
-        document.createElement("span");
-
-    yeni.className =
-        "yeni";
-
-    yeni.textContent =
-        "YENİ";
-
-
-    top.appendChild(bilgi);
-    top.appendChild(yeni);
-
-
-    const etiketler =
-        document.createElement("div");
-
-    etiketler.className =
-        "etiketler";
-
-
-    const konum =
-        document.createElement("span");
-
-    konum.className =
-        "etiket";
-
-    konum.textContent =
-        `📍 ${il}${ilce ? " / " + ilce : " geneli"}`;
-
-
-    etiketler.appendChild(konum);
-
-
-    if (butce) {
-
-        const butceEtiketi =
-            document.createElement("span");
-
-        butceEtiketi.className =
-            "etiket";
-
-        butceEtiketi.textContent =
-            `💰 ${butce}`;
-
-        etiketler.appendChild(
-            butceEtiketi
-        );
-
-    }
-
-
-    const kategoriEtiketi =
-        document.createElement("span");
-
-    kategoriEtiketi.className =
-        "etiket";
-
-    kategoriEtiketi.textContent =
-        `${kategori === "Araç" ? "🚘" : "🏡"} ${kategori}`;
-
-
-    etiketler.appendChild(
-        kategoriEtiketi
-    );
-
-
-    const teklif =
-        document.createElement("button");
-
-    teklif.className =
-        "teklif";
-
-    teklif.textContent =
-        kategori === "Araç"
-        ? "Uygun aracım var → Teklif Ver"
-        : "Uygun yerim var → Teklif Ver";
-
-    teklif.onclick =
-        teklifVer;
-
-
-    kart.appendChild(top);
-    kart.appendChild(etiketler);
-    kart.appendChild(teklif);
-
-
-    document
-        .getElementById("talepListesi")
-        .prepend(kart);
-
-
-    document
-        .getElementById("talepForm")
-        .reset();
-
-
-    document
-        .getElementById("ilce")
-        .innerHTML =
-        `<option value="">Önce il seç</option>`;
-
-
-    document
-        .getElementById("ilce")
-        .disabled = true;
-
-
-    talepFormunuKapat();
-
-
-    document
-        .getElementById("talepler")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-}
-
-
-function teklifVer() {
-
-    alert(
-        "Teklif sistemi bir sonraki aşamada profesyonel hesaplara bağlanacak."
-    );
-
-}
-
-
-illeriYukle();
-
-</script>
-<script>
-const supabaseClient = supabase.createClient(
-  "https://cfolesyiywnxvvwajhlo.supabase.co",
- "sb_publishable_VQ4AV6OZKt6KtUyhIj0Y6A_931yCzZB"
-);
-
-async function googleIleGiris() {
-  await supabaseClient.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo: window.location.origin
-    }
-  });
-}/* =========================================
-   ALICISINDAN.COM - GERÇEK KULLANICI OTURUMU
-   ========================================= */
-
-const eskiTalepFormunuAc = window.talepFormunuAc;
-const eskiTeklifVer = window.teklifVer;
-const eskiTalepYayinla = window.talepYayinla;
-
-
-/* GOOGLE GİRİŞİNİ GÜNCELLİYORUZ */
-
-window.googleIleGiris = async function () {
-
-    const { error } =
-        await supabaseClient.auth.signInWithOAuth({
-
-            provider: "google",
-
-            options: {
-                redirectTo: window.location.origin + "/"
-            }
-
-        });
-
-    if (error) {
-        alert(
-            "Google ile giriş başlatılamadı: " +
-            error.message
-        );
-    }
-};
-
-
-/* ÇIKIŞ */
-
-window.cikisYap = async function () {
-
-    await supabaseClient.auth.signOut();
-
-    kullaniciArayuzunuGuncelle(null);
-
-};
-
-
-/* AKTİF KULLANICIYI AL */
-
-async function aktifKullaniciyiAl() {
-
-    const {
-        data: { user }
-    } = await supabaseClient.auth.getUser();
-
-    return user;
-
-}
-
-
-/* HEADER'A KULLANICI ALANI EKLE */
-
-function authAlaniniHazirla() {
-
-    const header =
-        document.querySelector(".header-actions");
-
-    if (!header) return;
-
-
-    /* Daha önce elle koyduğumuz Google butonunu kaldır */
-
-    const eskiGoogleButon =
-        document.querySelector(
-            'button[onclick="googleIleGiris()"]'
-        );
-
-    if (eskiGoogleButon) {
-        eskiGoogleButon.remove();
-    }
-
-
-    if (document.getElementById("authArea")) {
-        return;
-    }
-
-
-    const alan =
-        document.createElement("div");
-
-    alan.id = "authArea";
-    alan.className = "auth-area";
-
-    header.insertBefore(
-        alan,
-        header.firstChild
-    );
-
-}
-
-
-/* GİRİŞ YAPMIŞ KULLANICIYI EKRANDA GÖSTER */
-
-function kullaniciArayuzunuGuncelle(user) {
-
-    const alan =
-        document.getElementById("authArea");
-
-    if (!alan) return;
-
-    alan.replaceChildren();
-
-
-    /* GİRİŞ YAPILMAMIŞ */
-
-    if (!user) {
-
-        const button =
-            document.createElement("button");
-
-        button.className =
-            "google-login-btn";
-
-        button.type =
-            "button";
-
-        button.onclick =
-            googleIleGiris;
-
-
-        const google =
-            document.createElement("span");
-
-        google.className =
-            "google-logo";
-
-        google.textContent =
-            "G";
-
-
-        const yazi =
-            document.createElement("span");
-
-        yazi.textContent =
-            "Google ile Giriş";
-
-
-        button.appendChild(google);
-        button.appendChild(yazi);
-
-        alan.appendChild(button);
-
-        return;
-    }
-
-
-    /* GİRİŞ YAPILMIŞ */
-
-    const bilgiler =
-        user.user_metadata || {};
-
-
-    const isim =
-        bilgiler.full_name ||
-        bilgiler.name ||
-        user.email?.split("@")[0] ||
-        "Kullanıcı";
-
-
-    const fotograf =
-        bilgiler.avatar_url ||
-        bilgiler.picture ||
-        "";
-
-
-    const panel =
-        document.createElement("div");
-
-    panel.className =
-        "user-panel";
-
-
-    /* PROFİL FOTOĞRAFI */
-
-    if (fotograf) {
-
-        const img =
-            document.createElement("img");
-
-        img.src =
-            fotograf;
-
-        img.alt =
-            isim;
-
-        img.className =
-            "user-avatar";
-
-        panel.appendChild(img);
-
-    } else {
-
-        const avatar =
-            document.createElement("div");
-
-        avatar.className =
-            "user-avatar user-avatar-text";
-
-        avatar.textContent =
-            isim.charAt(0).toUpperCase();
-
-        panel.appendChild(avatar);
-
-    }
-
-
-    /* İSİM / MAIL */
-
-    const meta =
-        document.createElement("div");
-
-    meta.className =
-        "user-meta";
-
-
-    const ad =
-        document.createElement("strong");
-
-    ad.textContent =
-        "Hoş geldin, " + isim;
-
-
-    const email =
-        document.createElement("span");
-
-    email.textContent =
-        user.email || "";
-
-
-    meta.appendChild(ad);
-    meta.appendChild(email);
-
-
-    /* ÇIKIŞ */
-
-    const cikis =
-        document.createElement("button");
-
-    cikis.className =
-        "logout-btn";
-
-    cikis.type =
-        "button";
-
-    cikis.textContent =
-        "Çıkış";
-
-    cikis.onclick =
-        cikisYap;
-
-
-    panel.appendChild(meta);
-    panel.appendChild(cikis);
-
-    alan.appendChild(panel);
-
-}
-
-
-/* GİRİŞ YAPMADAN TALEP AÇILMASIN */
-
-window.talepFormunuAc =
-async function () {
-
-    const user =
-        await aktifKullaniciyiAl();
-
-    if (!user) {
-
-        sessionStorage.setItem(
-            "oauthSonrasi",
-            "talep"
-        );
-
-        await googleIleGiris();
-
-        return;
-    }
-
-
-    if (
-        typeof eskiTalepFormunuAc ===
-        "function"
-    ) {
-
-        eskiTalepFormunuAc();
-
-    }
-
-};
-
-
-/* GİRİŞ YAPMADAN TEKLİF VERİLMESİN */
-
-window.teklifVer =
-async function () {
-
-    const user =
-        await aktifKullaniciyiAl();
-
-    if (!user) {
-
-        sessionStorage.setItem(
-            "oauthSonrasi",
-            "teklif"
-        );
-
-        await googleIleGiris();
-
-        return;
-    }
-
-
-    if (
-        typeof eskiTeklifVer ===
-        "function"
-    ) {
-
-        eskiTeklifVer();
-
-    }
-
-};
-
-
-/* TALEP YAYINLARKEN DE KULLANICI KONTROLÜ */
-
-if (
-    typeof eskiTalepYayinla ===
-    "function"
-) {
-
-    window.talepYayinla =
-    async function (event) {
-
-        const user =
-            await aktifKullaniciyiAl();
-
-        if (!user) {
-
-            event.preventDefault();
-
-            sessionStorage.setItem(
-                "oauthSonrasi",
-                "talep"
-            );
-
-            await googleIleGiris();
-
-            return;
-        }
-
-        return eskiTalepYayinla(event);
-
-    };
-
-}
-
-
-/* GOOGLE'DAN GERİ GELİNCE
-   KALDIĞI İŞLEME DEVAM ETSİN */
-
-function bekleyenIslemiCalistir() {
-
-    const islem =
-        sessionStorage.getItem(
-            "oauthSonrasi"
-        );
-
-    if (!islem) return;
-
-
-    sessionStorage.removeItem(
-        "oauthSonrasi"
-    );
-
-
-    setTimeout(() => {
-
-        if (
-            islem === "talep" &&
-            typeof eskiTalepFormunuAc ===
-            "function"
-        ) {
-
-            eskiTalepFormunuAc();
-
-        }
-
-
-        if (
-            islem === "teklif" &&
-            typeof eskiTeklifVer ===
-            "function"
-        ) {
-
-            eskiTeklifVer();
-
-        }
-
-    }, 500);
-
-}
-
-
-/* AUTH SİSTEMİNİ BAŞLAT */
-
-async function authSisteminiBaslat() {
-
-    authAlaniniHazirla();
-
-
-    const {
-        data: { user }
-    } =
-        await supabaseClient.auth.getUser();
-
-
-    kullaniciArayuzunuGuncelle(
-        user
-    );
-
-
-    if (user) {
-
-        bekleyenIslemiCalistir();
-
-    }
-
-
-    supabaseClient.auth.onAuthStateChange(
-        (event, session) => {
-
-            const aktifUser =
-                session?.user || null;
-
-
-            kullaniciArayuzunuGuncelle(
-                aktifUser
-            );
-
-
-            if (
-                event === "SIGNED_IN" &&
-                aktifUser
-            ) {
-
-                bekleyenIslemiCalistir();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* TASARIM */
-
-const authStyle =
-document.createElement("style");
-
-authStyle.textContent = `
-
-.auth-area {
-    display: flex;
-    align-items: center;
-}
-
-.google-login-btn {
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: #ffffff;
-    color: #111827;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 12px;
-
-    padding: 12px 16px;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 22px rgba(0,0,0,.08);
-
-    transition: .2s;
-}
-
-.google-login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 12px 28px rgba(0,0,0,.13);
-}
-
-.google-logo {
-
-    width: 27px;
-    height: 27px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    font-size: 17px;
-    font-weight: 900;
-
-    color: #4285F4;
-
-    background: #f8fafc;
-}
-
-.user-panel {
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 7px 10px;
-
-    border-radius: 14px;
-
-    background:
-        rgba(255,255,255,.09);
-
-    border:
-        1px solid rgba(255,255,255,.13);
-
-    color: white;
-}
-
-.user-avatar {
-
-    width: 39px;
-    height: 39px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border:
-        2px solid #ffc400;
-}
-
-.user-avatar-text {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #2563eb;
-    color: white;
-
-    font-weight: 900;
-}
-
-.user-meta {
-
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-}
-
-.user-meta strong {
-
-    max-width: 190px;
-
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    font-size: 13px;
-}
-
-.user-meta span {
-
-    max-width: 190px;
-
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    color: #cbd5e1;
-
-    font-size: 11px;
-
-    margin-top: 2px;
-}
-
-.logout-btn {
-
-    border: none;
-
-    padding: 8px 10px;
-
-    border-radius: 8px;
-
-    background:
-        rgba(255,255,255,.12);
-
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.logout-btn:hover {
-
-    background:
-        rgba(255,255,255,.20);
-
-}
-
-@media (max-width: 850px) {
-
-    .user-meta span {
-        display: none;
-    }
-
-    .user-meta strong {
-        max-width: 100px;
-    }
-
-}
-
-@media (max-width: 650px) {
-
-    .user-meta {
-        display: none;
-    }
-
-    .logout-btn {
-        display: none;
-    }
-
-    .user-panel {
-        padding: 5px;
-    }
-
-    .google-login-btn span:last-child {
-        display: none;
-    }
-
-    .google-login-btn {
-        padding: 7px;
-    }
-
-}
-
-`;
-
-document.head.appendChild(
-    authStyle
-);
-
-
-authSisteminiBaslat();
-window.talepYayinla = async function(event) {
-    event.preventDefault();
-
-    const { data: { user } } = await supabaseClient.auth.getUser();
-
-    if (!user) {
-        alert("Talep oluşturmak için giriş yapmalısın.");
-        await googleIleGiris();
-        return;
-    }
-
-    const kategori = document.getElementById("kategori").value;
-    const baslik = document.getElementById("baslik").value.trim();
-
-    const ilSelect = document.getElementById("il");
-    const sehir = ilSelect.options[ilSelect.selectedIndex].text;
-
-    const ilce = document.getElementById("ilce").value;
-    const butce = document.getElementById("butce").value.trim();
-    const aciklama = document.getElementById("aciklama").value.trim();
-    const adSoyad = document.getElementById("adSoyad").value.trim();
-    const telefon = document.getElementById("telefon").value.trim();
-
-    const { data, error } = await supabaseClient
-        .from("TALEPLER")
-        .insert({
-            user_id: user.id,
-            kategori: kategori,
-            baslik: baslik,
-            sehir: sehir,
-            ilce: ilce || null,
-            butce: butce,
-            aciklama: aciklama,
-            durum: "aktif",
-            detaylar: {
-                ad_soyad: adSoyad,
-                telefon: telefon
-            }
-        })
-        .select()
-        .single();
-
-    if (error) {
-        console.error(error);
-        alert("Talep kaydedilemedi: " + error.message);
-        return;
-    }
-
-    alert("Talebin başarıyla yayınlandı.");
-
-    document.getElementById("talepForm").reset();
-
-    talepFormunuKapat();
-
-    location.reload();
-};
-</script>
-<!-- =========================================================
-     ALICISINDAN.COM - GELİŞMİŞ TALEP OLUŞTURMA SİSTEMİ
-     ========================================================= -->
-
-<style>
-
-.akilli-talep-alani{
-    grid-column:1/-1;
-    margin-top:6px;
-}
-
-.akilli-panel{
-    background:linear-gradient(145deg,#ffffff,#f7faff);
-    border:1px solid #e3e9f3;
-    border-radius:22px;
-    padding:24px;
-    box-shadow:0 12px 35px rgba(16,24,40,.06);
-    animation:panelAc .25s ease;
-}
-
-@keyframes panelAc{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.akilli-baslik{
-    margin:0 0 6px;
-    font-size:20px;
-    color:#101828;
-}
-
-.akilli-aciklama{
-    margin:0 0 20px;
-    color:#667085;
-    font-size:14px;
-    line-height:1.55;
-}
-
-.secim-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:13px;
-}
-
-.secim-grid.iki{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.buyuk-secim{
-    border:2px solid #edf0f5;
-    background:#fff;
-    border-radius:17px;
-    padding:20px;
-    min-height:115px;
-    cursor:pointer;
-    text-align:left;
-    transition:.2s;
-}
-
-.buyuk-secim:hover{
-    border-color:#2563eb;
-    transform:translateY(-2px);
-    box-shadow:0 12px 28px rgba(37,99,235,.10);
-}
-
-.buyuk-secim.secili{
-    border-color:#2563eb;
-    background:#eff6ff;
-    box-shadow:0 0 0 3px rgba(37,99,235,.09);
-}
-
-.buyuk-secim .ikon{
-    display:block;
-    font-size:28px;
-    margin-bottom:9px;
-}
-
-.buyuk-secim strong{
-    display:block;
-    color:#101828;
-    font-size:17px;
-    margin-bottom:5px;
-}
-
-.buyuk-secim small{
-    color:#667085;
-    line-height:1.35;
-}
-
-.alt-panel{
-    margin-top:20px;
-    padding-top:20px;
-    border-top:1px solid #e7ebf2;
-    animation:panelAc .22s ease;
-}
-
-.detay-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
-.detay-grid .field{
-    min-width:0;
-}
-
-.detay-grid .full{
-    grid-column:1/-1;
-}
-
-.mini-baslik{
-    font-size:14px;
-    font-weight:900;
-    color:#344054;
-    margin-bottom:9px;
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.coklu-secimler{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-}
-
-.coklu-secim{
-    position:relative;
-}
-
-.coklu-secim input{
-    position:absolute;
-    opacity:0;
-    pointer-events:none;
-}
-
-.coklu-secim span{
-    display:block;
-    padding:10px 13px;
-    border:1px solid #dfe4ec;
-    border-radius:10px;
-    background:#fff;
-    color:#344054;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:700;
-    transition:.15s;
-}
-
-.coklu-secim input:checked + span{
-    background:#101828;
-    color:#fff;
-    border-color:#101828;
-}
-
-.tek-secimler{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-}
-
-.tek-secim-btn{
-    padding:11px 14px;
-    border:1px solid #dfe4ec;
-    border-radius:11px;
-    background:#fff;
-    color:#344054;
-    font-weight:800;
-    cursor:pointer;
-    transition:.15s;
-}
-
-.tek-secim-btn:hover{
-    border-color:#2563eb;
-}
-
-.tek-secim-btn.secili{
-    background:#2563eb;
-    border-color:#2563eb;
-    color:white;
-}
-
-.vurgu-kutu{
-    margin-top:18px;
-    padding:18px;
-    border-radius:16px;
-    background:linear-gradient(135deg,#fff8d7,#fffdf2);
-    border:1px solid #ffe18a;
-}
-
-.vurgu-kutu strong{
-    color:#493b00;
-    display:block;
-    margin-bottom:7px;
-}
-
-.vurgu-kutu p{
-    margin:0 0 12px;
-    color:#6b5b1e;
-    font-size:13px;
-    line-height:1.55;
-}
-
-.vurgu-check{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:800;
-    color:#423600;
-}
-
-.vurgu-check input{
-    width:19px;
-    height:19px;
-    flex-shrink:0;
-}
-
-/* BİLGİ İŞARETLERİ */
-
-.info-wrap{
-    display:inline-flex;
-    position:relative;
-    vertical-align:middle;
-}
-
-.info-btn{
-    width:19px;
-    height:19px;
-    border:0;
-    border-radius:50%;
-    background:#e7efff;
-    color:#2563eb;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-    font-weight:900;
-    cursor:pointer;
-    padding:0;
-}
-
-.info-popover{
-    position:absolute;
-    z-index:9999;
-    left:50%;
-    bottom:29px;
-    transform:translateX(-50%) translateY(5px);
-    width:265px;
-    max-width:calc(100vw - 35px);
-    padding:12px 13px;
-    border-radius:12px;
-    background:#101828;
-    color:white;
-    font-size:12px;
-    font-weight:500;
-    line-height:1.5;
-    box-shadow:0 14px 35px rgba(0,0,0,.22);
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:.16s;
-}
-
-.info-popover::after{
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    transform:translateX(-50%);
-    border:6px solid transparent;
-    border-top-color:#101828;
-}
-
-.info-wrap:hover .info-popover,
-.info-wrap.open .info-popover{
-    opacity:1;
-    visibility:visible;
-    transform:translateX(-50%) translateY(0);
-}
-
-.aciklama-bilgi{
-    padding:13px 15px;
-    margin-bottom:12px;
-    border-radius:13px;
-    background:#eff6ff;
-    border:1px solid #cfe0ff;
-    color:#375276;
-    font-size:13px;
-    line-height:1.55;
-}
-
-.arac-serbest{
-    margin-bottom:20px;
-    background:linear-gradient(135deg,#eaf8ff,#f6fcff);
-    border:1px solid #bfe6fa;
-    padding:17px;
-    border-radius:15px;
-}
-
-.arac-serbest label{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    cursor:pointer;
-    font-weight:800;
-    color:#144a64;
-}
-
-.arac-serbest input{
-    width:19px;
-    height:19px;
-}
-
-@media(max-width:750px){
-
-    .secim-grid,
-    .secim-grid.iki,
-    .detay-grid{
-        grid-template-columns:1fr;
-    }
-
-    .detay-grid .full{
-        grid-column:auto;
-    }
-
-    .akilli-panel{
-        padding:17px;
-    }
-
-    .buyuk-secim{
-        min-height:95px;
-    }
-
-    .info-popover{
-        left:0;
-        transform:translateY(5px);
-    }
-
-    .info-wrap:hover .info-popover,
-    .info-wrap.open .info-popover{
-        transform:translateY(0);
-    }
-
-    .info-popover::after{
-        left:9px;
-        transform:none;
-    }
-}
-
-</style>
-
-
-<script>
-
-(function(){
-
-/* ========================================
-   ALICISINDAN GELİŞMİŞ FORM
-   ======================================== */
-
-const eskiDinamik =
-    document.getElementById("emlakDinamikAlan");
-
-if(eskiDinamik){
-    eskiDinamik.remove();
-}
-
-
-/* Daha önce kategoriye eklenmiş eventleri temizle */
-
-const eskiKategori =
-    document.getElementById("kategori");
-
-if(!eskiKategori) return;
-
-const yeniKategori =
-    eskiKategori.cloneNode(true);
-
-eskiKategori.replaceWith(yeniKategori);
-
-
-/* Eski tek bütçe alanını gizle */
-
-const eskiButce =
-    document.getElementById("butce");
-
-if(eskiButce){
-
-    const field =
-        eskiButce.closest(".field");
-
-    if(field){
-        field.style.display="none";
-    }
-
-}
-
-
-/* Dinamik alan */
-
-const baslikInput =
-    document.getElementById("baslik");
-
-const baslikField =
-    baslikInput.closest(".field");
-
-const dinamik =
-    document.createElement("div");
-
-dinamik.id =
-    "akilliTalepAkisi";
-
-dinamik.className =
-    "akilli-talep-alani";
-
-baslikField.insertAdjacentElement(
-    "afterend",
-    dinamik
-);
-
-
-/* Açıklama label bilgi ikonu */
-
-const aciklama =
-    document.getElementById("aciklama");
-
-if(aciklama){
-
-    const label =
-        aciklama.closest(".field")
-        ?.querySelector("label");
-
-    if(label){
-
-        label.innerHTML =
-        `Aradığınızı detaylandır
-        ${infoHTML(
-        "Talebinizi biraz daha detaylandırmanız, profesyonel gayrimenkul veya araç danışmanlarının ihtiyacınızı daha doğru anlamasına ve daha isabetli teklifler sunmasına yardımcı olabilir."
-        )}`;
-
-    }
-
-}
-
-
-/* Kategori değişimi */
-
-yeniKategori.onchange =
-kategoriDegistiYeni;
-
-
-/* ========================================
-   INFO
-   ======================================== */
-
-function infoHTML(yazi){
-
-    return `
-    <span class="info-wrap">
-
-        <button
-            type="button"
-            class="info-btn"
-            aria-label="Bilgi"
-        >
-            i
-        </button>
-
-        <span class="info-popover">
-            ${yazi}
-        </span>
-
-    </span>
-    `;
-
-}
-
-
-document.addEventListener(
-"click",
-function(e){
-
-    const btn =
-        e.target.closest(".info-btn");
-
-    const wrap =
-        e.target.closest(".info-wrap");
-
-
-    document
-    .querySelectorAll(".info-wrap.open")
-    .forEach(item=>{
-
-        if(item !== wrap){
-            item.classList.remove("open");
-        }
-
-    });
-
-
-    if(btn){
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        btn.closest(".info-wrap")
-        .classList.toggle("open");
-
-    }
-
-});
-
-
-/* ========================================
-   KATEGORİ
-   ======================================== */
-
-function kategoriDegistiYeni(){
-
-    const kategori =
-        yeniKategori.value;
-
-    dinamik.innerHTML="";
-
-
-    if(kategori === "Emlak"){
-
-        emlakAnaPanel();
-
-    }
-
-
-    if(kategori === "Araç"){
-
-        aracAnaPanel();
-
-    }
-
-}
-
-
-/* ========================================
-   EMLAK
-   ======================================== */
-
-function emlakAnaPanel(){
-
-    dinamik.innerHTML = `
-
-    <div class="akilli-panel">
-
-        <h3 class="akilli-baslik">
-            Ne tür bir gayrimenkul arıyorsunuz?
-        </h3>
-
-        <p class="akilli-aciklama">
-            İhtiyacınıza en yakın seçeneği seçin.
-        </p>
-
-        <div class="secim-grid iki">
-
-            <button
-                type="button"
-                class="buyuk-secim"
-                data-choice="emlakAna"
-                onclick="dairePaneli(this)"
-            >
-
-                <span class="ikon">🏢</span>
-
-                <strong>Daire</strong>
-
-                <small>
-                    Satılık veya kiralık konut
-                </small>
-
-            </button>
-
-
-            <button
-                type="button"
-                class="buyuk-secim"
-                data-choice="emlakAna"
-                onclick="araziPaneli(this)"
-            >
-
-                <span class="ikon">🌳</span>
-
-                <strong>Arazi</strong>
-
-                <small>
-                    Hisseli veya tek tapu yatırım arazisi
-                </small>
-
-            </button>
-
-        </div>
-
-        <input
-            type="hidden"
-            id="emlakTuru"
-        >
-
-        <div id="emlakAltPanel"></div>
-
-    </div>
-
-    `;
-
-}
-
-
-/* ========================================
-   DAİRE
-   ======================================== */
-
-window.dairePaneli =
-function(button){
-
-    seciliKart(
-        button,
-        "emlakAna"
-    );
-
-    document
-    .getElementById("emlakTuru")
-    .value="Daire";
-
-
-    const alan =
-        document.getElementById(
-            "emlakAltPanel"
-        );
-
-
-    alan.innerHTML = `
-
-    <div class="alt-panel">
-
-        <div class="detay-grid">
-
-            <div class="field full">
-
-                <div class="mini-baslik">
-
-                    Satılık mı, kiralık mı?
-
-                    ${infoHTML(
-                    "Satılık veya kiralık tercihinizi seçtiğinizde size özel ek seçenekler açılır."
-                    )}
-
-                </div>
-
-                <div class="tek-secimler">
-
-                    <button
-                        type="button"
-                        class="tek-secim-btn"
-                        data-choice="daireIslem"
-                        onclick="daireIslemSec(this,'Satılık')"
-                    >
-                        Satılık
-                    </button>
-
-                    <button
-                        type="button"
-                        class="tek-secim-btn"
-                        data-choice="daireIslem"
-                        onclick="daireIslemSec(this,'Kiralık')"
-                    >
-                        Kiralık
-                    </button>
-
-                </div>
-
-                <input
-                    type="hidden"
-                    id="daireIslem"
-                >
-
-            </div>
-
-
-            <div class="field full">
-
-                <div class="mini-baslik">
-
-                    Oda tercihleri
-
-                    ${infoHTML(
-                    "Birden fazla oda tipi seçebilirsiniz. Böylece size uygun alternatif teklifler de gelebilir."
-                    )}
-
-                </div>
-
-                <div class="coklu-secimler">
-
-                    ${odaSecenekleri()}
-
-                </div>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Minimum m²
-                    ${infoHTML(
-                    "Değerlendirmek istediğiniz dairenin yaklaşık minimum büyüklüğünü belirtir."
-                    )}
-                </label>
-
-                <input
-                    id="daireMinM2"
-                    type="number"
-                    placeholder="Örn: 90"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum m²
-                </label>
-
-                <input
-                    id="daireMaxM2"
-                    type="number"
-                    placeholder="Örn: 160"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Minimum bütçe
-                    ${infoHTML(
-                    "Değerlendirmek istediğiniz fiyat aralığının alt sınırıdır. Zorunlu değildir."
-                    )}
-                </label>
-
-                <input
-                    id="daireMinButce"
-                    type="number"
-                    placeholder="Örn: 3000000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum bütçe
-                    ${infoHTML(
-                    "Bu talep için ayırabileceğiniz yaklaşık en yüksek bütçeyi belirtir."
-                    )}
-                </label>
-
-                <input
-                    id="daireMaxButce"
-                    type="number"
-                    placeholder="Örn: 5000000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Bina yaşı</label>
-
-                <select id="binaYasi">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>
-                        Sıfır
-                    </option>
-
-                    <option>
-                        1-5 yıl
-                    </option>
-
-                    <option>
-                        6-10 yıl
-                    </option>
-
-                    <option>
-                        11-20 yıl
-                    </option>
-
-                    <option>
-                        20 yıl üzeri
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Kat tercihi</label>
-
-                <select id="katTercihi">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>
-                        Giriş kat
-                    </option>
-
-                    <option>
-                        Ara kat
-                    </option>
-
-                    <option>
-                        Yüksek kat
-                    </option>
-
-                    <option>
-                        Çatı katı
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field full">
-
-                <div class="mini-baslik">
-                    Ek özellikler
-                </div>
-
-                <div class="coklu-secimler">
-
-                    ${ozellikCheck(
-                        "Site içinde",
-                        "daireOzellik"
-                    )}
-
-                    ${ozellikCheck(
-                        "Asansör",
-                        "daireOzellik"
-                    )}
-
-                    ${ozellikCheck(
-                        "Otopark",
-                        "daireOzellik"
-                    )}
-
-                    ${ozellikCheck(
-                        "Balkon",
-                        "daireOzellik"
-                    )}
-
-                    ${ozellikCheck(
-                        "Krediye uygun",
-                        "daireOzellik"
-                    )}
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div id="daireIslemDetay"></div>
-
-    </div>
-
-    `;
-
-}
-
-
-/* SATILIK / KİRALIK */
-
-window.daireIslemSec =
-function(button,deger){
-
-    seciliKart(
-        button,
-        "daireIslem"
-    );
-
-    document
-    .getElementById("daireIslem")
-    .value=deger;
-
-
-    const alan =
-        document.getElementById(
-            "daireIslemDetay"
-        );
-
-
-    if(deger === "Satılık"){
-
-        alan.innerHTML = `
-
-        <div class="alt-panel">
-
-            <div class="field">
-
-                <label>
-                    Satın alma amacınız
-                </label>
-
-                <select
-                    id="daireAmaci"
-                    onchange="daireAmaciDegisti()"
-                >
-
-                    <option value="">
-                        Seçiniz
-                    </option>
-
-                    <option value="Oturum">
-                        Kendim / ailem yaşayacak
-                    </option>
-
-                    <option value="Yatırım">
-                        Yatırım yapacağım
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div id="yatirimKiraAlani"></div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    if(deger === "Kiralık"){
-
-        alan.innerHTML = `
-
-        <div class="alt-panel">
-
-            <div class="detay-grid">
-
-                <div class="field">
-
-                    <label>
-                        Mesleğiniz
-                    </label>
-
-                    <input
-                        id="kiraciMeslek"
-                        type="text"
-                        placeholder="Örn: Memur, esnaf, mühendis"
-                    >
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Yaklaşık aylık gelir
-                        ${infoHTML(
-                        "Bu bilgi zorunlu değildir. Kiralama tekliflerinde danışmanın uygun seçenekleri değerlendirmesine yardımcı olabilir."
-                        )}
-                    </label>
-
-                    <select id="kiraciGelir">
-
-                        <option value="">
-                            Belirtmek istemiyorum
-                        </option>
-
-                        <option>
-                            30.000 - 50.000 TL
-                        </option>
-
-                        <option>
-                            50.000 - 75.000 TL
-                        </option>
-
-                        <option>
-                            75.000 - 100.000 TL
-                        </option>
-
-                        <option>
-                            100.000 TL üzeri
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-}
-
-
-window.daireAmaciDegisti =
-function(){
-
-    const amac =
-        document.getElementById(
-            "daireAmaci"
-        ).value;
-
-
-    const alan =
-        document.getElementById(
-            "yatirimKiraAlani"
-        );
-
-
-    if(amac !== "Yatırım"){
-
-        alan.innerHTML="";
-        return;
-
-    }
-
-
-    alan.innerHTML = `
-
-    <div
-        class="field"
-        style="margin-top:18px"
-    >
-
-        <label>
-            Beklediğiniz aylık kira getirisi
-
-            ${infoHTML(
-            "Yatırım amacıyla alınacak daireden beklediğiniz yaklaşık aylık kira getirisi aralığını belirtebilirsiniz."
-            )}
-
-        </label>
-
-
-        <select id="beklenenKira">
-
-            <option value="">
-                Herhangi biri
-            </option>
-
-            <option>
-                10.000 - 20.000 TL
-            </option>
-
-            <option>
-                20.000 - 30.000 TL
-            </option>
-
-            <option>
-                30.000 - 40.000 TL
-            </option>
-
-            <option>
-                40.000 - 70.000 TL
-            </option>
-
-            <option>
-                70.000 TL üzeri
-            </option>
-
-        </select>
-
-    </div>
-
-    `;
-
-}
-
-
-/* ========================================
-   ARAZİ
-   ======================================== */
-
-window.araziPaneli =
-function(button){
-
-    seciliKart(
-        button,
-        "emlakAna"
-    );
-
-    document
-    .getElementById("emlakTuru")
-    .value="Arazi";
-
-
-    document
-    .getElementById(
-        "emlakAltPanel"
-    ).innerHTML = `
-
-    <div class="alt-panel">
-
-        <div class="detay-grid">
-
-
-            <div class="field full">
-
-                <div class="mini-baslik">
-
-                    Tapu tercihi
-
-                    ${infoHTML(
-                    "Hisseli, tek tapu veya her iki seçeneğe de açık olduğunuzu belirtebilirsiniz."
-                    )}
-
-                </div>
-
-                <div class="tek-secimler">
-
-                    ${tekButton(
-                        "Hisseli",
-                        "araziTapu"
-                    )}
-
-                    ${tekButton(
-                        "Tek Tapu",
-                        "araziTapu"
-                    )}
-
-                    ${tekButton(
-                        "Herhangi biri",
-                        "araziTapu"
-                    )}
-
-                </div>
-
-                <input
-                    id="araziTapu"
-                    type="hidden"
-                >
-
-            </div>
-
-
-            <div class="field full">
-
-                <div class="mini-baslik">
-
-                    İmar durumu
-
-                    ${infoHTML(
-                    "İmarlı, imarsız veya her iki tür taşınmazdan da teklif almak isteyebilirsiniz."
-                    )}
-
-                </div>
-
-                <div class="tek-secimler">
-
-                    ${tekButton(
-                        "İmarlı",
-                        "araziImar"
-                    )}
-
-                    ${tekButton(
-                        "İmarsız",
-                        "araziImar"
-                    )}
-
-                    ${tekButton(
-                        "Herhangi biri",
-                        "araziImar"
-                    )}
-
-                </div>
-
-                <input
-                    id="araziImar"
-                    type="hidden"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Minimum m²
-                </label>
-
-                <input
-                    id="araziMinM2"
-                    type="number"
-                    placeholder="Örn: 500"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum m²
-                </label>
-
-                <input
-                    id="araziMaxM2"
-                    type="number"
-                    placeholder="Örn: 5000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Minimum bütçe
-
-                    ${infoHTML(
-                    "Değerlendirmeye açık olduğunuz yaklaşık yatırım bütçesinin alt sınırıdır."
-                    )}
-
-                </label>
-
-                <input
-                    id="araziMinButce"
-                    type="number"
-                    placeholder="Örn: 1000000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum bütçe
-
-                    ${infoHTML(
-                    "Bu yatırım için değerlendirebileceğiniz yaklaşık en yüksek bütçeyi belirtir."
-                    )}
-
-                </label>
-
-                <input
-                    id="araziMaxButce"
-                    type="number"
-                    placeholder="Örn: 3500000"
-                >
-
-            </div>
-
-
-            <div class="field full">
-
-                <label>
-                    Yatırım süresi
-                </label>
-
-                <select id="yatirimSuresi">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>
-                        Kısa vadeli
-                    </option>
-
-                    <option>
-                        Orta vadeli
-                    </option>
-
-                    <option>
-                        Uzun vadeli
-                    </option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-
-        <div class="vurgu-kutu">
-
-            <strong>
-                💡 Farklı yatırım fırsatlarına açık mısınız?
-            </strong>
-
-            <p>
-                Bu seçeneği aktif ettiğinizde,
-                belirttiğiniz bölgeyle sınırlı kalmadan
-                bütçenize ve yatırım beklentinize uygun
-                alternatif gayrimenkul teklifleri de
-                değerlendirmenize sunulabilir.
-                Sunulan teklifler bilgilendirme amaçlıdır;
-                nihai değerlendirme ve karar size aittir.
-            </p>
-
-            <label class="vurgu-check">
-
-                <input
-                    id="alternatifYatirim"
-                    type="checkbox"
-                >
-
-                Bütçeme uygun farklı bölgelerden
-                yatırım teklifleri de alabilirim.
-
-            </label>
-
-        </div>
-
-    </div>
-
-    `;
-
-}
-
-
-/* ========================================
-   ARAÇ
-   ======================================== */
-
-function aracAnaPanel(){
-
-    dinamik.innerHTML = `
-
-    <div class="akilli-panel">
-
-        <h3 class="akilli-baslik">
-            Ne tür bir araç arıyorsunuz?
-        </h3>
-
-        <p class="akilli-aciklama">
-            Araç türünü seçerek devam edin.
-        </p>
-
-
-        <div class="secim-grid">
-
-            <button
-                type="button"
-                class="buyuk-secim"
-                data-choice="aracTipi"
-                onclick="aracTipiSec(this,'Otomobil')"
-            >
-
-                <span class="ikon">🚘</span>
-
-                <strong>Otomobil</strong>
-
-            </button>
-
-
-            <button
-                type="button"
-                class="buyuk-secim"
-                data-choice="aracTipi"
-                onclick="aracTipiSec(this,'Motosiklet')"
-            >
-
-                <span class="ikon">🏍️</span>
-
-                <strong>Motosiklet</strong>
-
-            </button>
-
-
-            <button
-                type="button"
-                class="buyuk-secim"
-                data-choice="aracTipi"
-                onclick="aracTipiSec(this,'Pick-up')"
-            >
-
-                <span class="ikon">🛻</span>
-
-                <strong>Pick-up</strong>
-
-            </button>
-
-        </div>
-
-        <input
-            id="aracTipi"
-            type="hidden"
-        >
-
-        <div id="aracAltPanel"></div>
-
-    </div>
-
-    `;
-
-}
-
-
-window.aracTipiSec =
-function(button,tur){
-
-    seciliKart(
-        button,
-        "aracTipi"
-    );
-
-    document
-    .getElementById("aracTipi")
-    .value=tur;
-
-
-    document
-    .getElementById(
-        "aracAltPanel"
-    ).innerHTML = `
-
-    <div class="alt-panel">
-
-
-        <div class="arac-serbest">
-
-            <label>
-
-                <input
-                    id="markaFarketmez"
-                    type="checkbox"
-                    onchange="markaSerbestDegisti()"
-                >
-
-                Marka ve model fark etmez.
-                Bütçeme ve kriterlerime uygun
-                farklı araç tekliflerini de görmek istiyorum.
-
-            </label>
-
-        </div>
-
-
-        <div class="detay-grid">
-
-
-            <div class="field">
-
-                <label>
-                    Marka
-                </label>
-
-                <select
-                    id="aracMarka"
-                    onchange="aracMarkaDegisti()"
-                >
-
-                    <option value="">
-                        Marka seç
-                    </option>
-
-                    ${markaListesi()}
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Model
-                </label>
-
-                <select
-                    id="aracModel"
-                    disabled
-                >
-
-                    <option value="">
-                        Önce marka seç
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Minimum model yılı</label>
-
-                <input
-                    id="aracMinYil"
-                    type="number"
-                    placeholder="Örn: 2020"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Maksimum kilometre</label>
-
-                <input
-                    id="aracMaxKm"
-                    type="number"
-                    placeholder="Örn: 100000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Minimum bütçe
-                </label>
-
-                <input
-                    id="aracMinButce"
-                    type="number"
-                    placeholder="Örn: 1000000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum bütçe
-
-                    ${infoHTML(
-                    "Araç için değerlendirebileceğiniz yaklaşık en yüksek bütçeyi belirtir."
-                    )}
-
-                </label>
-
-                <input
-                    id="aracMaxButce"
-                    type="number"
-                    placeholder="Örn: 1500000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Yakıt</label>
-
-                <select id="aracYakit">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>Benzin</option>
-                    <option>Dizel</option>
-                    <option>Hibrit</option>
-                    <option>Elektrik</option>
-                    <option>LPG</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>Vites</label>
-
-                <select id="aracVites">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>Otomatik</option>
-                    <option>Manuel</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Maksimum tramer
-                </label>
-
-                <input
-                    id="aracTramer"
-                    type="number"
-                    placeholder="Örn: 50000"
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Ekspertiz tercihi
-                </label>
-
-                <select id="ekspertizTercihi">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>
-                        Güncel ekspertiz raporu yeterli
-                    </option>
-
-                    <option>
-                        Yeniden ekspertiz yapılmasını isterim
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field full">
-
-                <label>
-                    Teslim / satın alma tercihi
-                </label>
-
-                <select id="aracTeslim">
-
-                    <option value="">
-                        Herhangi biri
-                    </option>
-
-                    <option>
-                        Aracı ben gidip alabilirim
-                    </option>
-
-                    <option>
-                        Aracın bulunduğum şehre gelmesini isterim
-                    </option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    `;
-
-}
-
-
-/* ========================================
-   MARKA - MODEL
-   ======================================== */
+const SUPABASE_URL = "https://cfolesyiywnxvvwajhlo.supabase.co";
+const SUPABASE_KEY = "sb_publishable_VQ4AV6OZKt6KtUyhIj0Y6A_931yCzZB";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const TURKIYE_API = "https://api.turkiyeapi.dev/v2";
 
 const MODELLER = {
-
-"Audi":[
-"A1","A3","A4","A5","A6","A7","A8","Q2","Q3","Q5","Q7","Q8"
-],
-
-"BMW":[
-"1 Serisi","2 Serisi","3 Serisi","4 Serisi","5 Serisi",
-"7 Serisi","X1","X2","X3","X4","X5","X6"
-],
-
-"Mercedes-Benz":[
-"A Serisi","B Serisi","C Serisi","E Serisi","S Serisi",
-"CLA","CLS","GLA","GLB","GLC","GLE"
-],
-
-"Volkswagen":[
-"Polo","Golf","Passat","Jetta","T-Roc","Tiguan","Taigo","Arteon"
-],
-
-"Renault":[
-"Clio","Megane","Taliant","Austral","Captur","Koleos"
-],
-
-"Fiat":[
-"Egea","500","Panda","Fiorino","Doblo"
-],
-
-"Ford":[
-"Focus","Fiesta","Mondeo","Puma","Kuga","Ranger"
-],
-
-"Toyota":[
-"Corolla","Yaris","C-HR","Camry","RAV4","Hilux"
-],
-
-"Honda":[
-"Civic","City","Jazz","CR-V","HR-V"
-],
-
-"Hyundai":[
-"i10","i20","i30","Elantra","Bayon","Tucson","Kona"
-],
-
-"Peugeot":[
-"208","308","408","508","2008","3008","5008"
-],
-
-"Opel":[
-"Corsa","Astra","Insignia","Mokka","Crossland","Grandland"
-],
-
-"Skoda":[
-"Fabia","Scala","Octavia","Superb","Kamiq","Karoq","Kodiaq"
-],
-
-"Seat":[
-"Ibiza","Leon","Arona","Ateca","Tarraco"
-],
-
-"Volvo":[
-"S60","S90","V40","XC40","XC60","XC90"
-],
-
-"Nissan":[
-"Micra","Juke","Qashqai","X-Trail","Navara"
-],
-
-"Kia":[
-"Picanto","Rio","Ceed","Stonic","Sportage","Sorento"
-],
-
-"Dacia":[
-"Sandero","Logan","Duster","Jogger"
-],
-
-"Citroen":[
-"C3","C4","C5 Aircross","Berlingo"
-],
-
-"Tesla":[
-"Model 3","Model Y","Model S","Model X"
-],
-
-"Togg":[
-"T10X","T10F"
-],
-
-"Chery":[
-"Omoda 5","Tiggo 7 Pro","Tiggo 8 Pro"
-],
-
-"BYD":[
-"Atto 3","Seal","Dolphin","Han"
-],
-
-"MG":[
-"MG4","ZS","HS"
-],
-
-"Suzuki":[
-"Swift","Vitara","S-Cross"
-],
-
-"Subaru":[
-"Impreza","Forester","XV","Outback"
-],
-
-"Jeep":[
-"Renegade","Compass","Cherokee","Wrangler"
-],
-
-"Land Rover":[
-"Defender","Discovery","Range Rover","Range Rover Evoque"
-],
-
-"Porsche":[
-"Macan","Cayenne","Panamera","911","Taycan"
-],
-
-"Mini":[
-"Cooper","Countryman","Clubman"
-],
-
-"Mitsubishi":[
-"Colt","ASX","Eclipse Cross","L200"
-],
-
-"Yamaha":[
-"MT-07","MT-09","R25","R7","NMAX","XMAX"
-],
-
-"Kawasaki":[
-"Ninja 250","Ninja 400","Z400","Z650","Versys"
-]
-
+  "Audi":["A1","A3","A4","A5","A6","A7","A8","Q2","Q3","Q5","Q7","Q8"],
+  "BMW":["1 Serisi","2 Serisi","3 Serisi","4 Serisi","5 Serisi","7 Serisi","X1","X2","X3","X4","X5","X6"],
+  "Mercedes-Benz":["A Serisi","C Serisi","E Serisi","S Serisi","CLA","CLS","GLA","GLB","GLC","GLE"],
+  "Volkswagen":["Polo","Golf","Passat","T-Roc","Tiguan","Taigo","Arteon"],
+  "Renault":["Clio","Megane","Taliant","Captur","Austral","Koleos"],
+  "Fiat":["Egea","500","Panda","Fiorino","Doblo"],
+  "Ford":["Fiesta","Focus","Mondeo","Puma","Kuga","Ranger"],
+  "Toyota":["Corolla","Yaris","C-HR","Camry","RAV4","Hilux"],
+  "Honda":["Civic","City","Jazz","HR-V","CR-V"],
+  "Hyundai":["i10","i20","i30","Elantra","Bayon","Kona","Tucson"],
+  "Peugeot":["208","308","408","508","2008","3008","5008"],
+  "Opel":["Corsa","Astra","Insignia","Mokka","Crossland","Grandland"],
+  "Skoda":["Fabia","Scala","Octavia","Superb","Kamiq","Karoq","Kodiaq"],
+  "Seat":["Ibiza","Leon","Arona","Ateca"],
+  "Volvo":["S60","S90","XC40","XC60","XC90"],
+  "Nissan":["Micra","Juke","Qashqai","X-Trail","Navara"],
+  "Kia":["Picanto","Rio","Ceed","Stonic","Sportage","Sorento"],
+  "Dacia":["Sandero","Logan","Duster","Jogger"],
+  "Citroen":["C3","C4","C5 Aircross","Berlingo"],
+  "Tesla":["Model 3","Model Y","Model S","Model X"],
+  "Togg":["T10X","T10F"],
+  "Chery":["Omoda 5","Tiggo 7 Pro","Tiggo 8 Pro"],
+  "BYD":["Atto 3","Seal","Dolphin","Han"],
+  "MG":["MG4","ZS","HS"],
+  "Yamaha":["MT-07","MT-09","R25","R7","NMAX","XMAX"],
+  "Honda Motosiklet":["CB250R","CB500F","Forza 250","PCX","Africa Twin"],
+  "Kawasaki":["Ninja 250","Ninja 400","Z400","Z650","Versys"]
 };
 
-
-function markaListesi(){
-
-    return Object.keys(MODELLER)
-    .sort((a,b)=>a.localeCompare(b,"tr"))
-    .map(marka=>
-        `<option value="${marka}">
-            ${marka}
-        </option>`
-    )
-    .join("")
-    +
-    `<option value="Diğer">Diğer</option>`;
-
+function infoHTML(text){
+  return `<span class="info"><button class="info-btn" type="button">i</button><span class="info-pop">${text}</span></span>`;
 }
-
-
-window.aracMarkaDegisti =
-function(){
-
-    const marka =
-        document
-        .getElementById("aracMarka")
-        .value;
-
-
-    const model =
-        document
-        .getElementById("aracModel");
-
-
-    if(!marka){
-
-        model.disabled=true;
-
-        model.innerHTML =
-        `<option value="">
-            Önce marka seç
-        </option>`;
-
-        return;
-
-    }
-
-
-    const liste =
-        MODELLER[marka] || [];
-
-
-    model.disabled=false;
-
-    model.innerHTML =
-        `<option value="">
-            Model seç / Herhangi biri
-        </option>`
-        +
-        liste.map(x=>
-            `<option value="${x}">
-                ${x}
-            </option>`
-        ).join("")
-        +
-        `<option value="Diğer">
-            Diğer
-        </option>`;
-
+function pillHTML(label,group){
+  return `<label class="select-pill"><input type="checkbox" data-group="${group}" value="${label}"><span>${label}</span></label>`;
 }
-
-
-window.markaSerbestDegisti =
-function(){
-
-    const secili =
-        document
-        .getElementById(
-            "markaFarketmez"
-        ).checked;
-
-
-    const marka =
-        document.getElementById(
-            "aracMarka"
-        );
-
-    const model =
-        document.getElementById(
-            "aracModel"
-        );
-
-
-    marka.disabled=secili;
-    model.disabled=secili;
-
-
-    if(secili){
-
-        marka.value="";
-        model.innerHTML=
-        `<option value="">
-            Marka / model herhangi biri
-        </option>`;
-
-    }else{
-
-        model.innerHTML=
-        `<option value="">
-            Önce marka seç
-        </option>`;
-
-    }
-
+function singleButton(label,id){
+  return `<button type="button" class="single-pill blue" data-choice="${id}" onclick="tekSecim(this,'${id}','${label.replace(/'/g,"\\'")}')">${label}</button>`;
 }
-
-
-/* ========================================
-   UI YARDIMCILARI
-   ======================================== */
-
-function seciliKart(button,group){
-
-    document
-    .querySelectorAll(
-        `[data-choice="${group}"]`
-    )
-    .forEach(x=>
-        x.classList.remove("secili")
-    );
-
-    button.classList.add("secili");
-
+function tekSecim(btn,id,value){
+  document.querySelectorAll(`[data-choice="${id}"]`).forEach(x=>x.classList.remove("selected"));
+  btn.classList.add("selected");
+  document.getElementById(id).value=value;
 }
-
-
-window.tekSecimYap =
-function(button,inputId,deger){
-
-    seciliKart(
-        button,
-        inputId
-    );
-
-    document
-    .getElementById(inputId)
-    .value=deger;
-
-}
-
-
-function tekButton(yazi,inputId){
-
-    return `
-    <button
-        type="button"
-        class="tek-secim-btn"
-        data-choice="${inputId}"
-        onclick="tekSecimYap(this,'${inputId}','${yazi}')"
-    >
-        ${yazi}
-    </button>
-    `;
-
-}
-
-
-function ozellikCheck(yazi,group){
-
-    return `
-    <label class="coklu-secim">
-
-        <input
-            type="checkbox"
-            data-group="${group}"
-            value="${yazi}"
-        >
-
-        <span>
-            ${yazi}
-        </span>
-
-    </label>
-    `;
-
-}
-
-
-function odaSecenekleri(){
-
-    const odalar = [
-        "Stüdyo",
-        "1+0",
-        "1+1",
-        "2+1",
-        "2+2",
-        "3+1",
-        "3+2",
-        "4+1",
-        "4+2",
-        "5+1 ve üzeri"
-    ];
-
-    return odalar
-    .map(x=>
-        ozellikCheck(
-            x,
-            "odaSayisi"
-        )
-    )
-    .join("");
-
-}
-
-
 function cokluDeger(group){
+  return [...document.querySelectorAll(`[data-group="${group}"]:checked`)].map(x=>x.value);
+}
+function deger(id){return document.getElementById(id)?.value?.trim()||""}
+function seciliYazi(id){const s=document.getElementById(id);return s?.options[s.selectedIndex]?.text||""}
 
-    return [
-        ...document.querySelectorAll(
-            `[data-group="${group}"]:checked`
-        )
-    ]
-    .map(x=>x.value);
+function talepFormunuAc(){
+  aktifKullaniciyiAl().then(user=>{
+    if(!user){sessionStorage.setItem("oauthSonrasi","talep");googleIleGiris();return}
+    document.getElementById("talepModal").classList.add("aktif");document.body.style.overflow="hidden";
+  });
+}
+function talepFormunuKapat(){document.getElementById("talepModal").classList.remove("aktif");document.body.style.overflow=""}
+function arkaPlanKontrol(e){if(e.target.id==="talepModal")talepFormunuKapat()}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")talepFormunuKapat()});
 
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".info-btn");
+  const current=b?.closest(".info");
+  document.querySelectorAll(".info.open").forEach(x=>{if(x!==current)x.classList.remove("open")});
+  if(b){e.preventDefault();e.stopPropagation();current.classList.toggle("open")}
+});
+
+async function googleIleGiris(){
+  const {error}=await supabaseClient.auth.signInWithOAuth({provider:"google",options:{redirectTo:window.location.origin+window.location.pathname}});
+  if(error)alert("Google ile giriş başlatılamadı: "+error.message);
+}
+async function cikisYap(){await supabaseClient.auth.signOut();kullaniciArayuzunuGuncelle(null)}
+async function aktifKullaniciyiAl(){const {data:{user}}=await supabaseClient.auth.getUser();return user}
+function kullaniciArayuzunuGuncelle(user){
+  const a=document.getElementById("authArea");a.replaceChildren();
+  if(!user){const b=document.createElement("button");b.type="button";b.className="google-btn";b.onclick=googleIleGiris;b.innerHTML='<span class="google-dot">G</span><span>Google ile Giriş</span>';a.appendChild(b);return}
+  const m=user.user_metadata||{};const name=m.full_name||m.name||user.email?.split("@")[0]||"Kullanıcı";const avatar=m.avatar_url||m.picture||"";
+  const panel=document.createElement("div");panel.className="user-panel";
+  if(avatar){const img=document.createElement("img");img.className="user-avatar";img.src=avatar;img.alt=name;panel.appendChild(img)}else{const d=document.createElement("div");d.className="user-avatar";d.style.display="grid";d.style.placeItems="center";d.style.background="#2563eb";d.textContent=name[0]?.toUpperCase()||"K";panel.appendChild(d)}
+  const meta=document.createElement("div");meta.className="user-meta";meta.innerHTML=`<strong>Hoş geldin, ${escapeHTML(name)}</strong><span>${escapeHTML(user.email||"")}</span>`;panel.appendChild(meta);
+  const out=document.createElement("button");out.className="logout";out.type="button";out.textContent="Çıkış";out.onclick=cikisYap;panel.appendChild(out);a.appendChild(panel);
+}
+async function authBaslat(){const user=await aktifKullaniciyiAl();kullaniciArayuzunuGuncelle(user);if(user&&sessionStorage.getItem("oauthSonrasi")==="talep"){sessionStorage.removeItem("oauthSonrasi");setTimeout(()=>{document.getElementById("talepModal").classList.add("aktif");document.body.style.overflow="hidden"},300)}supabaseClient.auth.onAuthStateChange((event,session)=>kullaniciArayuzunuGuncelle(session?.user||null))}
+
+let ilVerileri=[];
+function ilMenusunuKapat(){
+  const menu=document.getElementById("ilMenu"),trigger=document.getElementById("ilTrigger");
+  menu?.classList.remove("open");trigger?.classList.remove("open");trigger?.setAttribute("aria-expanded","false");
+}
+function ilSec(id,name){
+  const il=document.getElementById("il");
+  il.value=String(id);
+  document.getElementById("ilTriggerText").textContent=name;
+  document.querySelectorAll(".compact-select-option").forEach(x=>x.classList.toggle("active",x.dataset.id===String(id)));
+  ilMenusunuKapat();
+  document.getElementById("ilSearch").value="";
+  ilceleriYukle();
+}
+function ilOpsiyonlariniCiz(query=""){
+  const box=document.getElementById("ilOptions");if(!box)return;
+  const q=query.trim().toLocaleLowerCase("tr-TR");
+  const liste=ilVerileri.filter(x=>!q||x.name.toLocaleLowerCase("tr-TR").includes(q));
+  box.innerHTML="";
+  if(!liste.length){box.innerHTML='<div class="compact-select-empty">İl bulunamadı</div>';return}
+  liste.forEach(x=>{const b=document.createElement("button");b.type="button";b.className="compact-select-option";b.dataset.id=String(x.id);b.textContent=x.name;b.onclick=()=>ilSec(x.id,x.name);box.appendChild(b)});
+}
+function ilCompactBaslat(){
+  const trigger=document.getElementById("ilTrigger"),menu=document.getElementById("ilMenu"),search=document.getElementById("ilSearch");
+  if(!trigger||trigger.dataset.ready==="1")return;trigger.dataset.ready="1";
+  trigger.addEventListener("click",()=>{const acik=menu.classList.toggle("open");trigger.classList.toggle("open",acik);trigger.setAttribute("aria-expanded",String(acik));if(acik){ilOpsiyonlariniCiz(search.value);setTimeout(()=>search.focus(),0)}});
+  search.addEventListener("input",()=>ilOpsiyonlariniCiz(search.value));
+  document.addEventListener("click",e=>{if(!e.target.closest("#ilCompact"))ilMenusunuKapat()});
+}
+async function illeriYukle(){
+  const il=document.getElementById("il"),triggerText=document.getElementById("ilTriggerText");
+  ilCompactBaslat();
+  try{
+    const r=await fetch(`${TURKIYE_API}/provinces?fields=id,name&sort=name&limit=100`);const j=await r.json();
+    ilVerileri=j.data||[];
+    il.innerHTML='<option value="">İl seç</option>';
+    ilVerileri.forEach(x=>{const o=document.createElement("option");o.value=String(x.id);o.textContent=x.name;il.appendChild(o)});
+    triggerText.textContent="İl seç";
+    ilOpsiyonlariniCiz();
+  }catch(e){console.error(e);il.innerHTML='<option value="">İller yüklenemedi</option>';triggerText.textContent="İller yüklenemedi"}
+}
+async function ilceleriYukle(){
+  const il=document.getElementById("il"), ilce=document.getElementById("ilce");
+  if(!il.value){ilce.disabled=true;ilce.innerHTML='<option value="">Önce il seç</option>';return}
+  ilce.disabled=true;ilce.innerHTML='<option value="">İlçeler yükleniyor...</option>';
+  try{
+    const r=await fetch(`${TURKIYE_API}/districts?provinceId=${encodeURIComponent(il.value)}&fields=id,name&sort=name&limit=1000`);const j=await r.json();
+    ilce.innerHTML='<option value="">İl geneli — İlçe belirtmek istemiyorum</option>';
+    (j.data||[]).forEach(x=>{const o=document.createElement("option");o.value=x.name;o.textContent=x.name;ilce.appendChild(o)});
+    ilce.disabled=false;
+  }catch(e){console.error("İlçe yükleme hatası",e);ilce.innerHTML='<option value="">İlçeler yüklenemedi</option>';ilce.disabled=false}
 }
 
 
-/* ========================================
-   TALEBİ SUPABASE'E KAYDET
-   ======================================== */
-
-window.talepYayinla =
-async function(event){
-
-    event.preventDefault();
-
-
-    const {
-        data:{user}
-    } =
-    await supabaseClient
-    .auth
-    .getUser();
-
-
-    if(!user){
-
-        alert(
-            "Talep oluşturmak için giriş yapmalısın."
-        );
-
-        await googleIleGiris();
-
-        return;
-
-    }
-
-
-    const kategori =
-        document
-        .getElementById("kategori")
-        .value;
-
-
-    const baslik =
-        document
-        .getElementById("baslik")
-        .value
-        .trim();
-
-
-    const ilSelect =
-        document
-        .getElementById("il");
-
-
-    const sehir =
-        ilSelect.options[
-            ilSelect.selectedIndex
-        ]?.text || "";
-
-
-    const ilce =
-        document
-        .getElementById("ilce")
-        ?.value || "";
-
-
-    const aciklama =
-        document
-        .getElementById("aciklama")
-        .value
-        .trim();
-
-
-    const adSoyad =
-        document
-        .getElementById("adSoyad")
-        .value
-        .trim();
-
-
-    const telefon =
-        document
-        .getElementById("telefon")
-        .value
-        .trim();
-
-
-    let detaylar = {
-
-        ad_soyad:adSoyad,
-        telefon:telefon
-
-    };
-
-
-    let minButce="";
-    let maxButce="";
-
-
-    /* EMLAK */
-
-    if(kategori === "Emlak"){
-
-        const tur =
-            document
-            .getElementById("emlakTuru")
-            ?.value || "";
-
-
-        detaylar.emlak_turu =
-            tur;
-
-
-        if(tur === "Daire"){
-
-            detaylar.islem =
-                document
-                .getElementById("daireIslem")
-                ?.value || "";
-
-
-            detaylar.oda_sayilari =
-                cokluDeger(
-                    "odaSayisi"
-                );
-
-
-            detaylar.min_m2 =
-                document
-                .getElementById("daireMinM2")
-                ?.value || "";
-
-
-            detaylar.max_m2 =
-                document
-                .getElementById("daireMaxM2")
-                ?.value || "";
-
-
-            detaylar.bina_yasi =
-                document
-                .getElementById("binaYasi")
-                ?.value || "";
-
-
-            detaylar.kat =
-                document
-                .getElementById("katTercihi")
-                ?.value || "";
-
-
-            detaylar.ozellikler =
-                cokluDeger(
-                    "daireOzellik"
-                );
-
-
-            detaylar.satin_alma_amaci =
-                document
-                .getElementById("daireAmaci")
-                ?.value || "";
-
-
-            detaylar.beklenen_kira =
-                document
-                .getElementById("beklenenKira")
-                ?.value || "";
-
-
-            detaylar.kiraci_meslek =
-                document
-                .getElementById("kiraciMeslek")
-                ?.value || "";
-
-
-            detaylar.kiraci_gelir =
-                document
-                .getElementById("kiraciGelir")
-                ?.value || "";
-
-
-            minButce =
-                document
-                .getElementById("daireMinButce")
-                ?.value || "";
-
-
-            maxButce =
-                document
-                .getElementById("daireMaxButce")
-                ?.value || "";
-
-        }
-
-
-        if(tur === "Arazi"){
-
-            detaylar.tapu =
-                document
-                .getElementById("araziTapu")
-                ?.value || "";
-
-
-            detaylar.imar =
-                document
-                .getElementById("araziImar")
-                ?.value || "";
-
-
-            detaylar.min_m2 =
-                document
-                .getElementById("araziMinM2")
-                ?.value || "";
-
-
-            detaylar.max_m2 =
-                document
-                .getElementById("araziMaxM2")
-                ?.value || "";
-
-
-            detaylar.yatirim_suresi =
-                document
-                .getElementById("yatirimSuresi")
-                ?.value || "";
-
-
-            detaylar.alternatif_yatirim =
-                document
-                .getElementById("alternatifYatirim")
-                ?.checked || false;
-
-
-            minButce =
-                document
-                .getElementById("araziMinButce")
-                ?.value || "";
-
-
-            maxButce =
-                document
-                .getElementById("araziMaxButce")
-                ?.value || "";
-
-        }
-
-    }
-
-
-    /* ARAÇ */
-
-    if(kategori === "Araç"){
-
-        detaylar.arac_tipi =
-            document
-            .getElementById("aracTipi")
-            ?.value || "";
-
-
-        detaylar.marka_model_serbest =
-            document
-            .getElementById("markaFarketmez")
-            ?.checked || false;
-
-
-        detaylar.marka =
-            document
-            .getElementById("aracMarka")
-            ?.value || "";
-
-
-        detaylar.model =
-            document
-            .getElementById("aracModel")
-            ?.value || "";
-
-
-        detaylar.min_yil =
-            document
-            .getElementById("aracMinYil")
-            ?.value || "";
-
-
-        detaylar.max_km =
-            document
-            .getElementById("aracMaxKm")
-            ?.value || "";
-
-
-        detaylar.yakit =
-            document
-            .getElementById("aracYakit")
-            ?.value || "";
-
-
-        detaylar.vites =
-            document
-            .getElementById("aracVites")
-            ?.value || "";
-
-
-        detaylar.max_tramer =
-            document
-            .getElementById("aracTramer")
-            ?.value || "";
-
-
-        detaylar.ekspertiz =
-            document
-            .getElementById("ekspertizTercihi")
-            ?.value || "";
-
-
-        detaylar.teslim =
-            document
-            .getElementById("aracTeslim")
-            ?.value || "";
-
-
-        minButce =
-            document
-            .getElementById("aracMinButce")
-            ?.value || "";
-
-
-        maxButce =
-            document
-            .getElementById("aracMaxButce")
-            ?.value || "";
-
-    }
-
-
-    detaylar.minimum_butce =
-        minButce;
-
-    detaylar.maximum_butce =
-        maxButce;
-
-
-    let butceMetni="";
-
-
-    if(minButce && maxButce){
-
-        butceMetni =
-            `${minButce} TL - ${maxButce} TL`;
-
-    }
-
-    else if(maxButce){
-
-        butceMetni =
-            `${maxButce} TL'ye kadar`;
-
-    }
-
-    else if(minButce){
-
-        butceMetni =
-            `${minButce} TL ve üzeri`;
-
-    }
-
-
-    const {
-        error
-    } =
-    await supabaseClient
-    .from("TALEPLER")
-    .insert({
-
-        user_id:user.id,
-
-        kategori:kategori,
-
-        baslik:baslik,
-
-        sehir:sehir,
-
-        ilce:ilce || null,
-
-        butce:butceMetni,
-
-        aciklama:aciklama,
-
-        durum:"aktif",
-
-        detaylar:detaylar
-
-    });
-
-
-    if(error){
-
-        console.error(error);
-
-        alert(
-            "Talep kaydedilemedi: "
-            +
-            error.message
-        );
-
-        return;
-
-    }
-
-
-    alert(
-        "✅ Talebiniz başarıyla yayınlandı."
-    );
-
-
-    document
-    .getElementById("talepForm")
-    .reset();
-
-
-    talepFormunuKapat();
-
-
-    location.reload();
-
+function kategoriDegisti(){
+  const k=deger("kategori"), d=document.getElementById("dynamicArea");d.innerHTML="";
+  if(k==="Emlak") emlakAna();
+  if(k==="Araç") aracAna();
+  setTimeout(paraAlanlariniHazirla,20);
+}
+document.getElementById("kategori").addEventListener("change",kategoriDegisti);
+
+function emlakAna(){
+  document.getElementById("dynamicArea").innerHTML=`<div class="choice-panel"><h3>Ne tür bir gayrimenkul arıyorsunuz?</h3><p>Seçiminize göre yalnızca gerekli alanlar açılır.</p><div class="choice-grid two"><button type="button" class="choice-card" data-choice="emlakAna" onclick="dairePanel(this)"><span class="choice-icon">🏢</span><strong>Daire</strong><small>Satılık veya kiralık konut</small></button><button type="button" class="choice-card" data-choice="emlakAna" onclick="araziPanel(this)"><span class="choice-icon">🌳</span><strong>Arazi</strong><small>Hisseli veya tek tapu arazi</small></button></div><input id="emlakTuru" type="hidden"><div id="emlakAlt"></div></div>`;
+}
+function selectCard(btn,group){document.querySelectorAll(`[data-choice="${group}"]`).forEach(x=>x.classList.remove("selected"));btn.classList.add("selected")}
+function dairePanel(btn){
+  selectCard(btn,"emlakAna");document.getElementById("emlakTuru").value="Daire";
+  document.getElementById("emlakAlt").innerHTML=`<div class="subpanel"><div class="form-grid">
+  <div class="field full"><div class="mini-title">Satılık mı, kiralık mı? ${infoHTML("Seçiminize göre yatırım veya kiralama detayları açılır.")}</div><div class="pill-row"><button type="button" class="single-pill blue" data-choice="daireIslem" onclick="daireIslemSec(this,'Satılık')">Satılık</button><button type="button" class="single-pill blue" data-choice="daireIslem" onclick="daireIslemSec(this,'Kiralık')">Kiralık</button></div><input id="daireIslem" type="hidden"></div>
+  <div class="field full"><div class="mini-title">Oda tercihleri ${infoHTML("Birden fazla oda tipi seçebilirsiniz.")}</div><div class="pill-row">${["Stüdyo","1+0","1+1","2+1","2+2","3+1","3+2","4+1","4+2","5+1 ve üzeri"].map(x=>pillHTML(x,"odaSayisi")).join("")}</div></div>
+  <div class="field"><label>Minimum m²</label><input id="daireMinM2" type="number" placeholder="Örn: 90"></div>
+  <div class="field"><label>Maksimum m²</label><input id="daireMaxM2" type="number" placeholder="Örn: 160"></div>
+  <div class="field"><label>Minimum bütçe ${infoHTML("Değerlendirmek istediğiniz yaklaşık fiyat aralığının alt sınırıdır.")}</label><input id="daireMinButce" class="money" inputmode="numeric" placeholder="Örn: 3.000.000"></div>
+  <div class="field"><label>Maksimum bütçe ${infoHTML("Bu talep için değerlendirebileceğiniz yaklaşık en yüksek bütçedir.")}</label><input id="daireMaxButce" class="money" inputmode="numeric" placeholder="Örn: 5.000.000"></div>
+  <div class="field"><label>Bina yaşı</label><select id="binaYasi"><option value="">Herhangi biri</option><option>Sıfır</option><option>1-5 yıl</option><option>6-10 yıl</option><option>11-20 yıl</option><option>20 yıl üzeri</option></select></div>
+  <div class="field"><label>Kat tercihi</label><select id="katTercihi"><option value="">Herhangi biri</option><option>Giriş kat</option><option>Ara kat</option><option>Yüksek kat</option><option>Çatı katı</option></select></div>
+  <div class="field full"><div class="mini-title">Aranan özellikler</div><div class="pill-row">${["🏫 Okula yakın","🚇 Metroya yakın","🏥 Hastaneye yakın","🚌 Toplu ulaşıma yakın","🚶 Günlük ihtiyaçlara yürüme mesafesinde","🛣️ Ana ulaşım yollarına yakın","🛒 Market / çarşıya yakın","Site içinde","Asansör","Otopark","Balkon","Krediye uygun"].map(x=>pillHTML(x,"daireOzellik")).join("")}</div></div>
+  </div><div id="daireEk"></div></div>`;
+  paraAlanlariniHazirla();
+}
+function daireIslemSec(btn,val){selectCard(btn,"daireIslem");document.getElementById("daireIslem").value=val;const a=document.getElementById("daireEk");if(val==="Satılık"){a.innerHTML=`<div class="subpanel"><div class="field"><label>Satın alma amacınız</label><select id="daireAmaci" onchange="daireAmaciDegisti()"><option value="">Seçiniz</option><option value="Oturum">Kendim / ailem yaşayacak</option><option value="Yatırım">Yatırım yapacağım</option></select></div><div id="yatirimKira"></div></div>`}else{a.innerHTML=`<div class="subpanel"><div class="form-grid"><div class="field"><label>Mesleğiniz</label><input id="kiraciMeslek" placeholder="Örn: Memur, esnaf, mühendis"></div><div class="field"><label>Yaklaşık aylık gelir ${infoHTML("Zorunlu değildir. Danışmanın kiralık alternatifleri daha doğru değerlendirmesine yardımcı olabilir.")}</label><select id="kiraciGelir"><option value="">Belirtmek istemiyorum</option><option>30.000 - 50.000 TL</option><option>50.000 - 75.000 TL</option><option>75.000 - 100.000 TL</option><option>100.000 TL üzeri</option></select></div></div></div>`}}
+function daireAmaciDegisti(){const a=document.getElementById("yatirimKira");if(deger("daireAmaci")!=="Yatırım"){a.innerHTML="";return}a.innerHTML=`<div class="field" style="margin-top:15px"><label>Beklenen aylık kira getirisi ${infoHTML("Yatırım amaçlı alınacak daireden beklediğiniz yaklaşık aylık kira aralığıdır.")}</label><select id="beklenenKira"><option value="">Herhangi biri</option><option>10.000 - 20.000 TL</option><option>20.000 - 30.000 TL</option><option>30.000 - 40.000 TL</option><option>40.000 - 70.000 TL</option><option>70.000 TL üzeri</option></select></div>`}
+
+function araziPanel(btn){
+  selectCard(btn,"emlakAna");document.getElementById("emlakTuru").value="Arazi";
+  document.getElementById("emlakAlt").innerHTML=`<div class="subpanel"><div class="form-grid">
+  <div class="field full"><div class="mini-title">Tapu tercihi ${infoHTML("Hisseli, tek tapu veya her iki seçeneğe de açık olduğunuzu belirtebilirsiniz.")}</div><div class="pill-row">${singleButton("Hisseli","araziTapu")}${singleButton("Tek Tapu","araziTapu")}${singleButton("Herhangi biri","araziTapu")}</div><input id="araziTapu" type="hidden"></div>
+  <div class="field full"><div class="mini-title">İmar durumu</div><div class="pill-row">${singleButton("İmarlı","araziImar")}${singleButton("İmarsız","araziImar")}${singleButton("Herhangi biri","araziImar")}</div><input id="araziImar" type="hidden"></div>
+  <div class="field"><label>Minimum m²</label><input id="araziMinM2" type="number" placeholder="Örn: 500"></div><div class="field"><label>Maksimum m²</label><input id="araziMaxM2" type="number" placeholder="Örn: 5000"></div>
+  <div class="field"><label>Minimum bütçe ${infoHTML("Değerlendirmeye açık olduğunuz yaklaşık yatırım bütçesinin alt sınırıdır.")}</label><input id="araziMinButce" class="money" inputmode="numeric" placeholder="Örn: 1.000.000"></div>
+  <div class="field"><label>Maksimum bütçe ${infoHTML("Bu yatırım için değerlendirebileceğiniz yaklaşık en yüksek bütçedir.")}</label><input id="araziMaxButce" class="money" inputmode="numeric" placeholder="Örn: 3.500.000"></div>
+  </div><div class="highlight-box"><strong>💡 Farklı yatırım fırsatlarına açık mısınız?</strong><p>Bu seçeneği aktif ettiğinizde belirttiğiniz bölgeyle sınırlı kalmadan bütçenize uygun alternatif gayrimenkul fikirleri de sunulabilir. Sunulan bilgiler öneri niteliğindedir; nihai değerlendirme ve karar size aittir.</p><label class="highlight-check"><input id="alternatifYatirim" type="checkbox"> Bütçeme uygun farklı bölgelerden yatırım teklifleri de alabilirim.</label></div></div>`;
+  paraAlanlariniHazirla();
 }
 
-})();
+function aracAna(){
+  document.getElementById("dynamicArea").innerHTML=`<div class="choice-panel"><h3>Ne tür bir araç arıyorsunuz?</h3><p>Araç türünü seçerek devam edin.</p><div class="choice-grid"><button type="button" class="choice-card" data-choice="aracTipi" onclick="aracTipiSec(this,'Otomobil')"><span class="choice-icon">🚘</span><strong>Otomobil</strong></button><button type="button" class="choice-card" data-choice="aracTipi" onclick="aracTipiSec(this,'Motosiklet')"><span class="choice-icon">🏍️</span><strong>Motosiklet</strong></button><button type="button" class="choice-card" data-choice="aracTipi" onclick="aracTipiSec(this,'Pick-up')"><span class="choice-icon">🛻</span><strong>Pick-up</strong></button></div><input id="aracTipi" type="hidden"><div id="aracAlt"></div></div>`;
+}
+function markaOptions(){return Object.keys(MODELLER).sort((a,b)=>a.localeCompare(b,"tr")).map(x=>`<option value="${x}">${x}</option>`).join("")+`<option value="Diğer">Diğer</option>`}
+function aracTipiSec(btn,tur){selectCard(btn,"aracTipi");document.getElementById("aracTipi").value=tur;document.getElementById("aracAlt").innerHTML=`<div class="subpanel"><div class="highlight-box" style="background:linear-gradient(135deg,#eaf8ff,#f7fcff);border-color:#bfe6fa"><label class="highlight-check" style="color:#15485f"><input id="markaFarketmez" type="checkbox" onchange="markaSerbestDegisti()"> Marka/model fark etmez; bütçeme ve kriterlerime uygun farklı araç tekliflerini de görmek istiyorum.</label></div><div class="form-grid" style="margin-top:15px">
+<div class="field"><label>Marka</label><select id="aracMarka" onchange="aracMarkaDegisti()"><option value="">Marka seç</option>${markaOptions()}</select></div><div class="field"><label>Model</label><select id="aracModel" disabled><option value="">Önce marka seç</option></select></div>
+<div class="field"><label>Minimum model yılı</label><input id="aracMinYil" type="number" placeholder="Örn: 2020"></div><div class="field"><label>Maksimum kilometre</label><input id="aracMaxKm" type="number" placeholder="Örn: 100000"></div>
+<div class="field"><label>Minimum bütçe</label><input id="aracMinButce" class="money" inputmode="numeric" placeholder="Örn: 1.000.000"></div><div class="field"><label>Maksimum bütçe ${infoHTML("Araç için değerlendirebileceğiniz yaklaşık en yüksek bütçedir.")}</label><input id="aracMaxButce" class="money" inputmode="numeric" placeholder="Örn: 1.500.000"></div>
+<div class="field"><label>Yakıt</label><select id="aracYakit"><option value="">Herhangi biri</option><option>Benzin</option><option>Dizel</option><option>Hibrit</option><option>Elektrik</option><option>LPG</option></select></div><div class="field"><label>Vites</label><select id="aracVites"><option value="">Herhangi biri</option><option>Otomatik</option><option>Manuel</option></select></div>
+<div class="field"><label>Maksimum tramer</label><input id="aracTramer" class="money" inputmode="numeric" placeholder="Örn: 50.000"></div><div class="field"><label>Ekspertiz tercihi</label><select id="ekspertizTercihi"><option value="">Herhangi biri</option><option>Güncel ekspertiz raporu yeterli</option><option>Yeniden ekspertiz yapılmasını isterim</option></select></div>
+<div class="field full"><label>Teslim / satın alma tercihi</label><select id="aracTeslim"><option value="">Herhangi biri</option><option>Aracı ben gidip alabilirim</option><option>Aracın bulunduğum şehre gelmesini isterim</option></select></div></div></div>`;paraAlanlariniHazirla()}
+function aracMarkaDegisti(){const m=deger("aracMarka"),s=document.getElementById("aracModel");if(!m){s.disabled=true;s.innerHTML='<option value="">Önce marka seç</option>';return}const list=MODELLER[m]||[];s.disabled=false;s.innerHTML='<option value="">Model seç / Herhangi biri</option>'+list.map(x=>`<option value="${x}">${x}</option>`).join("")+'<option value="Diğer">Diğer</option>'}
+function markaSerbestDegisti(){const c=document.getElementById("markaFarketmez").checked,m=document.getElementById("aracMarka"),s=document.getElementById("aracModel");m.disabled=c;s.disabled=c;if(c){m.value="";s.innerHTML='<option value="">Marka/model herhangi biri</option>'}else{s.innerHTML='<option value="">Önce marka seç</option>'}}
+
+function paraAlanlariniHazirla(){document.querySelectorAll(".money").forEach(i=>{if(i.dataset.moneyReady)return;i.dataset.moneyReady="1";i.type="text";i.inputMode="numeric";i.addEventListener("input",()=>{const n=i.value.replace(/\D/g,"");i.value=n.replace(/\B(?=(\d{3})+(?!\d))/g,".")})})}
+function telefonRakam(value){let n=value.replace(/\D/g,"");if(n.startsWith("90")&&n.length>=12)n="0"+n.slice(2);if(n.length===10&&n.startsWith("5"))n="0"+n;return n.slice(0,11)}
+function telefonFormat(n){if(!n)return"";return [n.slice(0,4),n.slice(4,7),n.slice(7,9),n.slice(9,11)].filter(Boolean).join(" ")}
+document.getElementById("telefon").addEventListener("input",e=>{const n=telefonRakam(e.target.value);e.target.value=telefonFormat(n);e.target.classList.remove("field-error")});
+document.getElementById("adSoyad").addEventListener("input",e=>{e.target.value=e.target.value.replace(/[^\p{L}\s'-]/gu,"");e.target.classList.remove("field-error")});
+function adSoyadGecerli(){const i=document.getElementById("adSoyad"),v=i.value.trim().replace(/\s+/g," ");const ok=/^[\p{L}]+(?:[\s'-]+[\p{L}]+)+$/u.test(v)&&v.length>=5;if(!ok){i.classList.add("field-error");i.focus();alert("Lütfen ad ve soyadınızı doğru biçimde girin.");return false}return true}
+function telefonGecerli(){const i=document.getElementById("telefon"),n=telefonRakam(i.value);if(!/^05\d{9}$/.test(n)){i.classList.add("field-error");i.focus();alert("Lütfen geçerli bir cep telefonu numarası girin. Örnek: 0532 123 45 67");return false}return true}
+
+function otomatikBaslik(){const k=deger("kategori"),ilce=deger("ilce"),il=seciliYazi("il"),yer=ilce||(!il.toLowerCase().includes("seç")?il:"");if(k==="Emlak"){const tur=deger("emlakTuru");if(tur==="Daire")return `${yer?yer+" - ":""}${deger("daireIslem")?deger("daireIslem")+" ":""}Daire aranıyor`;if(tur==="Arazi")return `${yer?yer+" - ":""}Arazi aranıyor`;return `${yer?yer+" - ":""}Gayrimenkul aranıyor`}if(k==="Araç"){const vehicle=[deger("aracMarka"),deger("aracModel")].filter(Boolean).join(" ")||deger("aracTipi")||"Araç";return vehicle+" aranıyor"}return "Yeni talep"}
+function detaylariTopla(){const k=deger("kategori"),d={};if(k==="Emlak"){d.emlak_turu=deger("emlakTuru");if(d.emlak_turu==="Daire"){Object.assign(d,{islem:deger("daireIslem"),oda_sayilari:cokluDeger("odaSayisi"),min_m2:deger("daireMinM2"),max_m2:deger("daireMaxM2"),minimum_butce:deger("daireMinButce"),maximum_butce:deger("daireMaxButce"),bina_yasi:deger("binaYasi"),kat:deger("katTercihi"),ozellikler:cokluDeger("daireOzellik"),satin_alma_amaci:deger("daireAmaci"),beklenen_kira:deger("beklenenKira"),kiraci_meslek:deger("kiraciMeslek"),kiraci_gelir:deger("kiraciGelir")})}if(d.emlak_turu==="Arazi"){Object.assign(d,{tapu:deger("araziTapu"),imar:deger("araziImar"),min_m2:deger("araziMinM2"),max_m2:deger("araziMaxM2"),minimum_butce:deger("araziMinButce"),maximum_butce:deger("araziMaxButce"),alternatif_yatirim:document.getElementById("alternatifYatirim")?.checked||false})}}if(k==="Araç"){Object.assign(d,{arac_tipi:deger("aracTipi"),marka_model_serbest:document.getElementById("markaFarketmez")?.checked||false,marka:deger("aracMarka"),model:deger("aracModel"),min_yil:deger("aracMinYil"),max_km:deger("aracMaxKm"),minimum_butce:deger("aracMinButce"),maximum_butce:deger("aracMaxButce"),yakit:deger("aracYakit"),vites:deger("aracVites"),max_tramer:deger("aracTramer"),ekspertiz:deger("ekspertizTercihi"),teslim:deger("aracTeslim")})}return d}
+function butceMetni(det){const min=det.minimum_butce||"",max=det.maximum_butce||"";if(min&&max)return `${min} TL - ${max} TL`;if(max)return `${max} TL'ye kadar`;if(min)return `${min} TL ve üzeri`;return""}
+async function talepYayinla(event){event.preventDefault();if(!adSoyadGecerli()||!telefonGecerli())return;const user=await aktifKullaniciyiAl();if(!user){await googleIleGiris();return}const kategori=deger("kategori");if(!kategori){alert("Lütfen kategori seçin.");return}if(!deger("il")){alert("Lütfen il seçin.");document.getElementById("ilTrigger")?.click();return}if(kategori==="Emlak"&&!deger("emlakTuru")){alert("Lütfen Daire veya Arazi seçin.");return}if(kategori==="Araç"&&!deger("aracTipi")){alert("Lütfen araç türünü seçin.");return}const detay=detaylariTopla();const {error}=await supabaseClient.from("TALEPLER").insert({user_id:user.id,kategori,baslik:otomatikBaslik(),sehir:seciliYazi("il"),ilce:deger("ilce")||null,butce:butceMetni(detay),aciklama:deger("aciklama"),detaylar:detay,durum:"aktif"});if(error){console.error(error);alert("Talep kaydedilemedi: "+error.message);return}alert("✅ Talebiniz başarıyla yayınlandı.");document.getElementById("talepForm").reset();document.getElementById("ilTriggerText").textContent="İl seç";document.getElementById("dynamicArea").innerHTML="";document.getElementById("ilce").disabled=true;document.getElementById("ilce").innerHTML='<option value="">Önce il seç</option>';talepFormunuKapat();await talepleriYukle()}
+
+function escapeHTML(s){return String(s??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]))}
+function talepIkon(row){if(row.kategori==="Araç")return"🚗";const t=row.detaylar?.emlak_turu;return t==="Daire"?"🏢":"🌳"}
+function formatDate(s){if(!s)return"";try{return new Intl.DateTimeFormat("tr-TR",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(new Date(s))}catch{return""}}
+
+
+
+</script>
+<script>
+
+const FOUNDER_EMAILS=["yusufakmercan1@gmail.com","yusufakmercan2@gmail.com"];
+let aktifUser=null, aktifProfil=null, aktifTeklif=null, chatTimer=null, ocrCache=null;
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2600)}
+function appModalAc(id){document.getElementById(id)?.classList.add('open');document.body.style.overflow='hidden'}
+function appModalKapat(id){document.getElementById(id)?.classList.remove('open');if(!document.querySelector('.app-modal.open,.as-chat-overlay.acik,.modal.aktif'))document.body.style.overflow=''}
+function appModalBack(e,id){if(e.target.id===id)appModalKapat(id)}
+function telNorm(v){let n=String(v||'').replace(/\D/g,'');if(n.startsWith('90')&&n.length>=12)n='0'+n.slice(2);if(n.length===10&&n.startsWith('5'))n='0'+n;return n.slice(0,11)}
+function telFmt(v){const n=telNorm(v);return [n.slice(0,4),n.slice(4,7),n.slice(7,9),n.slice(9,11)].filter(Boolean).join(' ')}
+function dosyaAdiGuvenli(name){return String(name||'file').toLowerCase().replace(/[^a-z0-9._-]+/g,'-').slice(-80)}
+
+async function profilGetir(userId){const {data}=await supabaseClient.from('PROFILLER').select('*').eq('user_id',userId).maybeSingle();return data||null}
+async function iletisimGetirKendim(){if(!aktifUser)return null;const {data}=await supabaseClient.from('KULLANICI_ILETISIM').select('*').eq('user_id',aktifUser.id).maybeSingle();return data||null}
+async function profilOlustur(user){
+  if(!user)return null;
+  let p=await profilGetir(user.id);
+  const m=user.user_metadata||{};
+  const name=m.full_name||m.name||user.email?.split('@')[0]||'Kullanıcı';
+  if(!p){const {data,error}=await supabaseClient.from('PROFILLER').insert({user_id:user.id,ad_soyad:name,avatar_url:m.avatar_url||m.picture||null,hesap_tipi:'alici',verification_status:'none'}).select().single();if(!error)p=data}
+  await supabaseClient.from('KULLANICI_ILETISIM').upsert({user_id:user.id,email:user.email||null,updated_at:new Date().toISOString()},{onConflict:'user_id'});
+  return p;
+}
+
+async function authBaslat(){
+  aktifUser=await aktifKullaniciyiAl();
+  if(aktifUser)aktifProfil=await profilOlustur(aktifUser); else aktifProfil=null;
+  kullaniciArayuzunuGuncelle(aktifUser);
+  const bekleyen=sessionStorage.getItem('oauthSonrasi');
+  if(aktifUser&&bekleyen){sessionStorage.removeItem('oauthSonrasi');setTimeout(()=>{if(bekleyen==='talep'){document.getElementById('talepModal').classList.add('aktif');document.body.style.overflow='hidden'}if(bekleyen==='pro')profesyonelAkis();if(bekleyen==='profile')profilAc()},350)}
+  supabaseClient.auth.onAuthStateChange(async(event,session)=>{aktifUser=session?.user||null;aktifProfil=aktifUser?await profilOlustur(aktifUser):null;kullaniciArayuzunuGuncelle(aktifUser);await talepleriYukle()});
+}
+
+function kullaniciArayuzunuGuncelle(user){
+  const a=document.getElementById('authArea');a.replaceChildren();
+  const msg=document.getElementById('asMesajBtn');msg.style.display=user?'block':'none';
+  if(!user){const b=document.createElement('button');b.type='button';b.className='google-btn';b.onclick=googleIleGiris;b.innerHTML='<span class="google-dot">G</span><span>Google ile Giriş</span>';a.appendChild(b);return}
+  const name=aktifProfil?.ad_soyad||user.user_metadata?.full_name||user.email?.split('@')[0]||'Kullanıcı';const avatar=aktifProfil?.avatar_url||user.user_metadata?.avatar_url||user.user_metadata?.picture||'';
+  const panel=document.createElement('div');panel.className='user-panel';panel.style.cursor='pointer';panel.onclick=profilAc;
+  if(avatar){const img=document.createElement('img');img.className='user-avatar';img.src=avatar;img.alt=name;panel.appendChild(img)}else{const d=document.createElement('div');d.className='user-avatar';d.style.display='grid';d.style.placeItems='center';d.style.background='#2563eb';d.textContent=name[0]?.toUpperCase()||'K';panel.appendChild(d)}
+  const meta=document.createElement('div');meta.className='user-meta';meta.innerHTML=`<strong>${escapeHTML(name)}</strong><span>${aktifProfil?.verification_status==='approved'?'✓ Doğrulanmış Profesyonel':escapeHTML(user.email||'')}</span>`;panel.appendChild(meta);
+  const out=document.createElement('button');out.className='logout';out.type='button';out.textContent='Çıkış';out.onclick=e=>{e.stopPropagation();cikisYap()};panel.appendChild(out);a.appendChild(panel);
+}
+
+async function cikisYap(){await supabaseClient.auth.signOut();aktifUser=null;aktifProfil=null;kullaniciArayuzunuGuncelle(null);await talepleriYukle()}
+
+async function profilAc(){if(!aktifUser){sessionStorage.setItem('oauthSonrasi','profile');await googleIleGiris();return}const contact=await iletisimGetirKendim();document.getElementById('profileName').value=aktifProfil?.ad_soyad||'';document.getElementById('profileEmail').value=aktifUser.email||'';document.getElementById('profilePhone').value=telFmt(contact?.telefon||'');document.getElementById('profileBio').value=aktifProfil?.bio||'';const avatar=aktifProfil?.avatar_url||aktifUser.user_metadata?.avatar_url||'';document.getElementById('profilePreview').innerHTML=`<div class="profile-preview">${avatar?`<img src="${escapeHTML(avatar)}">`:`<div class="profile-fallback">${escapeHTML((aktifProfil?.ad_soyad||'K')[0])}</div>`}<div><strong>${escapeHTML(aktifProfil?.ad_soyad||'Profil')}</strong><div style="margin-top:5px">${aktifProfil?.verification_status==='approved'?'<span class="verified-pill">✓ Doğrulanmış Profesyonel</span>':aktifProfil?.verification_status==='pending'?'<span class="pending-pill">⏳ Profesyonel incelemede</span>':'<span class="owner-pill">Alıcı hesabı</span>'}</div></div></div>`;appModalAc('profileModal')}
+
+async function avatarYukle(file){if(!file||!aktifUser)return aktifProfil?.avatar_url||null;const path=`${aktifUser.id}/${Date.now()}-${dosyaAdiGuvenli(file.name)}`;const {error}=await supabaseClient.storage.from('avatars').upload(path,file,{upsert:true,contentType:file.type});if(error)throw error;const {data}=supabaseClient.storage.from('avatars').getPublicUrl(path);return data.publicUrl}
+
+async function profilKaydet(e){e.preventDefault();if(!aktifUser)return;try{const avatar=await avatarYukle(document.getElementById('profileAvatar').files[0]);const name=document.getElementById('profileName').value.trim();const bio=document.getElementById('profileBio').value.trim();const phone=telNorm(document.getElementById('profilePhone').value);if(phone&&!/^05\d{9}$/.test(phone)){alert('Geçerli bir telefon girin.');return}await supabaseClient.from('PROFILLER').upsert({user_id:aktifUser.id,ad_soyad:name,avatar_url:avatar,bio,updated_at:new Date().toISOString()},{onConflict:'user_id'});await supabaseClient.from('KULLANICI_ILETISIM').upsert({user_id:aktifUser.id,telefon:phone||null,email:aktifUser.email||null,updated_at:new Date().toISOString()},{onConflict:'user_id'});aktifProfil=await profilGetir(aktifUser.id);kullaniciArayuzunuGuncelle(aktifUser);appModalKapat('profileModal');toast('Profil kaydedildi.')}catch(err){console.error(err);alert('Profil kaydedilemedi: '+err.message)}}
+
+async function profesyonelAkis(){
+  if(!aktifUser){sessionStorage.setItem('oauthSonrasi','pro');await googleIleGiris();return}
+  aktifProfil=await profilGetir(aktifUser.id)||await profilOlustur(aktifUser);
+  const status=document.getElementById('proStatus');status.innerHTML='';
+  if(aktifProfil?.verification_status==='approved'){status.innerHTML='<div class="status-panel"><span class="verified-pill">✓ Hesabınız doğrulandı</span><p style="margin:10px 0 0;color:#475569">Taleplerin tüm detaylarını görebilir ve talebe karşılık verebilirsiniz.</p></div>';document.getElementById('proForm').style.display='none'}
+  else {document.getElementById('proForm').style.display='block';if(aktifProfil?.verification_status==='pending')status.innerHTML='<div class="status-panel"><span class="pending-pill">⏳ İnceleme sürüyor</span><p style="margin:10px 0 0;color:#475569">Başvurunuz alındı. Belge ve işletme bilgileriniz kontrol ediliyor. Hedef inceleme süremiz yaklaşık 1 saattir.</p></div>'}
+  document.getElementById('proAd').value=aktifProfil?.ad_soyad||aktifUser.user_metadata?.full_name||'';document.getElementById('proSektor').value=aktifProfil?.sektor||'';document.getElementById('proIsletme').value=aktifProfil?.isletme_adi||'';document.getElementById('proSehir').value=aktifProfil?.sehir||'';document.getElementById('proIlce').value=aktifProfil?.ilce||'';document.getElementById('proAdres').value=aktifProfil?.ofis_adresi||'';document.getElementById('proBio').value=aktifProfil?.bio||'';const c=await iletisimGetirKendim();document.getElementById('proTelefon').value=telFmt(c?.telefon||'');appModalAc('proModal')}
+
+async function belgeOCR(file){
+  const box=document.getElementById('ocrStatus');box.className='scan-status';box.textContent='Belge okunuyor… İlk tarama birkaç saniye sürebilir.';
+  if(!window.Tesseract){box.className='scan-status warn';box.textContent='OCR kütüphanesi yüklenemedi. Belge yine incelemeye gönderilecek.';return {text:'',score:0,status:'ocr_yok'}}
+  try{const worker=await Tesseract.createWorker('tur',1,{logger:m=>{if(m.status==='recognizing text')box.textContent=`Belge okunuyor… %${Math.round((m.progress||0)*100)}`}});const result=await worker.recognize(file);await worker.terminate();const text=(result.data.text||'').toLocaleUpperCase('tr-TR');const keys=['VERGİ LEVHASI','VERGİ DAİRESİ','MÜKELLEF','T.C.','TİCARET','UNVAN','FAALİYET','VERGİ KİMLİK'];let hit=0;keys.forEach(k=>{if(text.includes(k))hit++});const score=Math.min(100,Math.round((hit/5)*100));const status=hit>=2?'format_uygun':'manuel_inceleme';box.className='scan-status '+(hit>=2?'ok':'warn');box.textContent=hit>=2?'✓ Belge vergi levhası formatına benziyor. Resmi doğrulama değildir; başvuru yine incelemeye alınacak.':'Belgede beklenen alanların bir kısmı okunamadı. Başvuru manuel incelemeye gönderilecek.';return {text:text.slice(0,8000),score,status}}
+  catch(err){console.error(err);box.className='scan-status warn';box.textContent='Otomatik okuma tamamlanamadı. Belge manuel incelemeye gönderilecek.';return {text:'',score:0,status:'manuel_inceleme'}}
+}
+
+async function privateUpload(bucket,file,prefix){if(!file)return null;const path=`${aktifUser.id}/${prefix}-${Date.now()}-${dosyaAdiGuvenli(file.name)}`;const {error}=await supabaseClient.storage.from(bucket).upload(path,file,{upsert:false,contentType:file.type});if(error)throw error;return path}
+
+async function profesyonelBasvuruGonder(e){
+  e.preventDefault();if(!aktifUser)return;const tax=document.getElementById('proVergi').files[0];if(!tax){alert('Vergi levhası fotoğrafı zorunludur.');return}const phone=telNorm(document.getElementById('proTelefon').value);if(!/^05\d{9}$/.test(phone)){alert('Geçerli bir telefon girin.');return}const submit=document.getElementById('proSubmit');submit.disabled=true;submit.textContent='Belge kontrol ediliyor…';try{const ocr=await belgeOCR(tax);ocrCache=ocr;submit.textContent='Dosyalar güvenli alana yükleniyor…';const avatar=await avatarYukle(document.getElementById('proAvatar').files[0]);const taxPath=await privateUpload('professional-docs',tax,'vergi-levhasi');const cardPath=await privateUpload('professional-docs',document.getElementById('proKartvizit').files[0],'kartvizit');const profile={user_id:aktifUser.id,ad_soyad:document.getElementById('proAd').value.trim(),avatar_url:avatar,hesap_tipi:'profesyonel',sektor:document.getElementById('proSektor').value,isletme_adi:document.getElementById('proIsletme').value.trim(),sehir:document.getElementById('proSehir').value.trim(),ilce:document.getElementById('proIlce').value.trim()||null,ofis_adresi:document.getElementById('proAdres').value.trim(),bio:document.getElementById('proBio').value.trim(),verification_status:'pending',updated_at:new Date().toISOString()};const {error:pErr}=await supabaseClient.from('PROFILLER').upsert(profile,{onConflict:'user_id'});if(pErr)throw pErr;const {data:basvuru,error:aErr}=await supabaseClient.from('PROFESYONEL_BASVURULAR').upsert({user_id:aktifUser.id,sektor:profile.sektor,vergi_levhasi_path:taxPath,kartvizit_path:cardPath,ocr_text:ocr.text,ocr_score:ocr.score,ocr_status:ocr.status,status:'pending',submitted_at:new Date().toISOString()},{onConflict:'user_id'}).select('id').single();if(aErr)throw aErr;submit.textContent='Yapay zekâ belgeyi inceliyor…';const {error:aiErr}=await supabaseClient.functions.invoke('vergi-levhasi-incele',{body:{basvuru_id:basvuru.id}});if(aiErr){console.error('AI inceleme başlatılamadı:',aiErr)}await supabaseClient.from('KULLANICI_ILETISIM').upsert({user_id:aktifUser.id,telefon:phone,email:aktifUser.email||null,updated_at:new Date().toISOString()},{onConflict:'user_id'});aktifProfil=await profilGetir(aktifUser.id);kullaniciArayuzunuGuncelle(aktifUser);document.getElementById('proStatus').innerHTML='<div class="status-panel"><span class="pending-pill">⏳ Başvurunuz alındı</span><p style="margin:10px 0 0;color:#475569">Vergi levhanız ve işletme bilgileriniz kontrol ediliyor. Hedef inceleme süremiz yaklaşık 1 saattir. Onaydan sonra taleplerin detaylarını görebilir ve karşılık verebilirsiniz.</p></div>';document.getElementById('proForm').style.display='none';toast('Profesyonel başvuru alındı.')}catch(err){console.error(err);alert('Başvuru kaydedilemedi: '+err.message)}finally{submit.disabled=false;submit.textContent='Başvuruyu Gönder • Ücretsiz'}}
+
+async function talepIletisimKaydet(){const u=await aktifKullaniciyiAl();if(!u)return;const phone=telNorm(deger('telefon'));const name=deger('adSoyad');await supabaseClient.from('KULLANICI_ILETISIM').upsert({user_id:u.id,telefon:phone,email:u.email||null,updated_at:new Date().toISOString()},{onConflict:'user_id'});const p=await profilGetir(u.id);if(!p||!p.ad_soyad)await supabaseClient.from('PROFILLER').upsert({user_id:u.id,ad_soyad:name,avatar_url:u.user_metadata?.avatar_url||u.user_metadata?.picture||null,hesap_tipi:'alici',verification_status:p?.verification_status||'none',updated_at:new Date().toISOString()},{onConflict:'user_id'})}
+const _talepYayinla=window.talepYayinla;window.talepYayinla=async function(e){e.preventDefault();if(!adSoyadGecerli()||!telefonGecerli())return;const u=await aktifKullaniciyiAl();if(!u){await googleIleGiris();return}await talepIletisimKaydet();return _talepYayinla(e)};
+
+function kilitliKart(row){const card=document.createElement('article');card.className='talep-card locked'+(row.kategori==='Araç'?' arac':'');card.innerHTML=`<div class="talep-top"><div><h3>${row.kategori==='Araç'?'🚗':row.baslik?.toLocaleLowerCase('tr-TR').includes('daire')?'🏢':'🌳'} ${escapeHTML(row.baslik||'Talep')}</h3></div><span class="tag">${formatDate(row.created_at)||'Aktif'}</span></div><div class="locked-box">🔒 Bütçe, konum, açıklama ve talep kriterleri doğrulanmış profesyonel hesaplara özeldir.</div>`;const b=document.createElement('button');b.className='lock-cta';b.textContent='Ücretsiz Profesyonel Hesap Oluştur →';b.onclick=profesyonelAkis;card.appendChild(b);return card}
+function acikKart(row,owner=false){const card=document.createElement('article');card.className='talep-card'+(row.kategori==='Araç'?' arac':'');const top=document.createElement('div');top.className='talep-top';const text=document.createElement('div');text.innerHTML=`<h3>${talepIkon(row)} ${escapeHTML(row.baslik||'Talep')}</h3><p>${escapeHTML(row.aciklama||'Talep detayları profesyoneller için açıldı.')}</p>`;const right=document.createElement('div');right.innerHTML=owner?'<span class="owner-pill">Kendi talebiniz</span>':`<span class="tag">${escapeHTML(formatDate(row.created_at)||'Aktif')}</span>`;top.append(text,right);card.append(top);const tags=document.createElement('div');tags.className='talep-tags';const loc=document.createElement('span');loc.className='tag';loc.textContent=`📍 ${row.sehir||'Türkiye'}${row.ilce?' / '+row.ilce:' geneli'}`;tags.append(loc);if(row.butce){const b=document.createElement('span');b.className='tag';b.textContent='💰 '+row.butce;tags.append(b)}const k=document.createElement('span');k.className='tag';k.textContent=(row.kategori==='Araç'?'🚘 ':'🏡 ')+(row.kategori||'');tags.append(k);card.append(tags);if(!owner){const offer=document.createElement('button');offer.className='offer-btn';offer.type='button';offer.textContent='Talebe Karşılık Ver →';offer.onclick=()=>teklifVer(String(row.id));card.append(offer)}return card}
+
+async function talepleriYukle(){
+  const box=document.getElementById('talepListesi');const note=document.getElementById('talepAccessNote');box.innerHTML='<div class="empty-state">Talepler yükleniyor...</div>';note.innerHTML='';const user=await aktifKullaniciyiAl();if(user&&!aktifProfil)aktifProfil=await profilGetir(user.id);const verified=aktifProfil?.hesap_tipi==='profesyonel'&&aktifProfil?.verification_status==='approved';
+  if(verified){const {data,error}=await supabaseClient.from('TALEPLER').select('*').eq('durum','aktif').order('created_at',{ascending:false}).limit(50);if(error){console.error(error);box.innerHTML='<div class="empty-state">Talepler yüklenemedi.</div>';return}note.innerHTML='<div class="lock-note" style="background:#ecfdf3;border-color:#bbf7d0;color:#166534">✓ Doğrulanmış profesyonel hesabınız aktif. Talep detaylarını görebilir ve karşılık verebilirsiniz.</div>';box.innerHTML='';(data||[]).forEach(r=>box.appendChild(acikKart(r,r.user_id===user.id)));if(!data?.length)box.innerHTML='<div class="empty-state">Henüz yayınlanmış talep yok.</div>';return}
+  const {data:vitrin,error:vErr}=await supabaseClient.rpc('vitrin_talepleri');if(vErr){console.error(vErr);box.innerHTML='<div class="empty-state">Talep vitrini yüklenemedi. setup_final.sql dosyasını Supabase SQL Editor’da çalıştırın.</div>';return}
+  let own=[];if(user){const {data}=await supabaseClient.from('TALEPLER').select('*').eq('user_id',user.id).eq('durum','aktif').order('created_at',{ascending:false});own=data||[]}
+  const ownMap=new Map(own.map(x=>[String(x.id),x]));note.innerHTML='<div class="lock-note">Ziyaretçiler talep başlıklarını görebilir. Bütçe, açıklama ve diğer kriterler yalnızca doğrulanmış emlakçı/galerici hesaplarına açılır.</div>';box.innerHTML='';(vitrin||[]).forEach(v=>{const ownRow=ownMap.get(String(v.talep_id));box.appendChild(ownRow?acikKart(ownRow,true):kilitliKart(v))});if(!vitrin?.length)box.innerHTML='<div class="empty-state">Henüz gerçek bir talep yayınlanmadı. İlk talebi ücretsiz oluşturabilirsiniz.</div>'
+}
+
+function hazirCevaplar(kategori){if(kategori==='Araç')return ['Talebinize karşılık verebilirim.','Birebir aradığınız model elimde mevcut.','Aradığınıza yakın farklı bir model elimde mevcut.','Benzer özelliklerde başka bir aracım bulunmaktadır, ilgilenir misiniz?'];return ['Talebinize karşılık verebilirim.','Aradığınız portföy elimde mevcut.','Aradığınız portföye yakın bir bölgede seçeneğim mevcut.','Aradığınıza benzer bir portföyüm bulunmaktadır, ilgilenir misiniz?']}
+function modalAc(baslik,html){document.getElementById('asChatTitle').textContent=baslik;document.getElementById('asChatBody').innerHTML=html;document.getElementById('asChatModal').classList.add('acik');document.body.style.overflow='hidden'}
+window.asChatKapat=function(){document.getElementById('asChatModal').classList.remove('acik');aktifTeklif=null;clearInterval(chatTimer);if(!document.querySelector('.app-modal.open,.modal.aktif'))document.body.style.overflow=''};
+
+window.teklifVer=async function(talepId){
+  const user=await aktifKullaniciyiAl();if(!user){sessionStorage.setItem('oauthSonrasi','pro');await googleIleGiris();return}aktifProfil=await profilGetir(user.id);if(!(aktifProfil?.hesap_tipi==='profesyonel'&&aktifProfil?.verification_status==='approved')){alert('Talebe karşılık vermek için ücretsiz profesyonel hesabınızın doğrulanmış olması gerekir.');await profesyonelAkis();return}
+  const {data:talep,error}=await supabaseClient.from('TALEPLER').select('id,user_id,kategori,baslik').eq('id',talepId).single();if(error||!talep){alert('Talep alınamadı.');return}if(talep.user_id===user.id){alert('Kendi talebinize karşılık veremezsiniz.');return}const cevaplar=hazirCevaplar(talep.kategori);modalAc('Talebe Karşılık Ver',`<p style="margin-top:0;color:#667085">İlk mesajınızı seçin:</p>${cevaplar.map((m,i)=>`<button class="as-hazir" data-i="${i}">${escapeHTML(m)}</button>`).join('')}`);document.querySelectorAll('.as-hazir').forEach(b=>b.onclick=()=>teklifBaslat(String(talep.id),cevaplar[Number(b.dataset.i)]))
+};
+async function teklifBaslat(talepId,mesaj){const {data,error}=await supabaseClient.rpc('teklif_olustur',{p_talep_id:String(talepId),p_mesaj:mesaj});if(error){alert(error.message);return}await sohbetAc(data)}
+
+async function mesajListesiAc(){const user=await aktifKullaniciyiAl();if(!user){await googleIleGiris();return}const {data,error}=await supabaseClient.from('TEKLIFLER').select('*').or(`talep_sahibi_id.eq.${user.id},teklif_veren_id.eq.${user.id}`).order('created_at',{ascending:false});if(error){alert('Mesajlar yüklenemedi: '+error.message);return}if(!data?.length){modalAc('Mesajlar','<p style="color:#667085">Henüz bir konuşmanız yok.</p>');return}modalAc('Mesajlar',data.map(t=>{let d='Cevap bekleniyor';if(t.talep_sahibi_ilgilendi===true)d='İlgileniyor';if(t.talep_sahibi_onay&&t.teklif_veren_onay)d='✅ Etkileşim onaylandı';if(t.durum==='reddedildi')d='İlgilenmedi';if(t.durum==='onay_reddi')d='Etkileşim onaylanmadı';return `<div class="as-konusma" onclick="asSohbetAc('${t.id}')"><strong>${escapeHTML(t.talep_baslik||'Talep')}</strong><div style="margin-top:5px;color:#667085;font-size:13px">${escapeHTML(d)}</div></div>`}).join(''))}
+document.getElementById('asMesajBtn').onclick=mesajListesiAc;
+
+async function karsiProfilHTML(teklif,user){const other=teklif.talep_sahibi_id===user.id?teklif.teklif_veren_id:teklif.talep_sahibi_id;const p=await profilGetir(other);if(!p)return '';const av=p.avatar_url?`<img class="avatar-small" src="${escapeHTML(p.avatar_url)}">`:`<div class="avatar-small" style="display:grid;place-items:center;font-weight:900">${escapeHTML((p.ad_soyad||'K')[0])}</div>`;const title=p.hesap_tipi==='profesyonel'?(p.isletme_adi||p.ad_soyad):(p.ad_soyad||'Kullanıcı');const detail=[p.sektor,p.sehir,p.ilce].filter(Boolean).join(' • ');return `<div class="profile-summary">${av}<div><strong>${escapeHTML(title)}</strong><small>${escapeHTML(detail||'ALICISINDAN.com kullanıcısı')}</small></div><button class="report-btn" onclick="geriBildirimAc('Profil Şikayeti','${other}')">Profili Şikayet Et</button></div>`}
+window.asSohbetAc=async id=>sohbetAc(id);
+async function sohbetAc(id,sessiz=false){const user=await aktifKullaniciyiAl();if(!user)return;const {data:teklif,error}=await supabaseClient.from('TEKLIFLER').select('*').eq('id',id).single();if(error)return;const {data:mesajlar}=await supabaseClient.from('MESAJLAR').select('*').eq('teklif_id',id).order('created_at',{ascending:true});const benTalep=teklif.talep_sahibi_id===user.id;const benimOnay=benTalep?teklif.talep_sahibi_onay:teklif.teklif_veren_onay;const karsiOnay=benTalep?teklif.teklif_veren_onay:teklif.talep_sahibi_onay;let html=await karsiProfilHTML(teklif,user);(mesajlar||[]).forEach(m=>{const benim=m.gonderen_id===user.id;if(m.tip==='onay'){html+=`<div class="as-system">${benim?'✅ Etkileşime onay verdiniz.':'✅ Karşı taraf etkileşimi onayladı.'}</div>`;return}if(m.tip==='onay_red'){html+=`<div class="as-warning">${benim?'Etkileşime onay vermediniz.':'Karşı taraf etkileşime onay vermedi.'}</div>`;return}html+=`<div class="as-bubble ${benim?'benim':''}">${escapeHTML(m.mesaj)}</div>`});if(teklif.talep_sahibi_ilgilendi===null){if(benTalep)html+=`<div class="as-actions"><button class="as-ok" onclick="asIlgiCevap('${id}',true)">Evet, ilgilenirim</button><button class="as-no" onclick="asIlgiCevap('${id}',false)">İlgilenmiyorum</button></div>`;else html+='<div class="as-warning">Talep sahibinin cevabı bekleniyor.</div>'}if(teklif.talep_sahibi_ilgilendi===true&&teklif.durum!=='onay_reddi'){if(karsiOnay&&!benimOnay)html+='<div class="as-system">✅ Karşı taraf etkileşimi onayladı. Siz de onay verebilir veya vermeyebilirsiniz.</div>';if(!benimOnay)html+=`<div class="as-actions"><button class="as-ok" onclick="asEtkilesimCevap('${id}',true)">Etkileşime Onay Ver</button><button class="as-no" onclick="asEtkilesimCevap('${id}',false)">Onay Vermiyorum</button></div>`;else if(!karsiOnay)html+='<div class="as-warning">Onayınız karşı tarafa iletildi. Karşı tarafın onayı bekleniyor.</div>'}if(teklif.talep_sahibi_onay&&teklif.teklif_veren_onay){const other=benTalep?teklif.teklif_veren_id:teklif.talep_sahibi_id;const {data:c}=await supabaseClient.from('KULLANICI_ILETISIM').select('telefon,email').eq('user_id',other).maybeSingle();html+=`<div class="as-contact"><strong>✅ Etkileşim onaylandı</strong>${c?.telefon?`📞 ${escapeHTML(telFmt(c.telefon))}<br>`:''}${c?.email?`✉️ ${escapeHTML(c.email)}`:''}</div><div class="as-send"><input id="asYeniMesaj" maxlength="1000" placeholder="Mesajınızı yazın..." onkeydown="if(event.key==='Enter'){event.preventDefault();asMesajGonder('${id}')} "><button onclick="asMesajGonder('${id}')">Gönder</button></div>`}if(!sessiz)modalAc(teklif.talep_baslik||'Konuşma',html);else document.getElementById('asChatBody').innerHTML=html;aktifTeklif=id;clearInterval(chatTimer);chatTimer=setInterval(()=>{if(aktifTeklif)sohbetAc(aktifTeklif,true)},5000)}
+window.asIlgiCevap=async(id,v)=>{const {error}=await supabaseClient.rpc('ilgi_cevabi',{p_teklif_id:id,p_ilgileniyorum:v});if(error)alert(error.message);else sohbetAc(id)};
+window.asEtkilesimCevap=async(id,v)=>{const {error}=await supabaseClient.rpc('etkilesim_cevabi',{p_teklif_id:id,p_onay:v});if(error)alert(error.message);else sohbetAc(id)};
+window.asMesajGonder=async id=>{const i=document.getElementById('asYeniMesaj');const m=i?.value.trim();if(!m)return;i.value='';const {error}=await supabaseClient.rpc('mesaj_gonder',{p_teklif_id:id,p_mesaj:m});if(error)alert(error.message);else sohbetAc(id)};
+document.getElementById('asChatModal').addEventListener('click',e=>{if(e.target.id==='asChatModal')asChatKapat()});
+
+function geriBildirimAc(type='Soru',target=''){document.getElementById('feedbackTarget').value=target||'';document.getElementById('feedbackType').value=type.includes('Profil')?'Profil Şikayeti':type.includes('Öneri')?'Öneri':type.includes('Şikayet')?'Şikayet':'Soru';document.getElementById('feedbackSubject').value=type;document.getElementById('feedbackMessage').value='';document.getElementById('feedbackEmail').value=aktifUser?.email||'';appModalAc('feedbackModal')}
+async function geriBildirimGonder(e){e.preventDefault();const tur=document.getElementById('feedbackType').value,konu=document.getElementById('feedbackSubject').value.trim(),mesaj=document.getElementById('feedbackMessage').value.trim(),email=document.getElementById('feedbackEmail').value.trim(),target=document.getElementById('feedbackTarget').value||null;const {error}=await supabaseClient.from('GERI_BILDIRIMLER').insert({user_id:aktifUser?.id||null,tur,konu,mesaj,gonderen_email:email||null,hedef_user_id:target||null});if(error){alert('Mesaj kaydedilemedi: '+error.message);return}appModalKapat('feedbackModal');toast('Mesajınız kaydedildi. Teşekkür ederiz.');const subject=encodeURIComponent(`[ALICISINDAN] ${tur}: ${konu}`);const body=encodeURIComponent(`${mesaj}\n\nGönderen: ${email||'Belirtilmedi'}${target?`\nŞikayet edilen profil: ${target}`:''}`);setTimeout(()=>window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(FOUNDER_EMAILS[0])}&cc=${encodeURIComponent(FOUNDER_EMAILS[1])}&su=${subject}&body=${body}`,'_blank'),350)}
+
+// Close app modals on Escape
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.app-modal.open').forEach(x=>x.classList.remove('open'));if(document.getElementById('asChatModal').classList.contains('acik'))asChatKapat()}});
+
+(async function finalInit(){await illeriYukle();await authBaslat();await talepleriYukle();paraAlanlariniHazirla()})();
+
 </script>
 </body>
 </html>
