@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICISINDAN.com</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .search-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .search-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 70%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 15px 25px;
+            margin-left: 8px;
+            border: none;
+            border-radius: 8px;
+            background: #111;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+            display: none;
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ALICISINDAN.com</h1>
+        <p>Aradığını yaz, sana uygun teklifler gelsin.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="search-box">
+
+            <h2>Ne arıyorsun?</h2>
+
+            <p>
+                İhtiyacını yaz, sana uygun teklifleri bulalım.
+            </p>
+
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Örn: İstanbul'da 3+1 ev"
+            >
+
+            <button onclick="search()">Ara</button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function search() {
+
+            const input = document.getElementById("searchInput").value;
+            const result = document.getElementById("result");
+
+            if (input.trim() === "") {
+
+                result.style.display = "block";
+                result.innerHTML = "Lütfen ne aradığını yaz.";
+
+                return;
+            }
+
+            result.style.display = "block";
+
+            result.innerHTML = `
+                <strong>Aradığın:</strong><br><br>
+                ${input}
+                <br><br>
+                Şimdilik burada uygun teklifleri göstereceğiz.
+            `;
+        }
+
+    </script>
+
+</body>
+</html> 
