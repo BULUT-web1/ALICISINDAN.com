@@ -1,152 +1,2209 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALICISINDAN.com</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>ALICISINDAN.com</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+<style>
 
-        header {
-            background: #111;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header h1 {
-            font-size: 32px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header p {
-            margin-top: 8px;
-            color: #ccc;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(37,99,235,.08), transparent 25%),
+        radial-gradient(circle at 85% 10%, rgba(255,196,0,.12), transparent 25%),
+        #f6f8fc;
+    color: #111827;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
 
-        .search-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+/* HEADER */
 
-        .search-box h2 {
-            margin-bottom: 15px;
-        }
+header {
+    background: rgba(11,18,32,.97);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 6px 30px rgba(0,0,0,.14);
+}
 
-        .search-box p {
-            color: #666;
-            margin-bottom: 25px;
-        }
+.header-inner {
+    max-width: 1180px;
+    margin: auto;
+    min-height: 82px;
+    padding: 0 24px;
 
-        input {
-            width: 70%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        button {
-            padding: 15px 25px;
-            margin-left: 8px;
-            border: none;
-            border-radius: 8px;
-            background: #111;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: white;
+}
 
-        button:hover {
-            background: #333;
-        }
+.logo span {
+    color: #ffc400;
+}
 
-        #result {
-            margin-top: 25px;
-            padding: 20px;
-            display: none;
-            background: #f0f0f0;
-            border-radius: 10px;
-        }
-    </style>
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.talepleri-gor {
+    color: #d7deea;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 13px 18px;
+}
+
+.talep-btn {
+    border: 0;
+    background: linear-gradient(135deg, #ffd000, #ffb800);
+    color: #101828;
+
+    padding: 15px 22px;
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(255,196,0,.25);
+    transition: .2s;
+}
+
+.talep-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1180px;
+    margin: auto;
+    padding: 85px 24px 70px;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    background: #e8f0ff;
+    color: #1557c0;
+
+    padding: 9px 14px;
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: .98;
+    margin: 0;
+
+    letter-spacing: -3px;
+    max-width: 760px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 690px;
+
+    margin: 25px 0 30px;
+
+    color: #5d6676;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primary {
+    border: none;
+    border-radius: 13px;
+
+    padding: 17px 25px;
+
+    background: #101828;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.secondary {
+    border: 1px solid #d9deea;
+    border-radius: 13px;
+
+    padding: 17px 25px;
+
+    background: white;
+    color: #111827;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* HERO SIDE CARD */
+
+.hero-card {
+    background: #101828;
+    color: white;
+
+    border-radius: 28px;
+    padding: 30px;
+
+    box-shadow: 0 25px 70px rgba(16,24,40,.22);
+
+    transform: rotate(1.5deg);
+}
+
+.hero-card-label {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-card h3 {
+    font-size: 25px;
+    margin: 18px 0 12px;
+}
+
+.hero-card p {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin: 0 0 22px;
+}
+
+.fake-tag {
+    display: inline-block;
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    padding: 9px 11px;
+    border-radius: 9px;
+
+    margin: 5px 4px 0 0;
+
+    font-size: 13px;
+}
+
+.offer-count {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffc400;
+    color: #101828;
+
+    padding: 14px;
+    border-radius: 12px;
+
+    font-weight: 900;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 15px 24px 80px;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 25px;
+}
+
+.section-top h2 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.section-top p {
+    margin: 7px 0 0;
+    color: #667085;
+}
+
+.live {
+    background: #e8fff0;
+    color: #087a3c;
+
+    padding: 9px 13px;
+    border-radius: 30px;
+
+    font-weight: 800;
+    font-size: 13px;
+}
+
+/* TALEPLER */
+
+#talepListesi {
+    display: grid;
+    gap: 17px;
+}
+
+.talep {
+    position: relative;
+
+    background: rgba(255,255,255,.94);
+
+    border: 1px solid #e8ebf2;
+    border-radius: 20px;
+
+    padding: 26px 28px;
+
+    box-shadow: 0 8px 30px rgba(16,24,40,.06);
+
+    overflow: hidden;
+
+    transition: .2s;
+}
+
+.talep:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(16,24,40,.10);
+}
+
+.talep::before {
+    content: "";
+    width: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    background: #2563eb;
+}
+
+.talep.arac::before {
+    background: #ffc400;
+}
+
+.talep-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.talep h3 {
+    font-size: 21px;
+    margin: 0 0 9px;
+}
+
+.talep-aciklama {
+    color: #5e6878;
+    line-height: 1.65;
+    margin: 0 0 18px;
+}
+
+.yeni {
+    background: #ecfdf3;
+    color: #067647;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    padding: 7px 10px;
+    border-radius: 30px;
+
+    height: fit-content;
+}
+
+.etiketler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.etiket {
+    background: #f2f4f7;
+    border: 1px solid #e4e7ec;
+
+    padding: 9px 12px;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.teklif {
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 19px;
+
+    background: #101828;
+    color: white;
+
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(5,12,25,.72);
+    backdrop-filter: blur(7px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 200;
+}
+
+.modal.aktif {
+    display: flex;
+}
+
+.modal-card {
+    width: min(850px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 26px;
+
+    box-shadow: 0 30px 100px rgba(0,0,0,.35);
+
+    animation: acilis .22s ease;
+}
+
+@keyframes acilis {
+    from {
+        opacity: 0;
+        transform: scale(.96) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 28px 32px 23px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 29px;
+    letter-spacing: -1px;
+}
+
+.modal-header p {
+    margin: 7px 0 0;
+    color: #667085;
+}
+
+.kapat {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f2f4f7;
+
+    font-size: 21px;
+
+    cursor: pointer;
+}
+
+.form-body {
+    padding: 28px 32px 32px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 14px;
+    font-weight: 900;
+    color: #344054;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+
+    border: 1px solid #d8dde7;
+
+    background: #fbfcfe;
+
+    border-radius: 12px;
+
+    padding: 15px 16px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: .15s;
+}
+
+.field textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow: 0 0 0 4px rgba(37,99,235,.10);
+}
+
+.field small {
+    color: #7c8798;
+}
+
+.form-note {
+    margin-top: 22px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: #f0f6ff;
+    color: #345275;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.publish {
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 13px;
+
+    padding: 17px;
+
+    background: linear-gradient(135deg, #2563eb, #1454d9);
+    color: white;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 25px rgba(37,99,235,.20);
+}
+
+.publish:hover {
+    filter: brightness(.96);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .header-inner {
+        min-height: 70px;
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .talepleri-gor {
+        display: none;
+    }
+
+    .talep-btn {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 20px 45px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+        letter-spacing: -2px;
+    }
+
+    .hero-card {
+        display: none;
+    }
+
+    .container {
+        padding: 10px 16px 60px;
+    }
+
+    .section-top {
+        align-items: start;
+        gap: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .modal {
+        padding: 10px;
+        align-items: end;
+    }
+
+    .modal-card {
+        border-radius: 24px 24px 12px 12px;
+        max-height: 94vh;
+    }
+
+    .modal-header,
+    .form-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
 
-    <header>
-        <h1>ALICISINDAN.com</h1>
-        <p>Aradığını yaz, sana uygun teklifler gelsin.</p>
-    </header>
+<header>
+    <div class="header-inner">
 
-    <div class="container">
+        <div class="logo">
+            ALICISINDAN<span>.com</span>
+        </div>
 
-        <div class="search-box">
+        <div class="header-actions">
+<button class="talep-btn" onclick="googleIleGiris()">Google ile Giriş</button>
+            <a href="#talepler" class="talepleri-gor">
+                Talepleri Gör
+            </a>
 
-            <h2>Ne arıyorsun?</h2>
-
-            <p>
-                İhtiyacını yaz, sana uygun teklifleri bulalım.
-            </p>
-
-            <input 
-                type="text" 
-                id="searchInput" 
-                placeholder="Örn: İstanbul'da 3+1 ev"
+            <button
+                class="talep-btn"
+                onclick="talepFormunuAc()"
             >
+                + Talep Oluştur
+            </button>
 
-            <button onclick="search()">Ara</button>
+        </div>
 
-            <div id="result"></div>
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div>
+
+        <div class="badge">
+            ⚡ Alıcı talebini yayınlar, satıcı teklif verir
+        </div>
+
+        <h1>
+            Aradığını bulmak için
+            <span>ilan arama.</span><br>
+            Aradığını ilan et.
+        </h1>
+
+        <p>
+            Ev, arsa veya araç aradığını bize söyle.
+            Talebin profesyonellerin önüne düşsün,
+            uygun ürünü olanlar sana teklif versin.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary"
+                onclick="talepFormunuAc()"
+            >
+                Talebimi Oluştur →
+            </button>
+
+            <a
+                class="secondary"
+                href="#talepler"
+            >
+                Aktif Talepleri Gör
+            </a>
 
         </div>
 
     </div>
 
-    <script>
 
-        function search() {
+    <div class="hero-card">
 
-            const input = document.getElementById("searchInput").value;
-            const result = document.getElementById("result");
+        <div class="hero-card-label">
+            Örnek aktif talep
+        </div>
 
-            if (input.trim() === "") {
+        <h3>
+            🚗 Audi A3 aranıyor
+        </h3>
 
-                result.style.display = "block";
-                result.innerHTML = "Lütfen ne aradığını yaz.";
+        <p>
+            2020 ve üzeri, ağır hasarsız,
+            düşük kilometre araç arıyorum.
+        </p>
 
-                return;
+        <span class="fake-tag">
+            📍 İstanbul
+        </span>
+
+        <span class="fake-tag">
+            💰 1.500.000 TL
+        </span>
+
+        <span class="fake-tag">
+            🚘 150.000 km altı
+        </span>
+
+        <div class="offer-count">
+            <span>Aktif talep</span>
+            <span>7 teklif →</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<main
+    class="container"
+    id="talepler"
+>
+
+    <div class="section-top">
+
+        <div>
+            <h2>Son Talepler</h2>
+            <p>
+                İnsanların şu anda ne aradığını keşfet.
+            </p>
+        </div>
+
+        <span class="live">
+            ● Canlı Talepler
+        </span>
+
+    </div>
+
+
+    <div id="talepListesi">
+
+        <article class="talep">
+
+            <div class="talep-top">
+
+                <div>
+                    <h3>
+                        🏡 Arnavutköy'de arsa aranıyor
+                    </h3>
+
+                    <p class="talep-aciklama">
+                        Yatırım amaçlı, gelişime açık bölgede
+                        uygun bir arsa arıyorum.
+                    </p>
+                </div>
+
+                <span class="yeni">
+                    YENİ
+                </span>
+
+            </div>
+
+            <div class="etiketler">
+
+                <span class="etiket">
+                    📍 İstanbul / Arnavutköy
+                </span>
+
+                <span class="etiket">
+                    💰 3.500.000 TL'ye kadar
+                </span>
+
+                <span class="etiket">
+                    🏡 Emlak
+                </span>
+
+            </div>
+
+            <button
+                class="teklif"
+                onclick="teklifVer()"
+            >
+                Uygun yerim var → Teklif Ver
+            </button>
+
+        </article>
+
+
+        <article class="talep arac">
+
+            <div class="talep-top">
+
+                <div>
+                    <h3>
+                        🚗 Audi A3 aranıyor
+                    </h3>
+
+                    <p class="talep-aciklama">
+                        2020 ve üzeri, ağır hasar kaydı olmayan,
+                        temiz araç arıyorum.
+                    </p>
+                </div>
+
+                <span class="yeni">
+                    AKTİF
+                </span>
+
+            </div>
+
+            <div class="etiketler">
+
+                <span class="etiket">
+                    📍 İstanbul
+                </span>
+
+                <span class="etiket">
+                    💰 1.500.000 TL'ye kadar
+                </span>
+
+                <span class="etiket">
+                    🚘 Araç
+                </span>
+
+            </div>
+
+            <button
+                class="teklif"
+                onclick="teklifVer()"
+            >
+                Uygun aracım var → Teklif Ver
+            </button>
+
+        </article>
+
+
+        <article class="talep">
+
+            <div class="talep-top">
+
+                <div>
+                    <h3>
+                        🏢 Başakşehir'de kiralık işyeri aranıyor
+                    </h3>
+
+                    <p class="talep-aciklama">
+                        Cadde üzerinde veya yoğun yaya trafiği
+                        bulunan bölgede işyeri arıyorum.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="etiketler">
+
+                <span class="etiket">
+                    📍 İstanbul / Başakşehir
+                </span>
+
+                <span class="etiket">
+                    💰 40.000 TL / ay
+                </span>
+
+                <span class="etiket">
+                    🏢 Emlak
+                </span>
+
+            </div>
+
+            <button
+                class="teklif"
+                onclick="teklifVer()"
+            >
+                Uygun yerim var → Teklif Ver
+            </button>
+
+        </article>
+
+    </div>
+
+</main>
+
+
+<!-- TALEP OLUŞTUR PENCERESİ -->
+
+<div
+    class="modal"
+    id="talepModal"
+    onclick="arkaPlanKontrol(event)"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Talebini Oluştur
+                </h2>
+
+                <p>
+                    Ne aradığını anlat, uygun satıcılar seni bulsun.
+                </p>
+
+            </div>
+
+            <button
+                class="kapat"
+                onclick="talepFormunuKapat()"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            class="form-body"
+            id="talepForm"
+            onsubmit="talepYayinla(event)"
+        >
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label>
+                        Kategori *
+                    </label>
+
+                    <select
+                        id="kategori"
+                        required
+                    >
+                        <option value="">
+                            Kategori seç
+                        </option>
+
+                        <option value="Emlak">
+                            🏡 Emlak
+                        </option>
+
+                        <option value="Araç">
+                            🚗 Araç
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Ne arıyorsun? *
+                    </label>
+
+                    <input
+                        id="baslik"
+                        type="text"
+                        required
+                        placeholder="Örn: Yatırımlık arsa / Audi A3"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        İl *
+                    </label>
+
+                    <select
+                        id="il"
+                        required
+                        onchange="ilceleriYukle()"
+                    >
+
+                        <option value="">
+                            İller yükleniyor...
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        İlçe
+                    </label>
+
+                    <select
+                        id="ilce"
+                        disabled
+                    >
+
+                        <option value="">
+                            Önce il seç
+                        </option>
+
+                    </select>
+
+                    <small>
+                        İlçe seçmek zorunlu değil.
+                        İl geneli olarak da yayınlayabilirsin.
+                    </small>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Bütçe
+                    </label>
+
+                    <input
+                        id="butce"
+                        type="text"
+                        placeholder="Örn: 3.500.000 TL'ye kadar"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Ad Soyad *
+                    </label>
+
+                    <input
+                        id="adSoyad"
+                        type="text"
+                        required
+                        placeholder="Adın ve soyadın"
+                    >
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>
+                        Telefon *
+                    </label>
+
+                    <input
+                        id="telefon"
+                        type="tel"
+                        required
+                        placeholder="05xx xxx xx xx"
+                    >
+
+                    <small>
+                        Telefon numaran ilan ekranında
+                        herkese açık gösterilmeyecek.
+                    </small>
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>
+                        Aradığını detaylandır
+                    </label>
+
+                    <textarea
+                        id="aciklama"
+                        placeholder="Örn: Arnavutköy'de yatırım amaçlı, yola yakın, gelişime açık bölgede arsa arıyorum..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-note">
+                🔒 İlk prototipte talebin bu sayfaya eklenecek.
+                Daha sonra hesap sistemi, telefon doğrulama,
+                veritabanı ve profesyonel teklif sistemi ekleyeceğiz.
+            </div>
+
+
+            <button
+                class="publish"
+                type="submit"
+            >
+                Talebimi Yayınla →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const API = "https://api.turkiyeapi.dev/v2";
+
+
+function talepFormunuAc() {
+
+    document
+        .getElementById("talepModal")
+        .classList.add("aktif");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function talepFormunuKapat() {
+
+    document
+        .getElementById("talepModal")
+        .classList.remove("aktif");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function arkaPlanKontrol(event) {
+
+    if (event.target.id === "talepModal") {
+        talepFormunuKapat();
+    }
+
+}
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        talepFormunuKapat();
+    }
+
+});
+
+
+async function illeriYukle() {
+
+    const ilSelect =
+        document.getElementById("il");
+
+    try {
+
+        const response =
+            await fetch(
+                `${API}/provinces?fields=id,name&sort=name&limit=100`
+            );
+
+        const sonuc =
+            await response.json();
+
+        ilSelect.innerHTML =
+            `<option value="">İl seç</option>`;
+
+        sonuc.data.forEach(il => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = il.id;
+            option.textContent = il.name;
+
+            ilSelect.appendChild(option);
+
+        });
+
+    }
+
+    catch (error) {
+
+        ilSelect.innerHTML =
+            `<option value="">İller yüklenemedi</option>`;
+
+        console.error(
+            "İl listesi yüklenemedi:",
+            error
+        );
+
+    }
+
+}
+
+
+async function ilceleriYukle() {
+
+    const ilSelect =
+        document.getElementById("il");
+
+    const ilceSelect =
+        document.getElementById("ilce");
+
+    const ilId =
+        ilSelect.value;
+
+    if (!ilId) {
+
+        ilceSelect.disabled = true;
+
+        ilceSelect.innerHTML =
+            `<option value="">Önce il seç</option>`;
+
+        return;
+
+    }
+
+
+    ilceSelect.disabled = true;
+
+    ilceSelect.innerHTML =
+        `<option value="">İlçeler yükleniyor...</option>`;
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API}/districts?provinceId=${ilId}&fields=id,name&sort=name&limit=1000`
+            );
+
+        const sonuc =
+            await response.json();
+
+
+        ilceSelect.innerHTML =
+            `<option value="">İl geneli — İlçe seçmek istemiyorum</option>`;
+
+
+        sonuc.data.forEach(ilce => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = ilce.name;
+            option.textContent = ilce.name;
+
+            ilceSelect.appendChild(option);
+
+        });
+
+
+        ilceSelect.disabled = false;
+
+    }
+
+    catch (error) {
+
+        ilceSelect.innerHTML =
+            `<option value="">İlçeler yüklenemedi</option>`;
+
+        console.error(
+            "İlçe listesi yüklenemedi:",
+            error
+        );
+
+    }
+
+}
+
+
+function talepYayinla(event) {
+
+    event.preventDefault();
+
+
+    const kategori =
+        document.getElementById("kategori").value;
+
+    const baslik =
+        document.getElementById("baslik").value.trim();
+
+    const ilSelect =
+        document.getElementById("il");
+
+    const il =
+        ilSelect.options[
+            ilSelect.selectedIndex
+        ].text;
+
+    const ilce =
+        document.getElementById("ilce").value;
+
+    const butce =
+        document.getElementById("butce").value.trim();
+
+    const aciklama =
+        document.getElementById("aciklama").value.trim();
+
+
+    const kart =
+        document.createElement("article");
+
+
+    kart.className =
+        kategori === "Araç"
+        ? "talep arac"
+        : "talep";
+
+
+    const top =
+        document.createElement("div");
+
+    top.className = "talep-top";
+
+
+    const bilgi =
+        document.createElement("div");
+
+
+    const h3 =
+        document.createElement("h3");
+
+
+    h3.textContent =
+        `${kategori === "Araç" ? "🚗" : "🏡"} ${baslik}`;
+
+
+    const p =
+        document.createElement("p");
+
+    p.className =
+        "talep-aciklama";
+
+    p.textContent =
+        aciklama ||
+        "Yeni bir alıcı talebi oluşturuldu.";
+
+
+    bilgi.appendChild(h3);
+    bilgi.appendChild(p);
+
+
+    const yeni =
+        document.createElement("span");
+
+    yeni.className =
+        "yeni";
+
+    yeni.textContent =
+        "YENİ";
+
+
+    top.appendChild(bilgi);
+    top.appendChild(yeni);
+
+
+    const etiketler =
+        document.createElement("div");
+
+    etiketler.className =
+        "etiketler";
+
+
+    const konum =
+        document.createElement("span");
+
+    konum.className =
+        "etiket";
+
+    konum.textContent =
+        `📍 ${il}${ilce ? " / " + ilce : " geneli"}`;
+
+
+    etiketler.appendChild(konum);
+
+
+    if (butce) {
+
+        const butceEtiketi =
+            document.createElement("span");
+
+        butceEtiketi.className =
+            "etiket";
+
+        butceEtiketi.textContent =
+            `💰 ${butce}`;
+
+        etiketler.appendChild(
+            butceEtiketi
+        );
+
+    }
+
+
+    const kategoriEtiketi =
+        document.createElement("span");
+
+    kategoriEtiketi.className =
+        "etiket";
+
+    kategoriEtiketi.textContent =
+        `${kategori === "Araç" ? "🚘" : "🏡"} ${kategori}`;
+
+
+    etiketler.appendChild(
+        kategoriEtiketi
+    );
+
+
+    const teklif =
+        document.createElement("button");
+
+    teklif.className =
+        "teklif";
+
+    teklif.textContent =
+        kategori === "Araç"
+        ? "Uygun aracım var → Teklif Ver"
+        : "Uygun yerim var → Teklif Ver";
+
+    teklif.onclick =
+        teklifVer;
+
+
+    kart.appendChild(top);
+    kart.appendChild(etiketler);
+    kart.appendChild(teklif);
+
+
+    document
+        .getElementById("talepListesi")
+        .prepend(kart);
+
+
+    document
+        .getElementById("talepForm")
+        .reset();
+
+
+    document
+        .getElementById("ilce")
+        .innerHTML =
+        `<option value="">Önce il seç</option>`;
+
+
+    document
+        .getElementById("ilce")
+        .disabled = true;
+
+
+    talepFormunuKapat();
+
+
+    document
+        .getElementById("talepler")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function teklifVer() {
+
+    alert(
+        "Teklif sistemi bir sonraki aşamada profesyonel hesaplara bağlanacak."
+    );
+
+}
+
+
+illeriYukle();
+
+</script>
+<script>
+const supabaseClient = supabase.createClient(
+  "https://cfolesyiywnxvvwajhlo.supabase.co",
+ "sb_publishable_VQ4AV6OZKt6KtUyhIj0Y6A_931yCzZB"
+);
+
+async function googleIleGiris() {
+  await supabaseClient.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: window.location.origin
+    }
+  });
+}/* =========================================
+   ALICISINDAN.COM - GERÇEK KULLANICI OTURUMU
+   ========================================= */
+
+const eskiTalepFormunuAc = window.talepFormunuAc;
+const eskiTeklifVer = window.teklifVer;
+const eskiTalepYayinla = window.talepYayinla;
+
+
+/* GOOGLE GİRİŞİNİ GÜNCELLİYORUZ */
+
+window.googleIleGiris = async function () {
+
+    const { error } =
+        await supabaseClient.auth.signInWithOAuth({
+
+            provider: "google",
+
+            options: {
+                redirectTo: window.location.origin + "/"
             }
 
-            result.style.display = "block";
+        });
 
-            result.innerHTML = `
-                <strong>Aradığın:</strong><br><br>
-                ${input}
-                <br><br>
-                Şimdilik burada uygun teklifleri göstereceğiz.
-            `;
+    if (error) {
+        alert(
+            "Google ile giriş başlatılamadı: " +
+            error.message
+        );
+    }
+};
+
+
+/* ÇIKIŞ */
+
+window.cikisYap = async function () {
+
+    await supabaseClient.auth.signOut();
+
+    kullaniciArayuzunuGuncelle(null);
+
+};
+
+
+/* AKTİF KULLANICIYI AL */
+
+async function aktifKullaniciyiAl() {
+
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
+
+    return user;
+
+}
+
+
+/* HEADER'A KULLANICI ALANI EKLE */
+
+function authAlaniniHazirla() {
+
+    const header =
+        document.querySelector(".header-actions");
+
+    if (!header) return;
+
+
+    /* Daha önce elle koyduğumuz Google butonunu kaldır */
+
+    const eskiGoogleButon =
+        document.querySelector(
+            'button[onclick="googleIleGiris()"]'
+        );
+
+    if (eskiGoogleButon) {
+        eskiGoogleButon.remove();
+    }
+
+
+    if (document.getElementById("authArea")) {
+        return;
+    }
+
+
+    const alan =
+        document.createElement("div");
+
+    alan.id = "authArea";
+    alan.className = "auth-area";
+
+    header.insertBefore(
+        alan,
+        header.firstChild
+    );
+
+}
+
+
+/* GİRİŞ YAPMIŞ KULLANICIYI EKRANDA GÖSTER */
+
+function kullaniciArayuzunuGuncelle(user) {
+
+    const alan =
+        document.getElementById("authArea");
+
+    if (!alan) return;
+
+    alan.replaceChildren();
+
+
+    /* GİRİŞ YAPILMAMIŞ */
+
+    if (!user) {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "google-login-btn";
+
+        button.type =
+            "button";
+
+        button.onclick =
+            googleIleGiris;
+
+
+        const google =
+            document.createElement("span");
+
+        google.className =
+            "google-logo";
+
+        google.textContent =
+            "G";
+
+
+        const yazi =
+            document.createElement("span");
+
+        yazi.textContent =
+            "Google ile Giriş";
+
+
+        button.appendChild(google);
+        button.appendChild(yazi);
+
+        alan.appendChild(button);
+
+        return;
+    }
+
+
+    /* GİRİŞ YAPILMIŞ */
+
+    const bilgiler =
+        user.user_metadata || {};
+
+
+    const isim =
+        bilgiler.full_name ||
+        bilgiler.name ||
+        user.email?.split("@")[0] ||
+        "Kullanıcı";
+
+
+    const fotograf =
+        bilgiler.avatar_url ||
+        bilgiler.picture ||
+        "";
+
+
+    const panel =
+        document.createElement("div");
+
+    panel.className =
+        "user-panel";
+
+
+    /* PROFİL FOTOĞRAFI */
+
+    if (fotograf) {
+
+        const img =
+            document.createElement("img");
+
+        img.src =
+            fotograf;
+
+        img.alt =
+            isim;
+
+        img.className =
+            "user-avatar";
+
+        panel.appendChild(img);
+
+    } else {
+
+        const avatar =
+            document.createElement("div");
+
+        avatar.className =
+            "user-avatar user-avatar-text";
+
+        avatar.textContent =
+            isim.charAt(0).toUpperCase();
+
+        panel.appendChild(avatar);
+
+    }
+
+
+    /* İSİM / MAIL */
+
+    const meta =
+        document.createElement("div");
+
+    meta.className =
+        "user-meta";
+
+
+    const ad =
+        document.createElement("strong");
+
+    ad.textContent =
+        "Hoş geldin, " + isim;
+
+
+    const email =
+        document.createElement("span");
+
+    email.textContent =
+        user.email || "";
+
+
+    meta.appendChild(ad);
+    meta.appendChild(email);
+
+
+    /* ÇIKIŞ */
+
+    const cikis =
+        document.createElement("button");
+
+    cikis.className =
+        "logout-btn";
+
+    cikis.type =
+        "button";
+
+    cikis.textContent =
+        "Çıkış";
+
+    cikis.onclick =
+        cikisYap;
+
+
+    panel.appendChild(meta);
+    panel.appendChild(cikis);
+
+    alan.appendChild(panel);
+
+}
+
+
+/* GİRİŞ YAPMADAN TALEP AÇILMASIN */
+
+window.talepFormunuAc =
+async function () {
+
+    const user =
+        await aktifKullaniciyiAl();
+
+    if (!user) {
+
+        sessionStorage.setItem(
+            "oauthSonrasi",
+            "talep"
+        );
+
+        await googleIleGiris();
+
+        return;
+    }
+
+
+    if (
+        typeof eskiTalepFormunuAc ===
+        "function"
+    ) {
+
+        eskiTalepFormunuAc();
+
+    }
+
+};
+
+
+/* GİRİŞ YAPMADAN TEKLİF VERİLMESİN */
+
+window.teklifVer =
+async function () {
+
+    const user =
+        await aktifKullaniciyiAl();
+
+    if (!user) {
+
+        sessionStorage.setItem(
+            "oauthSonrasi",
+            "teklif"
+        );
+
+        await googleIleGiris();
+
+        return;
+    }
+
+
+    if (
+        typeof eskiTeklifVer ===
+        "function"
+    ) {
+
+        eskiTeklifVer();
+
+    }
+
+};
+
+
+/* TALEP YAYINLARKEN DE KULLANICI KONTROLÜ */
+
+if (
+    typeof eskiTalepYayinla ===
+    "function"
+) {
+
+    window.talepYayinla =
+    async function (event) {
+
+        const user =
+            await aktifKullaniciyiAl();
+
+        if (!user) {
+
+            event.preventDefault();
+
+            sessionStorage.setItem(
+                "oauthSonrasi",
+                "talep"
+            );
+
+            await googleIleGiris();
+
+            return;
         }
 
-    </script>
+        return eskiTalepYayinla(event);
 
+    };
+
+}
+
+
+/* GOOGLE'DAN GERİ GELİNCE
+   KALDIĞI İŞLEME DEVAM ETSİN */
+
+function bekleyenIslemiCalistir() {
+
+    const islem =
+        sessionStorage.getItem(
+            "oauthSonrasi"
+        );
+
+    if (!islem) return;
+
+
+    sessionStorage.removeItem(
+        "oauthSonrasi"
+    );
+
+
+    setTimeout(() => {
+
+        if (
+            islem === "talep" &&
+            typeof eskiTalepFormunuAc ===
+            "function"
+        ) {
+
+            eskiTalepFormunuAc();
+
+        }
+
+
+        if (
+            islem === "teklif" &&
+            typeof eskiTeklifVer ===
+            "function"
+        ) {
+
+            eskiTeklifVer();
+
+        }
+
+    }, 500);
+
+}
+
+
+/* AUTH SİSTEMİNİ BAŞLAT */
+
+async function authSisteminiBaslat() {
+
+    authAlaniniHazirla();
+
+
+    const {
+        data: { user }
+    } =
+        await supabaseClient.auth.getUser();
+
+
+    kullaniciArayuzunuGuncelle(
+        user
+    );
+
+
+    if (user) {
+
+        bekleyenIslemiCalistir();
+
+    }
+
+
+    supabaseClient.auth.onAuthStateChange(
+        (event, session) => {
+
+            const aktifUser =
+                session?.user || null;
+
+
+            kullaniciArayuzunuGuncelle(
+                aktifUser
+            );
+
+
+            if (
+                event === "SIGNED_IN" &&
+                aktifUser
+            ) {
+
+                bekleyenIslemiCalistir();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* TASARIM */
+
+const authStyle =
+document.createElement("style");
+
+authStyle.textContent = `
+
+.auth-area {
+    display: flex;
+    align-items: center;
+}
+
+.google-login-btn {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #ffffff;
+    color: #111827;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 12px 16px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.08);
+
+    transition: .2s;
+}
+
+.google-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.13);
+}
+
+.google-logo {
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    color: #4285F4;
+
+    background: #f8fafc;
+}
+
+.user-panel {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 7px 10px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    color: white;
+}
+
+.user-avatar {
+
+    width: 39px;
+    height: 39px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #ffc400;
+}
+
+.user-avatar-text {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2563eb;
+    color: white;
+
+    font-weight: 900;
+}
+
+.user-meta {
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.user-meta strong {
+
+    max-width: 190px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 13px;
+}
+
+.user-meta span {
+
+    max-width: 190px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+.logout-btn {
+
+    border: none;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.logout-btn:hover {
+
+    background:
+        rgba(255,255,255,.20);
+
+}
+
+@media (max-width: 850px) {
+
+    .user-meta span {
+        display: none;
+    }
+
+    .user-meta strong {
+        max-width: 100px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .user-meta {
+        display: none;
+    }
+
+    .logout-btn {
+        display: none;
+    }
+
+    .user-panel {
+        padding: 5px;
+    }
+
+    .google-login-btn span:last-child {
+        display: none;
+    }
+
+    .google-login-btn {
+        padding: 7px;
+    }
+
+}
+
+`;
+
+document.head.appendChild(
+    authStyle
+);
+
+
+authSisteminiBaslat();
+</script>
 </body>
-</html> 
+</html>
