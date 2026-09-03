@@ -2204,6 +2204,2532 @@ document.head.appendChild(
 
 
 authSisteminiBaslat();
+window.talepYayinla = async function(event) {
+    event.preventDefault();
+
+    const { data: { user } } = await supabaseClient.auth.getUser();
+
+    if (!user) {
+        alert("Talep oluşturmak için giriş yapmalısın.");
+        await googleIleGiris();
+        return;
+    }
+
+    const kategori = document.getElementById("kategori").value;
+    const baslik = document.getElementById("baslik").value.trim();
+
+    const ilSelect = document.getElementById("il");
+    const sehir = ilSelect.options[ilSelect.selectedIndex].text;
+
+    const ilce = document.getElementById("ilce").value;
+    const butce = document.getElementById("butce").value.trim();
+    const aciklama = document.getElementById("aciklama").value.trim();
+    const adSoyad = document.getElementById("adSoyad").value.trim();
+    const telefon = document.getElementById("telefon").value.trim();
+
+    const { data, error } = await supabaseClient
+        .from("TALEPLER")
+        .insert({
+            user_id: user.id,
+            kategori: kategori,
+            baslik: baslik,
+            sehir: sehir,
+            ilce: ilce || null,
+            butce: butce,
+            aciklama: aciklama,
+            durum: "aktif",
+            detaylar: {
+                ad_soyad: adSoyad,
+                telefon: telefon
+            }
+        })
+        .select()
+        .single();
+
+    if (error) {
+        console.error(error);
+        alert("Talep kaydedilemedi: " + error.message);
+        return;
+    }
+
+    alert("Talebin başarıyla yayınlandı.");
+
+    document.getElementById("talepForm").reset();
+
+    talepFormunuKapat();
+
+    location.reload();
+};
+</script>
+<!-- =========================================================
+     ALICISINDAN.COM - GELİŞMİŞ TALEP OLUŞTURMA SİSTEMİ
+     ========================================================= -->
+
+<style>
+
+.akilli-talep-alani{
+    grid-column:1/-1;
+    margin-top:6px;
+}
+
+.akilli-panel{
+    background:linear-gradient(145deg,#ffffff,#f7faff);
+    border:1px solid #e3e9f3;
+    border-radius:22px;
+    padding:24px;
+    box-shadow:0 12px 35px rgba(16,24,40,.06);
+    animation:panelAc .25s ease;
+}
+
+@keyframes panelAc{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.akilli-baslik{
+    margin:0 0 6px;
+    font-size:20px;
+    color:#101828;
+}
+
+.akilli-aciklama{
+    margin:0 0 20px;
+    color:#667085;
+    font-size:14px;
+    line-height:1.55;
+}
+
+.secim-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+}
+
+.secim-grid.iki{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.buyuk-secim{
+    border:2px solid #edf0f5;
+    background:#fff;
+    border-radius:17px;
+    padding:20px;
+    min-height:115px;
+    cursor:pointer;
+    text-align:left;
+    transition:.2s;
+}
+
+.buyuk-secim:hover{
+    border-color:#2563eb;
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(37,99,235,.10);
+}
+
+.buyuk-secim.secili{
+    border-color:#2563eb;
+    background:#eff6ff;
+    box-shadow:0 0 0 3px rgba(37,99,235,.09);
+}
+
+.buyuk-secim .ikon{
+    display:block;
+    font-size:28px;
+    margin-bottom:9px;
+}
+
+.buyuk-secim strong{
+    display:block;
+    color:#101828;
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.buyuk-secim small{
+    color:#667085;
+    line-height:1.35;
+}
+
+.alt-panel{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid #e7ebf2;
+    animation:panelAc .22s ease;
+}
+
+.detay-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.detay-grid .field{
+    min-width:0;
+}
+
+.detay-grid .full{
+    grid-column:1/-1;
+}
+
+.mini-baslik{
+    font-size:14px;
+    font-weight:900;
+    color:#344054;
+    margin-bottom:9px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.coklu-secimler{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+.coklu-secim{
+    position:relative;
+}
+
+.coklu-secim input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.coklu-secim span{
+    display:block;
+    padding:10px 13px;
+    border:1px solid #dfe4ec;
+    border-radius:10px;
+    background:#fff;
+    color:#344054;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:700;
+    transition:.15s;
+}
+
+.coklu-secim input:checked + span{
+    background:#101828;
+    color:#fff;
+    border-color:#101828;
+}
+
+.tek-secimler{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+.tek-secim-btn{
+    padding:11px 14px;
+    border:1px solid #dfe4ec;
+    border-radius:11px;
+    background:#fff;
+    color:#344054;
+    font-weight:800;
+    cursor:pointer;
+    transition:.15s;
+}
+
+.tek-secim-btn:hover{
+    border-color:#2563eb;
+}
+
+.tek-secim-btn.secili{
+    background:#2563eb;
+    border-color:#2563eb;
+    color:white;
+}
+
+.vurgu-kutu{
+    margin-top:18px;
+    padding:18px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#fff8d7,#fffdf2);
+    border:1px solid #ffe18a;
+}
+
+.vurgu-kutu strong{
+    color:#493b00;
+    display:block;
+    margin-bottom:7px;
+}
+
+.vurgu-kutu p{
+    margin:0 0 12px;
+    color:#6b5b1e;
+    font-size:13px;
+    line-height:1.55;
+}
+
+.vurgu-check{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:800;
+    color:#423600;
+}
+
+.vurgu-check input{
+    width:19px;
+    height:19px;
+    flex-shrink:0;
+}
+
+/* BİLGİ İŞARETLERİ */
+
+.info-wrap{
+    display:inline-flex;
+    position:relative;
+    vertical-align:middle;
+}
+
+.info-btn{
+    width:19px;
+    height:19px;
+    border:0;
+    border-radius:50%;
+    background:#e7efff;
+    color:#2563eb;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:900;
+    cursor:pointer;
+    padding:0;
+}
+
+.info-popover{
+    position:absolute;
+    z-index:9999;
+    left:50%;
+    bottom:29px;
+    transform:translateX(-50%) translateY(5px);
+    width:265px;
+    max-width:calc(100vw - 35px);
+    padding:12px 13px;
+    border-radius:12px;
+    background:#101828;
+    color:white;
+    font-size:12px;
+    font-weight:500;
+    line-height:1.5;
+    box-shadow:0 14px 35px rgba(0,0,0,.22);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:.16s;
+}
+
+.info-popover::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:#101828;
+}
+
+.info-wrap:hover .info-popover,
+.info-wrap.open .info-popover{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
+
+.aciklama-bilgi{
+    padding:13px 15px;
+    margin-bottom:12px;
+    border-radius:13px;
+    background:#eff6ff;
+    border:1px solid #cfe0ff;
+    color:#375276;
+    font-size:13px;
+    line-height:1.55;
+}
+
+.arac-serbest{
+    margin-bottom:20px;
+    background:linear-gradient(135deg,#eaf8ff,#f6fcff);
+    border:1px solid #bfe6fa;
+    padding:17px;
+    border-radius:15px;
+}
+
+.arac-serbest label{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    cursor:pointer;
+    font-weight:800;
+    color:#144a64;
+}
+
+.arac-serbest input{
+    width:19px;
+    height:19px;
+}
+
+@media(max-width:750px){
+
+    .secim-grid,
+    .secim-grid.iki,
+    .detay-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detay-grid .full{
+        grid-column:auto;
+    }
+
+    .akilli-panel{
+        padding:17px;
+    }
+
+    .buyuk-secim{
+        min-height:95px;
+    }
+
+    .info-popover{
+        left:0;
+        transform:translateY(5px);
+    }
+
+    .info-wrap:hover .info-popover,
+    .info-wrap.open .info-popover{
+        transform:translateY(0);
+    }
+
+    .info-popover::after{
+        left:9px;
+        transform:none;
+    }
+}
+
+</style>
+
+
+<script>
+
+(function(){
+
+/* ========================================
+   ALICISINDAN GELİŞMİŞ FORM
+   ======================================== */
+
+const eskiDinamik =
+    document.getElementById("emlakDinamikAlan");
+
+if(eskiDinamik){
+    eskiDinamik.remove();
+}
+
+
+/* Daha önce kategoriye eklenmiş eventleri temizle */
+
+const eskiKategori =
+    document.getElementById("kategori");
+
+if(!eskiKategori) return;
+
+const yeniKategori =
+    eskiKategori.cloneNode(true);
+
+eskiKategori.replaceWith(yeniKategori);
+
+
+/* Eski tek bütçe alanını gizle */
+
+const eskiButce =
+    document.getElementById("butce");
+
+if(eskiButce){
+
+    const field =
+        eskiButce.closest(".field");
+
+    if(field){
+        field.style.display="none";
+    }
+
+}
+
+
+/* Dinamik alan */
+
+const baslikInput =
+    document.getElementById("baslik");
+
+const baslikField =
+    baslikInput.closest(".field");
+
+const dinamik =
+    document.createElement("div");
+
+dinamik.id =
+    "akilliTalepAkisi";
+
+dinamik.className =
+    "akilli-talep-alani";
+
+baslikField.insertAdjacentElement(
+    "afterend",
+    dinamik
+);
+
+
+/* Açıklama label bilgi ikonu */
+
+const aciklama =
+    document.getElementById("aciklama");
+
+if(aciklama){
+
+    const label =
+        aciklama.closest(".field")
+        ?.querySelector("label");
+
+    if(label){
+
+        label.innerHTML =
+        `Aradığınızı detaylandır
+        ${infoHTML(
+        "Talebinizi biraz daha detaylandırmanız, profesyonel gayrimenkul veya araç danışmanlarının ihtiyacınızı daha doğru anlamasına ve daha isabetli teklifler sunmasına yardımcı olabilir."
+        )}`;
+
+    }
+
+}
+
+
+/* Kategori değişimi */
+
+yeniKategori.onchange =
+kategoriDegistiYeni;
+
+
+/* ========================================
+   INFO
+   ======================================== */
+
+function infoHTML(yazi){
+
+    return `
+    <span class="info-wrap">
+
+        <button
+            type="button"
+            class="info-btn"
+            aria-label="Bilgi"
+        >
+            i
+        </button>
+
+        <span class="info-popover">
+            ${yazi}
+        </span>
+
+    </span>
+    `;
+
+}
+
+
+document.addEventListener(
+"click",
+function(e){
+
+    const btn =
+        e.target.closest(".info-btn");
+
+    const wrap =
+        e.target.closest(".info-wrap");
+
+
+    document
+    .querySelectorAll(".info-wrap.open")
+    .forEach(item=>{
+
+        if(item !== wrap){
+            item.classList.remove("open");
+        }
+
+    });
+
+
+    if(btn){
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        btn.closest(".info-wrap")
+        .classList.toggle("open");
+
+    }
+
+});
+
+
+/* ========================================
+   KATEGORİ
+   ======================================== */
+
+function kategoriDegistiYeni(){
+
+    const kategori =
+        yeniKategori.value;
+
+    dinamik.innerHTML="";
+
+
+    if(kategori === "Emlak"){
+
+        emlakAnaPanel();
+
+    }
+
+
+    if(kategori === "Araç"){
+
+        aracAnaPanel();
+
+    }
+
+}
+
+
+/* ========================================
+   EMLAK
+   ======================================== */
+
+function emlakAnaPanel(){
+
+    dinamik.innerHTML = `
+
+    <div class="akilli-panel">
+
+        <h3 class="akilli-baslik">
+            Ne tür bir gayrimenkul arıyorsunuz?
+        </h3>
+
+        <p class="akilli-aciklama">
+            İhtiyacınıza en yakın seçeneği seçin.
+        </p>
+
+        <div class="secim-grid iki">
+
+            <button
+                type="button"
+                class="buyuk-secim"
+                data-choice="emlakAna"
+                onclick="dairePaneli(this)"
+            >
+
+                <span class="ikon">🏢</span>
+
+                <strong>Daire</strong>
+
+                <small>
+                    Satılık veya kiralık konut
+                </small>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="buyuk-secim"
+                data-choice="emlakAna"
+                onclick="araziPaneli(this)"
+            >
+
+                <span class="ikon">🌳</span>
+
+                <strong>Arazi</strong>
+
+                <small>
+                    Hisseli veya tek tapu yatırım arazisi
+                </small>
+
+            </button>
+
+        </div>
+
+        <input
+            type="hidden"
+            id="emlakTuru"
+        >
+
+        <div id="emlakAltPanel"></div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ========================================
+   DAİRE
+   ======================================== */
+
+window.dairePaneli =
+function(button){
+
+    seciliKart(
+        button,
+        "emlakAna"
+    );
+
+    document
+    .getElementById("emlakTuru")
+    .value="Daire";
+
+
+    const alan =
+        document.getElementById(
+            "emlakAltPanel"
+        );
+
+
+    alan.innerHTML = `
+
+    <div class="alt-panel">
+
+        <div class="detay-grid">
+
+            <div class="field full">
+
+                <div class="mini-baslik">
+
+                    Satılık mı, kiralık mı?
+
+                    ${infoHTML(
+                    "Satılık veya kiralık tercihinizi seçtiğinizde size özel ek seçenekler açılır."
+                    )}
+
+                </div>
+
+                <div class="tek-secimler">
+
+                    <button
+                        type="button"
+                        class="tek-secim-btn"
+                        data-choice="daireIslem"
+                        onclick="daireIslemSec(this,'Satılık')"
+                    >
+                        Satılık
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tek-secim-btn"
+                        data-choice="daireIslem"
+                        onclick="daireIslemSec(this,'Kiralık')"
+                    >
+                        Kiralık
+                    </button>
+
+                </div>
+
+                <input
+                    type="hidden"
+                    id="daireIslem"
+                >
+
+            </div>
+
+
+            <div class="field full">
+
+                <div class="mini-baslik">
+
+                    Oda tercihleri
+
+                    ${infoHTML(
+                    "Birden fazla oda tipi seçebilirsiniz. Böylece size uygun alternatif teklifler de gelebilir."
+                    )}
+
+                </div>
+
+                <div class="coklu-secimler">
+
+                    ${odaSecenekleri()}
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Minimum m²
+                    ${infoHTML(
+                    "Değerlendirmek istediğiniz dairenin yaklaşık minimum büyüklüğünü belirtir."
+                    )}
+                </label>
+
+                <input
+                    id="daireMinM2"
+                    type="number"
+                    placeholder="Örn: 90"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum m²
+                </label>
+
+                <input
+                    id="daireMaxM2"
+                    type="number"
+                    placeholder="Örn: 160"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Minimum bütçe
+                    ${infoHTML(
+                    "Değerlendirmek istediğiniz fiyat aralığının alt sınırıdır. Zorunlu değildir."
+                    )}
+                </label>
+
+                <input
+                    id="daireMinButce"
+                    type="number"
+                    placeholder="Örn: 3000000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum bütçe
+                    ${infoHTML(
+                    "Bu talep için ayırabileceğiniz yaklaşık en yüksek bütçeyi belirtir."
+                    )}
+                </label>
+
+                <input
+                    id="daireMaxButce"
+                    type="number"
+                    placeholder="Örn: 5000000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Bina yaşı</label>
+
+                <select id="binaYasi">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>
+                        Sıfır
+                    </option>
+
+                    <option>
+                        1-5 yıl
+                    </option>
+
+                    <option>
+                        6-10 yıl
+                    </option>
+
+                    <option>
+                        11-20 yıl
+                    </option>
+
+                    <option>
+                        20 yıl üzeri
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Kat tercihi</label>
+
+                <select id="katTercihi">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>
+                        Giriş kat
+                    </option>
+
+                    <option>
+                        Ara kat
+                    </option>
+
+                    <option>
+                        Yüksek kat
+                    </option>
+
+                    <option>
+                        Çatı katı
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field full">
+
+                <div class="mini-baslik">
+                    Ek özellikler
+                </div>
+
+                <div class="coklu-secimler">
+
+                    ${ozellikCheck(
+                        "Site içinde",
+                        "daireOzellik"
+                    )}
+
+                    ${ozellikCheck(
+                        "Asansör",
+                        "daireOzellik"
+                    )}
+
+                    ${ozellikCheck(
+                        "Otopark",
+                        "daireOzellik"
+                    )}
+
+                    ${ozellikCheck(
+                        "Balkon",
+                        "daireOzellik"
+                    )}
+
+                    ${ozellikCheck(
+                        "Krediye uygun",
+                        "daireOzellik"
+                    )}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="daireIslemDetay"></div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* SATILIK / KİRALIK */
+
+window.daireIslemSec =
+function(button,deger){
+
+    seciliKart(
+        button,
+        "daireIslem"
+    );
+
+    document
+    .getElementById("daireIslem")
+    .value=deger;
+
+
+    const alan =
+        document.getElementById(
+            "daireIslemDetay"
+        );
+
+
+    if(deger === "Satılık"){
+
+        alan.innerHTML = `
+
+        <div class="alt-panel">
+
+            <div class="field">
+
+                <label>
+                    Satın alma amacınız
+                </label>
+
+                <select
+                    id="daireAmaci"
+                    onchange="daireAmaciDegisti()"
+                >
+
+                    <option value="">
+                        Seçiniz
+                    </option>
+
+                    <option value="Oturum">
+                        Kendim / ailem yaşayacak
+                    </option>
+
+                    <option value="Yatırım">
+                        Yatırım yapacağım
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div id="yatirimKiraAlani"></div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    if(deger === "Kiralık"){
+
+        alan.innerHTML = `
+
+        <div class="alt-panel">
+
+            <div class="detay-grid">
+
+                <div class="field">
+
+                    <label>
+                        Mesleğiniz
+                    </label>
+
+                    <input
+                        id="kiraciMeslek"
+                        type="text"
+                        placeholder="Örn: Memur, esnaf, mühendis"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Yaklaşık aylık gelir
+                        ${infoHTML(
+                        "Bu bilgi zorunlu değildir. Kiralama tekliflerinde danışmanın uygun seçenekleri değerlendirmesine yardımcı olabilir."
+                        )}
+                    </label>
+
+                    <select id="kiraciGelir">
+
+                        <option value="">
+                            Belirtmek istemiyorum
+                        </option>
+
+                        <option>
+                            30.000 - 50.000 TL
+                        </option>
+
+                        <option>
+                            50.000 - 75.000 TL
+                        </option>
+
+                        <option>
+                            75.000 - 100.000 TL
+                        </option>
+
+                        <option>
+                            100.000 TL üzeri
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+
+window.daireAmaciDegisti =
+function(){
+
+    const amac =
+        document.getElementById(
+            "daireAmaci"
+        ).value;
+
+
+    const alan =
+        document.getElementById(
+            "yatirimKiraAlani"
+        );
+
+
+    if(amac !== "Yatırım"){
+
+        alan.innerHTML="";
+        return;
+
+    }
+
+
+    alan.innerHTML = `
+
+    <div
+        class="field"
+        style="margin-top:18px"
+    >
+
+        <label>
+            Beklediğiniz aylık kira getirisi
+
+            ${infoHTML(
+            "Yatırım amacıyla alınacak daireden beklediğiniz yaklaşık aylık kira getirisi aralığını belirtebilirsiniz."
+            )}
+
+        </label>
+
+
+        <select id="beklenenKira">
+
+            <option value="">
+                Herhangi biri
+            </option>
+
+            <option>
+                10.000 - 20.000 TL
+            </option>
+
+            <option>
+                20.000 - 30.000 TL
+            </option>
+
+            <option>
+                30.000 - 40.000 TL
+            </option>
+
+            <option>
+                40.000 - 70.000 TL
+            </option>
+
+            <option>
+                70.000 TL üzeri
+            </option>
+
+        </select>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ========================================
+   ARAZİ
+   ======================================== */
+
+window.araziPaneli =
+function(button){
+
+    seciliKart(
+        button,
+        "emlakAna"
+    );
+
+    document
+    .getElementById("emlakTuru")
+    .value="Arazi";
+
+
+    document
+    .getElementById(
+        "emlakAltPanel"
+    ).innerHTML = `
+
+    <div class="alt-panel">
+
+        <div class="detay-grid">
+
+
+            <div class="field full">
+
+                <div class="mini-baslik">
+
+                    Tapu tercihi
+
+                    ${infoHTML(
+                    "Hisseli, tek tapu veya her iki seçeneğe de açık olduğunuzu belirtebilirsiniz."
+                    )}
+
+                </div>
+
+                <div class="tek-secimler">
+
+                    ${tekButton(
+                        "Hisseli",
+                        "araziTapu"
+                    )}
+
+                    ${tekButton(
+                        "Tek Tapu",
+                        "araziTapu"
+                    )}
+
+                    ${tekButton(
+                        "Herhangi biri",
+                        "araziTapu"
+                    )}
+
+                </div>
+
+                <input
+                    id="araziTapu"
+                    type="hidden"
+                >
+
+            </div>
+
+
+            <div class="field full">
+
+                <div class="mini-baslik">
+
+                    İmar durumu
+
+                    ${infoHTML(
+                    "İmarlı, imarsız veya her iki tür taşınmazdan da teklif almak isteyebilirsiniz."
+                    )}
+
+                </div>
+
+                <div class="tek-secimler">
+
+                    ${tekButton(
+                        "İmarlı",
+                        "araziImar"
+                    )}
+
+                    ${tekButton(
+                        "İmarsız",
+                        "araziImar"
+                    )}
+
+                    ${tekButton(
+                        "Herhangi biri",
+                        "araziImar"
+                    )}
+
+                </div>
+
+                <input
+                    id="araziImar"
+                    type="hidden"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Minimum m²
+                </label>
+
+                <input
+                    id="araziMinM2"
+                    type="number"
+                    placeholder="Örn: 500"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum m²
+                </label>
+
+                <input
+                    id="araziMaxM2"
+                    type="number"
+                    placeholder="Örn: 5000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Minimum bütçe
+
+                    ${infoHTML(
+                    "Değerlendirmeye açık olduğunuz yaklaşık yatırım bütçesinin alt sınırıdır."
+                    )}
+
+                </label>
+
+                <input
+                    id="araziMinButce"
+                    type="number"
+                    placeholder="Örn: 1000000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum bütçe
+
+                    ${infoHTML(
+                    "Bu yatırım için değerlendirebileceğiniz yaklaşık en yüksek bütçeyi belirtir."
+                    )}
+
+                </label>
+
+                <input
+                    id="araziMaxButce"
+                    type="number"
+                    placeholder="Örn: 3500000"
+                >
+
+            </div>
+
+
+            <div class="field full">
+
+                <label>
+                    Yatırım süresi
+                </label>
+
+                <select id="yatirimSuresi">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>
+                        Kısa vadeli
+                    </option>
+
+                    <option>
+                        Orta vadeli
+                    </option>
+
+                    <option>
+                        Uzun vadeli
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="vurgu-kutu">
+
+            <strong>
+                💡 Farklı yatırım fırsatlarına açık mısınız?
+            </strong>
+
+            <p>
+                Bu seçeneği aktif ettiğinizde,
+                belirttiğiniz bölgeyle sınırlı kalmadan
+                bütçenize ve yatırım beklentinize uygun
+                alternatif gayrimenkul teklifleri de
+                değerlendirmenize sunulabilir.
+                Sunulan teklifler bilgilendirme amaçlıdır;
+                nihai değerlendirme ve karar size aittir.
+            </p>
+
+            <label class="vurgu-check">
+
+                <input
+                    id="alternatifYatirim"
+                    type="checkbox"
+                >
+
+                Bütçeme uygun farklı bölgelerden
+                yatırım teklifleri de alabilirim.
+
+            </label>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ========================================
+   ARAÇ
+   ======================================== */
+
+function aracAnaPanel(){
+
+    dinamik.innerHTML = `
+
+    <div class="akilli-panel">
+
+        <h3 class="akilli-baslik">
+            Ne tür bir araç arıyorsunuz?
+        </h3>
+
+        <p class="akilli-aciklama">
+            Araç türünü seçerek devam edin.
+        </p>
+
+
+        <div class="secim-grid">
+
+            <button
+                type="button"
+                class="buyuk-secim"
+                data-choice="aracTipi"
+                onclick="aracTipiSec(this,'Otomobil')"
+            >
+
+                <span class="ikon">🚘</span>
+
+                <strong>Otomobil</strong>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="buyuk-secim"
+                data-choice="aracTipi"
+                onclick="aracTipiSec(this,'Motosiklet')"
+            >
+
+                <span class="ikon">🏍️</span>
+
+                <strong>Motosiklet</strong>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="buyuk-secim"
+                data-choice="aracTipi"
+                onclick="aracTipiSec(this,'Pick-up')"
+            >
+
+                <span class="ikon">🛻</span>
+
+                <strong>Pick-up</strong>
+
+            </button>
+
+        </div>
+
+        <input
+            id="aracTipi"
+            type="hidden"
+        >
+
+        <div id="aracAltPanel"></div>
+
+    </div>
+
+    `;
+
+}
+
+
+window.aracTipiSec =
+function(button,tur){
+
+    seciliKart(
+        button,
+        "aracTipi"
+    );
+
+    document
+    .getElementById("aracTipi")
+    .value=tur;
+
+
+    document
+    .getElementById(
+        "aracAltPanel"
+    ).innerHTML = `
+
+    <div class="alt-panel">
+
+
+        <div class="arac-serbest">
+
+            <label>
+
+                <input
+                    id="markaFarketmez"
+                    type="checkbox"
+                    onchange="markaSerbestDegisti()"
+                >
+
+                Marka ve model fark etmez.
+                Bütçeme ve kriterlerime uygun
+                farklı araç tekliflerini de görmek istiyorum.
+
+            </label>
+
+        </div>
+
+
+        <div class="detay-grid">
+
+
+            <div class="field">
+
+                <label>
+                    Marka
+                </label>
+
+                <select
+                    id="aracMarka"
+                    onchange="aracMarkaDegisti()"
+                >
+
+                    <option value="">
+                        Marka seç
+                    </option>
+
+                    ${markaListesi()}
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Model
+                </label>
+
+                <select
+                    id="aracModel"
+                    disabled
+                >
+
+                    <option value="">
+                        Önce marka seç
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Minimum model yılı</label>
+
+                <input
+                    id="aracMinYil"
+                    type="number"
+                    placeholder="Örn: 2020"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Maksimum kilometre</label>
+
+                <input
+                    id="aracMaxKm"
+                    type="number"
+                    placeholder="Örn: 100000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Minimum bütçe
+                </label>
+
+                <input
+                    id="aracMinButce"
+                    type="number"
+                    placeholder="Örn: 1000000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum bütçe
+
+                    ${infoHTML(
+                    "Araç için değerlendirebileceğiniz yaklaşık en yüksek bütçeyi belirtir."
+                    )}
+
+                </label>
+
+                <input
+                    id="aracMaxButce"
+                    type="number"
+                    placeholder="Örn: 1500000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Yakıt</label>
+
+                <select id="aracYakit">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>Benzin</option>
+                    <option>Dizel</option>
+                    <option>Hibrit</option>
+                    <option>Elektrik</option>
+                    <option>LPG</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Vites</label>
+
+                <select id="aracVites">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>Otomatik</option>
+                    <option>Manuel</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Maksimum tramer
+                </label>
+
+                <input
+                    id="aracTramer"
+                    type="number"
+                    placeholder="Örn: 50000"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Ekspertiz tercihi
+                </label>
+
+                <select id="ekspertizTercihi">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>
+                        Güncel ekspertiz raporu yeterli
+                    </option>
+
+                    <option>
+                        Yeniden ekspertiz yapılmasını isterim
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field full">
+
+                <label>
+                    Teslim / satın alma tercihi
+                </label>
+
+                <select id="aracTeslim">
+
+                    <option value="">
+                        Herhangi biri
+                    </option>
+
+                    <option>
+                        Aracı ben gidip alabilirim
+                    </option>
+
+                    <option>
+                        Aracın bulunduğum şehre gelmesini isterim
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ========================================
+   MARKA - MODEL
+   ======================================== */
+
+const MODELLER = {
+
+"Audi":[
+"A1","A3","A4","A5","A6","A7","A8","Q2","Q3","Q5","Q7","Q8"
+],
+
+"BMW":[
+"1 Serisi","2 Serisi","3 Serisi","4 Serisi","5 Serisi",
+"7 Serisi","X1","X2","X3","X4","X5","X6"
+],
+
+"Mercedes-Benz":[
+"A Serisi","B Serisi","C Serisi","E Serisi","S Serisi",
+"CLA","CLS","GLA","GLB","GLC","GLE"
+],
+
+"Volkswagen":[
+"Polo","Golf","Passat","Jetta","T-Roc","Tiguan","Taigo","Arteon"
+],
+
+"Renault":[
+"Clio","Megane","Taliant","Austral","Captur","Koleos"
+],
+
+"Fiat":[
+"Egea","500","Panda","Fiorino","Doblo"
+],
+
+"Ford":[
+"Focus","Fiesta","Mondeo","Puma","Kuga","Ranger"
+],
+
+"Toyota":[
+"Corolla","Yaris","C-HR","Camry","RAV4","Hilux"
+],
+
+"Honda":[
+"Civic","City","Jazz","CR-V","HR-V"
+],
+
+"Hyundai":[
+"i10","i20","i30","Elantra","Bayon","Tucson","Kona"
+],
+
+"Peugeot":[
+"208","308","408","508","2008","3008","5008"
+],
+
+"Opel":[
+"Corsa","Astra","Insignia","Mokka","Crossland","Grandland"
+],
+
+"Skoda":[
+"Fabia","Scala","Octavia","Superb","Kamiq","Karoq","Kodiaq"
+],
+
+"Seat":[
+"Ibiza","Leon","Arona","Ateca","Tarraco"
+],
+
+"Volvo":[
+"S60","S90","V40","XC40","XC60","XC90"
+],
+
+"Nissan":[
+"Micra","Juke","Qashqai","X-Trail","Navara"
+],
+
+"Kia":[
+"Picanto","Rio","Ceed","Stonic","Sportage","Sorento"
+],
+
+"Dacia":[
+"Sandero","Logan","Duster","Jogger"
+],
+
+"Citroen":[
+"C3","C4","C5 Aircross","Berlingo"
+],
+
+"Tesla":[
+"Model 3","Model Y","Model S","Model X"
+],
+
+"Togg":[
+"T10X","T10F"
+],
+
+"Chery":[
+"Omoda 5","Tiggo 7 Pro","Tiggo 8 Pro"
+],
+
+"BYD":[
+"Atto 3","Seal","Dolphin","Han"
+],
+
+"MG":[
+"MG4","ZS","HS"
+],
+
+"Suzuki":[
+"Swift","Vitara","S-Cross"
+],
+
+"Subaru":[
+"Impreza","Forester","XV","Outback"
+],
+
+"Jeep":[
+"Renegade","Compass","Cherokee","Wrangler"
+],
+
+"Land Rover":[
+"Defender","Discovery","Range Rover","Range Rover Evoque"
+],
+
+"Porsche":[
+"Macan","Cayenne","Panamera","911","Taycan"
+],
+
+"Mini":[
+"Cooper","Countryman","Clubman"
+],
+
+"Mitsubishi":[
+"Colt","ASX","Eclipse Cross","L200"
+],
+
+"Yamaha":[
+"MT-07","MT-09","R25","R7","NMAX","XMAX"
+],
+
+"Kawasaki":[
+"Ninja 250","Ninja 400","Z400","Z650","Versys"
+]
+
+};
+
+
+function markaListesi(){
+
+    return Object.keys(MODELLER)
+    .sort((a,b)=>a.localeCompare(b,"tr"))
+    .map(marka=>
+        `<option value="${marka}">
+            ${marka}
+        </option>`
+    )
+    .join("")
+    +
+    `<option value="Diğer">Diğer</option>`;
+
+}
+
+
+window.aracMarkaDegisti =
+function(){
+
+    const marka =
+        document
+        .getElementById("aracMarka")
+        .value;
+
+
+    const model =
+        document
+        .getElementById("aracModel");
+
+
+    if(!marka){
+
+        model.disabled=true;
+
+        model.innerHTML =
+        `<option value="">
+            Önce marka seç
+        </option>`;
+
+        return;
+
+    }
+
+
+    const liste =
+        MODELLER[marka] || [];
+
+
+    model.disabled=false;
+
+    model.innerHTML =
+        `<option value="">
+            Model seç / Herhangi biri
+        </option>`
+        +
+        liste.map(x=>
+            `<option value="${x}">
+                ${x}
+            </option>`
+        ).join("")
+        +
+        `<option value="Diğer">
+            Diğer
+        </option>`;
+
+}
+
+
+window.markaSerbestDegisti =
+function(){
+
+    const secili =
+        document
+        .getElementById(
+            "markaFarketmez"
+        ).checked;
+
+
+    const marka =
+        document.getElementById(
+            "aracMarka"
+        );
+
+    const model =
+        document.getElementById(
+            "aracModel"
+        );
+
+
+    marka.disabled=secili;
+    model.disabled=secili;
+
+
+    if(secili){
+
+        marka.value="";
+        model.innerHTML=
+        `<option value="">
+            Marka / model herhangi biri
+        </option>`;
+
+    }else{
+
+        model.innerHTML=
+        `<option value="">
+            Önce marka seç
+        </option>`;
+
+    }
+
+}
+
+
+/* ========================================
+   UI YARDIMCILARI
+   ======================================== */
+
+function seciliKart(button,group){
+
+    document
+    .querySelectorAll(
+        `[data-choice="${group}"]`
+    )
+    .forEach(x=>
+        x.classList.remove("secili")
+    );
+
+    button.classList.add("secili");
+
+}
+
+
+window.tekSecimYap =
+function(button,inputId,deger){
+
+    seciliKart(
+        button,
+        inputId
+    );
+
+    document
+    .getElementById(inputId)
+    .value=deger;
+
+}
+
+
+function tekButton(yazi,inputId){
+
+    return `
+    <button
+        type="button"
+        class="tek-secim-btn"
+        data-choice="${inputId}"
+        onclick="tekSecimYap(this,'${inputId}','${yazi}')"
+    >
+        ${yazi}
+    </button>
+    `;
+
+}
+
+
+function ozellikCheck(yazi,group){
+
+    return `
+    <label class="coklu-secim">
+
+        <input
+            type="checkbox"
+            data-group="${group}"
+            value="${yazi}"
+        >
+
+        <span>
+            ${yazi}
+        </span>
+
+    </label>
+    `;
+
+}
+
+
+function odaSecenekleri(){
+
+    const odalar = [
+        "Stüdyo",
+        "1+0",
+        "1+1",
+        "2+1",
+        "2+2",
+        "3+1",
+        "3+2",
+        "4+1",
+        "4+2",
+        "5+1 ve üzeri"
+    ];
+
+    return odalar
+    .map(x=>
+        ozellikCheck(
+            x,
+            "odaSayisi"
+        )
+    )
+    .join("");
+
+}
+
+
+function cokluDeger(group){
+
+    return [
+        ...document.querySelectorAll(
+            `[data-group="${group}"]:checked`
+        )
+    ]
+    .map(x=>x.value);
+
+}
+
+
+/* ========================================
+   TALEBİ SUPABASE'E KAYDET
+   ======================================== */
+
+window.talepYayinla =
+async function(event){
+
+    event.preventDefault();
+
+
+    const {
+        data:{user}
+    } =
+    await supabaseClient
+    .auth
+    .getUser();
+
+
+    if(!user){
+
+        alert(
+            "Talep oluşturmak için giriş yapmalısın."
+        );
+
+        await googleIleGiris();
+
+        return;
+
+    }
+
+
+    const kategori =
+        document
+        .getElementById("kategori")
+        .value;
+
+
+    const baslik =
+        document
+        .getElementById("baslik")
+        .value
+        .trim();
+
+
+    const ilSelect =
+        document
+        .getElementById("il");
+
+
+    const sehir =
+        ilSelect.options[
+            ilSelect.selectedIndex
+        ]?.text || "";
+
+
+    const ilce =
+        document
+        .getElementById("ilce")
+        ?.value || "";
+
+
+    const aciklama =
+        document
+        .getElementById("aciklama")
+        .value
+        .trim();
+
+
+    const adSoyad =
+        document
+        .getElementById("adSoyad")
+        .value
+        .trim();
+
+
+    const telefon =
+        document
+        .getElementById("telefon")
+        .value
+        .trim();
+
+
+    let detaylar = {
+
+        ad_soyad:adSoyad,
+        telefon:telefon
+
+    };
+
+
+    let minButce="";
+    let maxButce="";
+
+
+    /* EMLAK */
+
+    if(kategori === "Emlak"){
+
+        const tur =
+            document
+            .getElementById("emlakTuru")
+            ?.value || "";
+
+
+        detaylar.emlak_turu =
+            tur;
+
+
+        if(tur === "Daire"){
+
+            detaylar.islem =
+                document
+                .getElementById("daireIslem")
+                ?.value || "";
+
+
+            detaylar.oda_sayilari =
+                cokluDeger(
+                    "odaSayisi"
+                );
+
+
+            detaylar.min_m2 =
+                document
+                .getElementById("daireMinM2")
+                ?.value || "";
+
+
+            detaylar.max_m2 =
+                document
+                .getElementById("daireMaxM2")
+                ?.value || "";
+
+
+            detaylar.bina_yasi =
+                document
+                .getElementById("binaYasi")
+                ?.value || "";
+
+
+            detaylar.kat =
+                document
+                .getElementById("katTercihi")
+                ?.value || "";
+
+
+            detaylar.ozellikler =
+                cokluDeger(
+                    "daireOzellik"
+                );
+
+
+            detaylar.satin_alma_amaci =
+                document
+                .getElementById("daireAmaci")
+                ?.value || "";
+
+
+            detaylar.beklenen_kira =
+                document
+                .getElementById("beklenenKira")
+                ?.value || "";
+
+
+            detaylar.kiraci_meslek =
+                document
+                .getElementById("kiraciMeslek")
+                ?.value || "";
+
+
+            detaylar.kiraci_gelir =
+                document
+                .getElementById("kiraciGelir")
+                ?.value || "";
+
+
+            minButce =
+                document
+                .getElementById("daireMinButce")
+                ?.value || "";
+
+
+            maxButce =
+                document
+                .getElementById("daireMaxButce")
+                ?.value || "";
+
+        }
+
+
+        if(tur === "Arazi"){
+
+            detaylar.tapu =
+                document
+                .getElementById("araziTapu")
+                ?.value || "";
+
+
+            detaylar.imar =
+                document
+                .getElementById("araziImar")
+                ?.value || "";
+
+
+            detaylar.min_m2 =
+                document
+                .getElementById("araziMinM2")
+                ?.value || "";
+
+
+            detaylar.max_m2 =
+                document
+                .getElementById("araziMaxM2")
+                ?.value || "";
+
+
+            detaylar.yatirim_suresi =
+                document
+                .getElementById("yatirimSuresi")
+                ?.value || "";
+
+
+            detaylar.alternatif_yatirim =
+                document
+                .getElementById("alternatifYatirim")
+                ?.checked || false;
+
+
+            minButce =
+                document
+                .getElementById("araziMinButce")
+                ?.value || "";
+
+
+            maxButce =
+                document
+                .getElementById("araziMaxButce")
+                ?.value || "";
+
+        }
+
+    }
+
+
+    /* ARAÇ */
+
+    if(kategori === "Araç"){
+
+        detaylar.arac_tipi =
+            document
+            .getElementById("aracTipi")
+            ?.value || "";
+
+
+        detaylar.marka_model_serbest =
+            document
+            .getElementById("markaFarketmez")
+            ?.checked || false;
+
+
+        detaylar.marka =
+            document
+            .getElementById("aracMarka")
+            ?.value || "";
+
+
+        detaylar.model =
+            document
+            .getElementById("aracModel")
+            ?.value || "";
+
+
+        detaylar.min_yil =
+            document
+            .getElementById("aracMinYil")
+            ?.value || "";
+
+
+        detaylar.max_km =
+            document
+            .getElementById("aracMaxKm")
+            ?.value || "";
+
+
+        detaylar.yakit =
+            document
+            .getElementById("aracYakit")
+            ?.value || "";
+
+
+        detaylar.vites =
+            document
+            .getElementById("aracVites")
+            ?.value || "";
+
+
+        detaylar.max_tramer =
+            document
+            .getElementById("aracTramer")
+            ?.value || "";
+
+
+        detaylar.ekspertiz =
+            document
+            .getElementById("ekspertizTercihi")
+            ?.value || "";
+
+
+        detaylar.teslim =
+            document
+            .getElementById("aracTeslim")
+            ?.value || "";
+
+
+        minButce =
+            document
+            .getElementById("aracMinButce")
+            ?.value || "";
+
+
+        maxButce =
+            document
+            .getElementById("aracMaxButce")
+            ?.value || "";
+
+    }
+
+
+    detaylar.minimum_butce =
+        minButce;
+
+    detaylar.maximum_butce =
+        maxButce;
+
+
+    let butceMetni="";
+
+
+    if(minButce && maxButce){
+
+        butceMetni =
+            `${minButce} TL - ${maxButce} TL`;
+
+    }
+
+    else if(maxButce){
+
+        butceMetni =
+            `${maxButce} TL'ye kadar`;
+
+    }
+
+    else if(minButce){
+
+        butceMetni =
+            `${minButce} TL ve üzeri`;
+
+    }
+
+
+    const {
+        error
+    } =
+    await supabaseClient
+    .from("TALEPLER")
+    .insert({
+
+        user_id:user.id,
+
+        kategori:kategori,
+
+        baslik:baslik,
+
+        sehir:sehir,
+
+        ilce:ilce || null,
+
+        butce:butceMetni,
+
+        aciklama:aciklama,
+
+        durum:"aktif",
+
+        detaylar:detaylar
+
+    });
+
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "Talep kaydedilemedi: "
+            +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "✅ Talebiniz başarıyla yayınlandı."
+    );
+
+
+    document
+    .getElementById("talepForm")
+    .reset();
+
+
+    talepFormunuKapat();
+
+
+    location.reload();
+
+}
+
+})();
 </script>
 </body>
 </html>
