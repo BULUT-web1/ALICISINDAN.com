@@ -833,5 +833,1090 @@ window.talepVitriniAc = async function () {
     data.forEach(row => box.appendChild(acikKart(row, false)));
 };
 </script>
+<!-- ===== BULUT.com PROFESYONEL TALEP VİTRİNİ ===== -->
+<style>
+#talepVitriniModal{
+    position:fixed!important;
+    inset:0!important;
+    z-index:9500!important;
+    background:#f4f7fb!important;
+    backdrop-filter:none!important;
+    padding:0!important;
+    align-items:stretch!important;
+    justify-content:stretch!important;
+    overflow:auto!important;
+}
+
+#talepVitriniModal .vitrin-card{
+    width:100%!important;
+    max-width:none!important;
+    min-height:100vh!important;
+    max-height:none!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:#f4f7fb!important;
+    overflow:visible!important;
+}
+
+.bulut-market-head{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#06162d;
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    box-shadow:0 8px 28px rgba(0,0,0,.12);
+}
+
+.bulut-market-head-inner{
+    max-width:1240px;
+    margin:auto;
+    min-height:82px;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.bulut-market-title{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.bulut-market-title h2{
+    margin:0;
+    font-size:27px;
+    letter-spacing:-.8px;
+}
+
+.bulut-market-title p{
+    margin:0;
+    color:#b9c8da;
+    font-size:12px;
+}
+
+.bulut-market-close{
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border-radius:12px;
+    font-size:24px;
+}
+
+.bulut-market-close:hover{
+    background:rgba(255,255,255,.14);
+}
+
+.bulut-market-wrap{
+    max-width:1240px;
+    margin:0 auto;
+    padding:28px 22px 70px;
+}
+
+.bulut-market-toolbar{
+    background:#fff;
+    border:1px solid #dfe6ef;
+    border-radius:18px;
+    padding:16px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:10px;
+    box-shadow:0 8px 28px rgba(15,23,42,.05);
+    margin-bottom:18px;
+}
+
+.bulut-market-toolbar input,
+.bulut-market-toolbar select{
+    width:100%;
+    height:46px;
+    border:1px solid #d8e0ea;
+    background:#fbfcfe;
+    border-radius:11px;
+    padding:0 13px;
+    outline:none;
+    color:#172033;
+    font-weight:700;
+}
+
+.bulut-market-toolbar input:focus,
+.bulut-market-toolbar select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.08);
+    background:#fff;
+}
+
+.bulut-market-topline{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin:24px 0 12px;
+}
+
+.bulut-market-topline h3{
+    margin:0;
+    font-size:22px;
+    color:#0b1b33;
+}
+
+.bulut-market-count{
+    border-radius:999px;
+    padding:7px 11px;
+    background:#ecfdf3;
+    color:#087443;
+    font-size:11px;
+    font-weight:900;
+}
+
+.bulut-list{
+    display:grid;
+    gap:11px;
+}
+
+.bulut-demand-row{
+    background:#fff;
+    border:1px solid #dfe6ef;
+    border-radius:15px;
+    display:grid;
+    grid-template-columns:62px 1fr auto;
+    gap:16px;
+    align-items:center;
+    padding:17px 18px;
+    transition:.16s ease;
+    box-shadow:0 5px 18px rgba(15,23,42,.035);
+}
+
+.bulut-demand-row:hover{
+    transform:translateY(-1px);
+    border-color:#b9c9dc;
+    box-shadow:0 10px 25px rgba(15,23,42,.07);
+}
+
+.bulut-demand-icon{
+    width:52px;
+    height:52px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:#eef4ff;
+    color:#1d4ed8;
+}
+
+.bulut-demand-icon svg{
+    width:27px;
+    height:27px;
+}
+
+.bulut-demand-main h4{
+    margin:0 0 7px;
+    font-size:17px;
+    color:#0b1b33;
+}
+
+.bulut-demand-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px 14px;
+    font-size:11px;
+    color:#667085;
+}
+
+.bulut-demand-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+}
+
+.bulut-demand-badge{
+    display:inline-flex;
+    margin-top:8px;
+    padding:5px 8px;
+    border-radius:999px;
+    font-size:10px;
+    font-weight:900;
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+.bulut-demand-badge.pro{
+    background:#fff7db;
+    color:#8a6100;
+}
+
+.bulut-demand-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.bulut-demand-button{
+    border:0;
+    border-radius:10px;
+    padding:11px 14px;
+    background:#06162d;
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.bulut-demand-button:hover{
+    background:#0d2c53;
+}
+
+.bulut-own{
+    border-radius:999px;
+    padding:7px 10px;
+    background:#eef2ff;
+    color:#4338ca;
+    font-size:10px;
+    font-weight:900;
+}
+
+.bulut-market-empty{
+    background:#fff;
+    border:1px solid #dfe6ef;
+    border-radius:18px;
+    padding:58px 25px;
+    text-align:center;
+    color:#667085;
+}
+
+.bulut-market-empty strong{
+    display:block;
+    color:#0b1b33;
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.bulut-market-login{
+    max-width:650px;
+    margin:60px auto;
+    background:#fff;
+    border:1px solid #dfe6ef;
+    border-radius:22px;
+    padding:42px;
+    text-align:center;
+    box-shadow:0 15px 45px rgba(15,23,42,.07);
+}
+
+.bulut-market-login svg{
+    width:46px;
+    height:46px;
+    color:#2563eb;
+    margin-bottom:14px;
+}
+
+.bulut-market-login h3{
+    margin:0 0 9px;
+    font-size:25px;
+}
+
+.bulut-market-login p{
+    margin:0 auto 20px;
+    max-width:510px;
+    line-height:1.65;
+    color:#667085;
+}
+
+.bulut-market-login button{
+    border:0;
+    border-radius:11px;
+    background:#2563eb;
+    color:#fff;
+    padding:13px 19px;
+    font-weight:900;
+}
+
+@media(max-width:850px){
+    .bulut-market-toolbar{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .bulut-demand-row{
+        grid-template-columns:48px 1fr;
+    }
+
+    .bulut-demand-actions{
+        grid-column:1/-1;
+        justify-content:flex-end;
+    }
+}
+
+@media(max-width:560px){
+    .bulut-market-toolbar{
+        grid-template-columns:1fr;
+    }
+
+    .bulut-demand-row{
+        grid-template-columns:1fr;
+    }
+
+    .bulut-demand-icon{
+        width:45px;
+        height:45px;
+    }
+
+    .bulut-demand-actions{
+        justify-content:flex-start;
+    }
+
+    .bulut-demand-button{
+        width:100%;
+    }
+}
+</style>
+
+<script>
+/* ===== BULUT.com YENİ TALEP VİTRİNİ ===== */
+
+let bulutVitrinVerileri = [];
+
+function bulutTalepIkonu(kategori, baslik){
+    const yazi = (String(kategori||'') + ' ' + String(baslik||''))
+        .toLocaleLowerCase('tr-TR');
+
+    if(yazi.includes('araç') || yazi.includes('arac')){
+        return `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 15l2-5a2 2 0 0 1 2-1h8a2 2 0 0 1 2 1l2 5"/>
+            <path d="M3 15h18v4H3z"/>
+            <path d="M6 19v2M18 19v2"/>
+        </svg>`;
+    }
+
+    if(yazi.includes('arsa') || yazi.includes('arazi') || yazi.includes('tarla')){
+        return `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 18c5-6 10-7 18-10"/>
+            <path d="M3 13c5-4 10-5 18-7"/>
+            <path d="M4 21h16"/>
+        </svg>`;
+    }
+
+    return `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M5 21V4h14v17"/>
+        <path d="M3 21h18"/>
+        <path d="M8 8h2M14 8h2M8 12h2M14 12h2M10 21v-4h4v4"/>
+    </svg>`;
+}
+
+function bulutTarih(tarih){
+    if(!tarih) return 'Yeni';
+    try{
+        return new Date(tarih).toLocaleDateString('tr-TR',{
+            day:'2-digit',
+            month:'2-digit',
+            year:'numeric'
+        });
+    }catch(e){
+        return '';
+    }
+}
+
+function bulutVitrinIskelet(){
+    const modal = document.getElementById('talepVitriniModal');
+    if(!modal) return;
+
+    modal.innerHTML = `
+        <div class="vitrin-card">
+            <div class="bulut-market-head">
+                <div class="bulut-market-head-inner">
+                    <div class="bulut-market-title">
+                        <h2>BULUT.com Talep Vitrini</h2>
+                        <p>İnsanların şu anda ne aradığını keşfedin.</p>
+                    </div>
+
+                    <button class="bulut-market-close"
+                        onclick="appModalKapat('talepVitriniModal')">×</button>
+                </div>
+            </div>
+
+            <main class="bulut-market-wrap">
+                <div id="bulutVitrinAlan">
+                    <div class="bulut-market-empty">
+                        Talepler hazırlanıyor...
+                    </div>
+                </div>
+            </main>
+        </div>
+    `;
+}
+
+function bulutFiltrele(){
+    const ara = document.getElementById('bulutVitrinAra')?.value
+        .toLocaleLowerCase('tr-TR').trim() || '';
+
+    const kategori = document.getElementById('bulutVitrinKategori')?.value || '';
+    const sehir = document.getElementById('bulutVitrinSehir')?.value || '';
+    const tip = document.getElementById('bulutVitrinTip')?.value || '';
+
+    const filtre = bulutVitrinVerileri.filter(x=>{
+        const metin = [
+            x.baslik,
+            x.kategori,
+            x.sehir,
+            x.ilce,
+            x.profil_adi,
+            x.hesap_tipi
+        ].join(' ').toLocaleLowerCase('tr-TR');
+
+        return (!ara || metin.includes(ara))
+            && (!kategori || x.kategori === kategori)
+            && (!sehir || x.sehir === sehir)
+            && (!tip || x.hesap_tipi === tip);
+    });
+
+    bulutListeyiCiz(filtre);
+}
+
+function bulutListeyiCiz(veriler){
+    const liste = document.getElementById('bulutVitrinListe');
+    const sayac = document.getElementById('bulutVitrinSayac');
+    if(!liste) return;
+
+    if(sayac) sayac.textContent = `${veriler.length} aktif talep`;
+
+    if(!veriler.length){
+        liste.innerHTML = `
+            <div class="bulut-market-empty">
+                <strong>Şu an aktif talep bulunmuyor.</strong>
+                Yeni talepler yayınlandığında burada görüntülenecek.
+            </div>
+        `;
+        return;
+    }
+
+    liste.innerHTML = '';
+
+    veriler.forEach(row=>{
+        const kart = document.createElement('article');
+        kart.className = 'bulut-demand-row';
+
+        const profesyonel = row.hesap_tipi === 'profesyonel';
+        const kendiTalebi = aktifUser && String(row.user_id) === String(aktifUser.id);
+
+        kart.innerHTML = `
+            <div class="bulut-demand-icon">
+                ${bulutTalepIkonu(row.kategori,row.baslik)}
+            </div>
+
+            <div class="bulut-demand-main">
+                <h4>${escapeHTML(row.baslik || 'Talep')}</h4>
+
+                <div class="bulut-demand-meta">
+                    <span>📍 ${escapeHTML(
+                        [row.sehir,row.ilce].filter(Boolean).join(' / ') || 'Türkiye'
+                    )}</span>
+
+                    <span>◷ ${bulutTarih(row.created_at)}</span>
+
+                    <span>${escapeHTML(row.kategori || 'Talep')}</span>
+                </div>
+
+                <span class="bulut-demand-badge ${profesyonel?'pro':''}">
+                    ${profesyonel
+                        ? 'Profesyonel Üye'
+                        : 'Bireysel Üye'}
+                    ${row.profil_adi
+                        ? ' • ' + escapeHTML(row.profil_adi)
+                        : ''}
+                </span>
+            </div>
+
+            <div class="bulut-demand-actions">
+                ${kendiTalebi
+                    ? `<span class="bulut-own">Kendi Talebiniz</span>`
+                    : `<button class="bulut-demand-button"
+                        onclick="teklifVer('${String(row.id)}')">
+                        Talebi İncele →
+                       </button>`
+                }
+            </div>
+        `;
+
+        liste.appendChild(kart);
+    });
+}
+
+async function bulutGercekTalepleriGetir(){
+    const alan = document.getElementById('bulutVitrinAlan');
+    const user = await aktifKullaniciyiAl();
+
+    if(!user){
+        alan.innerHTML = `
+            <div class="bulut-market-login">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.8">
+                    <rect x="5" y="10" width="14" height="10" rx="2"/>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                </svg>
+
+                <h3>Talep Vitrinine Ücretsiz Katılın</h3>
+
+                <p>
+                    Güncel talepleri ayrıntılı görüntülemek,
+                    filtrelemek ve uygun taleplere karşılık vermek
+                    için Google hesabınızla ücretsiz giriş yapın.
+                </p>
+
+                <button onclick="googleIleGiris()">
+                    Google ile Ücretsiz Giriş Yap
+                </button>
+            </div>
+        `;
+        return;
+    }
+
+    alan.innerHTML = `
+        <div class="bulut-market-toolbar">
+            <input id="bulutVitrinAra"
+                   placeholder="Talep ara..."
+                   oninput="bulutFiltrele()">
+
+            <select id="bulutVitrinKategori" onchange="bulutFiltrele()">
+                <option value="">Tüm kategoriler</option>
+                <option value="Emlak">Gayrimenkul</option>
+                <option value="Araç">Araç</option>
+            </select>
+
+            <select id="bulutVitrinSehir" onchange="bulutFiltrele()">
+                <option value="">Tüm şehirler</option>
+            </select>
+
+            <select id="bulutVitrinTip" onchange="bulutFiltrele()">
+                <option value="">Tüm üyeler</option>
+                <option value="alici">Bireysel</option>
+                <option value="bireysel">Bireysel</option>
+                <option value="profesyonel">Profesyonel</option>
+            </select>
+        </div>
+
+        <div class="bulut-market-topline">
+            <h3>Güncel Talepler</h3>
+            <span id="bulutVitrinSayac"
+                  class="bulut-market-count">0 aktif talep</span>
+        </div>
+
+        <div id="bulutVitrinListe" class="bulut-list">
+            <div class="bulut-market-empty">Talepler yükleniyor...</div>
+        </div>
+    `;
+
+    const {data,error} = await supabaseClient
+        .from('TALEPLER')
+        .select('*')
+        .eq('durum','aktif')
+        .order('created_at',{ascending:false})
+        .limit(100);
+
+    if(error){
+        console.error(error);
+        document.getElementById('bulutVitrinListe').innerHTML = `
+            <div class="bulut-market-empty">
+                <strong>Talep vitrini şu anda yüklenemedi.</strong>
+                Lütfen kısa süre sonra tekrar deneyin.
+            </div>
+        `;
+        return;
+    }
+
+    if(!data || !data.length){
+        bulutVitrinVerileri = [];
+        bulutListeyiCiz([]);
+        return;
+    }
+
+    const kullaniciIdleri = [...new Set(
+        data.map(x=>x.user_id).filter(Boolean)
+    )];
+
+    let profilMap = {};
+
+    if(kullaniciIdleri.length){
+        try{
+            const {data:profiller} = await supabaseClient
+                .from('PROFILLER')
+                .select('user_id,ad_soyad,isletme_adi,hesap_tipi')
+                .in('user_id',kullaniciIdleri);
+
+            (profiller || []).forEach(p=>{
+                profilMap[String(p.user_id)] = p;
+            });
+        }catch(e){
+            console.warn('Profil bilgileri alınamadı.',e);
+        }
+    }
+
+    bulutVitrinVerileri = data.map(row=>{
+        const p = profilMap[String(row.user_id)] || {};
+
+        return {
+            ...row,
+            hesap_tipi:p.hesap_tipi || 'bireysel',
+            profil_adi:
+                p.hesap_tipi === 'profesyonel'
+                ? (p.isletme_adi || p.ad_soyad || '')
+                : (p.ad_soyad || '')
+        };
+    });
+
+    const sehirSelect = document.getElementById('bulutVitrinSehir');
+
+    [...new Set(
+        bulutVitrinVerileri
+            .map(x=>x.sehir)
+            .filter(Boolean)
+    )]
+    .sort((a,b)=>a.localeCompare(b,'tr'))
+    .forEach(sehir=>{
+        const op = document.createElement('option');
+        op.value = sehir;
+        op.textContent = sehir;
+        sehirSelect.appendChild(op);
+    });
+
+    bulutListeyiCiz(bulutVitrinVerileri);
+}
+
+window.talepVitriniAc = async function(){
+    bulutVitrinIskelet();
+
+    const modal = document.getElementById('talepVitriniModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    await bulutGercekTalepleriGetir();
+};
+</script>
+<script>
+/* ===== BULUT.com TALEP VİTRİNİ SON DÜZELTME ===== */
+
+function bulutVitrineKapat(){
+    const modal = document.getElementById('talepVitriniModal');
+
+    if(modal){
+        modal.classList.remove('open');
+        modal.style.display = 'none';
+    }
+
+    document.body.style.overflow = '';
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+
+/* ÜST KISMI YENİDEN OLUŞTUR */
+window.bulutVitrinIskelet = function(){
+
+    const modal = document.getElementById('talepVitriniModal');
+
+    if(!modal) return;
+
+    modal.style.display = 'flex';
+
+    modal.innerHTML = `
+        <div class="vitrin-card">
+
+            <div class="bulut-market-head">
+
+                <div class="bulut-market-head-inner">
+
+                    <div class="bulut-market-title">
+                        <h2>BULUT.com Talep Vitrini</h2>
+                        <p>İnsanların şu anda ne aradığını keşfedin.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        onclick="bulutVitrineKapat()"
+                        style="
+                            border:1px solid rgba(255,255,255,.18);
+                            background:rgba(255,255,255,.08);
+                            color:white;
+                            border-radius:11px;
+                            padding:11px 16px;
+                            font-weight:900;
+                            font-size:13px;
+                        ">
+                        ← Siteye Dön
+                    </button>
+
+                </div>
+
+            </div>
+
+            <main class="bulut-market-wrap">
+
+                <div id="bulutVitrinAlan">
+
+                    <div class="bulut-market-empty">
+                        Talepler hazırlanıyor...
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    `;
+};
+
+
+/* GERÇEK TALEPLER */
+window.bulutGercekTalepleriGetir = async function(){
+
+    const alan = document.getElementById('bulutVitrinAlan');
+
+    const user = await aktifKullaniciyiAl();
+
+
+    /* GİRİŞ YOKSA */
+    if(!user){
+
+        alan.innerHTML = `
+            <div class="bulut-market-login">
+
+                <h3>Talep Vitrinine Ücretsiz Katılın</h3>
+
+                <p>
+                    Güncel talepleri görüntülemek ve uygun
+                    taleplere karşılık vermek için Google hesabınızla
+                    ücretsiz giriş yapın.
+                </p>
+
+                <button onclick="googleIleGiris()">
+                    Google ile Ücretsiz Giriş Yap
+                </button>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    alan.innerHTML = `
+        <div class="bulut-market-toolbar">
+
+            <input
+                id="bulutVitrinAra"
+                placeholder="Talep ara..."
+                oninput="bulutFiltrele()">
+
+            <select
+                id="bulutVitrinKategori"
+                onchange="bulutFiltrele()">
+
+                <option value="">Tüm kategoriler</option>
+                <option value="Emlak">Gayrimenkul</option>
+                <option value="Araç">Araç</option>
+
+            </select>
+
+            <select
+                id="bulutVitrinSehir"
+                onchange="bulutFiltrele()">
+
+                <option value="">Tüm şehirler</option>
+
+            </select>
+
+            <select
+                id="bulutVitrinTip"
+                onchange="bulutFiltrele()">
+
+                <option value="">Tüm üyeler</option>
+                <option value="bireysel">Bireysel</option>
+                <option value="profesyonel">Profesyonel</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="bulut-market-topline">
+
+            <h3>Güncel Talepler</h3>
+
+            <span
+                id="bulutVitrinSayac"
+                class="bulut-market-count">
+                0 aktif talep
+            </span>
+
+        </div>
+
+
+        <div
+            id="bulutVitrinListe"
+            class="bulut-list">
+
+            <div class="bulut-market-empty">
+                Talepler kontrol ediliyor...
+            </div>
+
+        </div>
+    `;
+
+
+    /* KENDİ TALEPLERİMİZİ VİTRİNDEN ÇIKARIYORUZ */
+
+    const {data,error} = await supabaseClient
+        .from('TALEPLER')
+        .select('*')
+        .eq('durum','aktif')
+        .neq('user_id', user.id)
+        .order('created_at',{ascending:false})
+        .limit(100);
+
+
+    if(error){
+
+        console.error(error);
+
+        document.getElementById('bulutVitrinListe').innerHTML = `
+            <div class="bulut-market-empty">
+                <strong>Talep vitrini şu anda yüklenemedi.</strong>
+                Lütfen daha sonra tekrar deneyin.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* BAŞKA GERÇEK TALEP YOKSA */
+
+    if(!data || data.length === 0){
+
+        bulutVitrinVerileri = [];
+
+        document.getElementById('bulutVitrinSayac')
+            .textContent = '0 aktif talep';
+
+        document.getElementById('bulutVitrinListe').innerHTML = `
+            <div class="bulut-market-empty"
+                 style="padding:70px 30px">
+
+                <strong style="font-size:24px">
+                    Şu an aktif talep bulunmamaktadır.
+                </strong>
+
+                <div style="
+                    margin-top:8px;
+                    color:#667085;
+                    font-size:14px;
+                ">
+                    Yeni bir talep yayınlandığında burada görüntülenecektir.
+                </div>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* PROFİL BİLGİLERİ */
+
+    const kullaniciIdleri = [
+        ...new Set(
+            data.map(x => x.user_id).filter(Boolean)
+        )
+    ];
+
+    let profilMap = {};
+
+
+    if(kullaniciIdleri.length){
+
+        const {data:profiller} = await supabaseClient
+            .from('PROFILLER')
+            .select(
+                'user_id,ad_soyad,isletme_adi,hesap_tipi'
+            )
+            .in('user_id', kullaniciIdleri);
+
+
+        (profiller || []).forEach(p => {
+
+            profilMap[String(p.user_id)] = p;
+
+        });
+
+    }
+
+
+    bulutVitrinVerileri = data.map(row => {
+
+        const p =
+            profilMap[String(row.user_id)] || {};
+
+        return {
+
+            ...row,
+
+            hesap_tipi:
+                p.hesap_tipi || 'bireysel',
+
+            profil_adi:
+                p.hesap_tipi === 'profesyonel'
+                ? (p.isletme_adi || p.ad_soyad || '')
+                : (p.ad_soyad || '')
+
+        };
+
+    });
+
+
+    /* ŞEHİR FİLTRESİ */
+
+    const sehirSelect =
+        document.getElementById('bulutVitrinSehir');
+
+
+    [
+        ...new Set(
+            bulutVitrinVerileri
+                .map(x => x.sehir)
+                .filter(Boolean)
+        )
+    ]
+    .sort((a,b) => a.localeCompare(b,'tr'))
+    .forEach(sehir => {
+
+        const option =
+            document.createElement('option');
+
+        option.value = sehir;
+        option.textContent = sehir;
+
+        sehirSelect.appendChild(option);
+
+    });
+
+
+    bulutListeyiCiz(
+        bulutVitrinVerileri
+    );
+
+};
+
+
+/* VİTRİNİ AÇ */
+window.talepVitriniAc = async function(){
+
+    bulutVitrinIskelet();
+
+    const modal =
+        document.getElementById('talepVitriniModal');
+
+    modal.style.display = 'flex';
+    modal.classList.add('open');
+
+    document.body.style.overflow = 'hidden';
+
+    await bulutGercekTalepleriGetir();
+
+};
+
+</script>
+<script>
+/* ===== BULUT.com SAYFA GEÇMİŞİ / GERİ-İLERİ / REFRESH ===== */
+
+async function bulutRotaUygula(){
+
+    const modal = document.getElementById('talepVitriniModal');
+    if(!modal) return;
+
+    /* TALEP VİTRİNİ SAYFASI */
+    if(window.location.hash === '#talep-vitrini'){
+
+        bulutVitrinIskelet();
+
+        const yeniModal = document.getElementById('talepVitriniModal');
+
+        yeniModal.style.display = 'flex';
+        yeniModal.classList.add('open');
+
+        document.body.style.overflow = 'hidden';
+
+        await bulutGercekTalepleriGetir();
+
+        return;
+    }
+
+    /* ANA SAYFA */
+    modal.classList.remove('open');
+    modal.style.display = 'none';
+
+    document.body.style.overflow = '';
+}
+
+
+/* TALEP VİTRİNİNİ AÇ */
+window.talepVitriniAc = async function(){
+
+    if(window.location.hash !== '#talep-vitrini'){
+
+        history.pushState(
+            { bulutSayfa:'talep-vitrini' },
+            '',
+            '#talep-vitrini'
+        );
+
+    }
+
+    await bulutRotaUygula();
+};
+
+
+/* SİTEYE DÖN */
+window.bulutVitrineKapat = function(){
+
+    if(window.location.hash === '#talep-vitrini'){
+
+        history.back();
+
+    }else{
+
+        const modal = document.getElementById('talepVitriniModal');
+
+        if(modal){
+            modal.classList.remove('open');
+            modal.style.display = 'none';
+        }
+
+        document.body.style.overflow = '';
+    }
+};
+
+
+/* GOOGLE / CHROME GERİ - İLERİ BUTONLARI */
+window.addEventListener('popstate', function(){
+    bulutRotaUygula();
+});
+
+
+/* HASH DEĞİŞİMLERİNİ DE TAKİP ET */
+window.addEventListener('hashchange', function(){
+    bulutRotaUygula();
+});
+
+
+/* SAYFA YENİLENDİĞİNDE AYNI SAYFADA KAL */
+window.addEventListener('load', function(){
+
+    setTimeout(function(){
+        bulutRotaUygula();
+    },100);
+
+});
+</script>
 </body>
 </html>
