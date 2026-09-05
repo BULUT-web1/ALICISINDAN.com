@@ -213,5 +213,143 @@ function routeHash(){const h=location.hash;if(h==='#talep-vitrini'){if(activeUse
 window.addEventListener('popstate',routeHash);window.addEventListener('hashchange',routeHash);
 (async function init(){await initAuth();routeHash();const after=sessionStorage.getItem('afterAction');if(activeUser&&after&&!needsConsent()&&activeProfile){sessionStorage.removeItem('afterAction');if(after==='demand')setTimeout(()=>openDemandForm(),200);if(after==='showcase')setTimeout(()=>openShowcase(),200)}})();
 </script>
+<style>
+/* ===== BULUT.com KURUCU KARTI ===== */
+
+.founder-card{
+  background:
+    radial-gradient(circle at 90% 10%,rgba(37,99,235,.28),transparent 34%),
+    linear-gradient(145deg,#071426,#0b2340) !important;
+
+  border:1px solid rgba(255,255,255,.10) !important;
+  box-shadow:0 22px 55px rgba(7,20,38,.20) !important;
+}
+
+/* KURUCU yazısı */
+.founder-card .eyebrow,
+.founder-card .founder-label{
+  color:#ffc400 !important;
+  font-weight:950 !important;
+  letter-spacing:.15em !important;
+}
+
+/* Yusuf Akmercan */
+.founder-card h2,
+.founder-card h3{
+  color:#ffffff !important;
+  font-weight:950 !important;
+}
+
+/* Biyografi */
+.founder-card p{
+  color:#d6e0ec !important;
+  font-weight:600 !important;
+  line-height:1.75 !important;
+}
+
+/* Fotoğraf */
+.founder-card img{
+  border:2px solid rgba(255,196,0,.75) !important;
+  box-shadow:0 18px 38px rgba(0,0,0,.28) !important;
+}
+
+/* Alt ayırıcı */
+.founder-card hr,
+.founder-card .founder-divider{
+  border-color:rgba(255,255,255,.14) !important;
+}
+
+/* Telefon / mail */
+.founder-card a{
+  color:#ffc400 !important;
+  font-weight:850 !important;
+  text-decoration:none !important;
+}
+
+.founder-card a:hover{
+  color:#ffffff !important;
+}
+
+/* Adres */
+.founder-card .contact-row,
+.founder-card .founder-contact{
+  color:#e5edf6 !important;
+}
+
+/* Mobil */
+@media(max-width:700px){
+  .founder-card{
+    padding:22px 18px !important;
+  }
+
+  .founder-card img{
+    max-width:155px !important;
+  }
+
+  .founder-card p{
+    font-size:14px !important;
+    line-height:1.7 !important;
+  }
+}
+</style>
+<script>
+/* ===== BULUT.com — KVKK / GÜVENLİK EKRANI AÇILIŞ DÜZELTMESİ =====
+   Site açılır açılmaz gösterme.
+   Sadece kullanıcı giriş/üyelik/talep işlemi başlattığında göster.
+*/
+
+(function(){
+
+  function kullaniciIslemBaslattiMi(){
+    return (
+      sessionStorage.getItem('afterLogin') === '1' ||
+      !!sessionStorage.getItem('membershipIntent') ||
+      !!sessionStorage.getItem('afterAction')
+    );
+  }
+
+  /* Eski otomatik açılma fonksiyonunun yerine geçer */
+  showConsentIfNeeded = function(){
+
+    if(
+      typeof needsConsent === 'function' &&
+      needsConsent() &&
+      kullaniciIslemBaslattiMi()
+    ){
+      sessionStorage.removeItem('afterLogin');
+      openOverlay('consentModal');
+      return;
+    }
+
+    /* Normal site girişinde KVKK ekranını kapalı tut */
+    const modal = document.getElementById('consentModal');
+
+    if(modal){
+      modal.classList.remove('open');
+    }
+  };
+
+
+  /* Eski kod site açılırken modalı açmışsa tekrar kapat */
+  function ilkAcilisiTemizle(){
+
+    if(kullaniciIslemBaslattiMi()) return;
+
+    const modal = document.getElementById('consentModal');
+
+    if(modal){
+      modal.classList.remove('open');
+    }
+
+    document.body.classList.remove('modal-open');
+  }
+
+
+  setTimeout(ilkAcilisiTemizle,50);
+  setTimeout(ilkAcilisiTemizle,300);
+  setTimeout(ilkAcilisiTemizle,800);
+
+})();
+</script>
 </body>
 </html>
