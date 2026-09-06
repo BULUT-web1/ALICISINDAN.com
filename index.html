@@ -351,5 +351,1775 @@ window.addEventListener('popstate',routeHash);window.addEventListener('hashchang
 
 })();
 </script>
+<!-- ===== BULUT.com VIDEO DUZELTME PAKETI ===== -->
+<style>
+
+/* =========================================================
+   1) KURUCU KARTI — ESKİ LACİVERT / SARI PROFESYONEL HAL
+========================================================= */
+
+#hakkimizda .about-card:last-child{
+  position:relative !important;
+  overflow:hidden !important;
+
+  background:
+    radial-gradient(circle at 92% 8%,rgba(37,99,235,.30),transparent 32%),
+    radial-gradient(circle at 5% 100%,rgba(255,196,0,.08),transparent 30%),
+    linear-gradient(145deg,#061426,#0b2848) !important;
+
+  border:1px solid rgba(255,255,255,.12) !important;
+  box-shadow:0 22px 55px rgba(5,18,35,.20) !important;
+}
+
+/* üst sarı ince çizgi */
+#hakkimizda .about-card:last-child::before{
+  content:"";
+  position:absolute;
+  left:24px;
+  right:24px;
+  top:0;
+  height:3px;
+  border-radius:0 0 6px 6px;
+  background:linear-gradient(90deg,#ffc400,#ffd84d,transparent);
+}
+
+#hakkimizda .founder-kicker{
+  color:#ffc400 !important;
+  font-weight:950 !important;
+  letter-spacing:.17em !important;
+}
+
+#hakkimizda .founder-wrap h3{
+  color:#fff !important;
+  font-weight:950 !important;
+}
+
+#hakkimizda .founder-bio{
+  color:#d7e3ef !important;
+  font-weight:550 !important;
+  line-height:1.75 !important;
+}
+
+#hakkimizda .founder-photo{
+  border:2px solid rgba(255,196,0,.82) !important;
+  box-shadow:
+    0 18px 35px rgba(0,0,0,.32),
+    0 0 0 5px rgba(255,196,0,.07) !important;
+}
+
+#hakkimizda .contact-lines{
+  border-top:1px solid rgba(255,255,255,.14) !important;
+  color:#e8eef5 !important;
+}
+
+#hakkimizda .contact-lines a{
+  color:#ffc400 !important;
+  font-weight:900 !important;
+}
+
+#hakkimizda .contact-lines div{
+  color:#e8eef5 !important;
+}
+
+
+/* =========================================================
+   2) ÜSTTEKİ DAİRE / ARAZİ / ARAÇ / ÜYELİK KARTLARI
+   RENKLERİ DAHA CANLI AMA PROFESYONEL
+========================================================= */
+
+.category-card,
+.benefit-card{
+  transition:
+    transform .20s ease,
+    box-shadow .20s ease,
+    border-color .20s ease !important;
+}
+
+.category-card:hover,
+.benefit-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 13px 30px rgba(8,20,38,.10) !important;
+}
+
+.category-card:nth-child(1){
+  border-top:3px solid #2563eb !important;
+}
+
+.category-card:nth-child(2){
+  border-top:3px solid #16a34a !important;
+}
+
+.category-card:nth-child(3){
+  border-top:3px solid #f97316 !important;
+}
+
+.category-card:nth-child(4){
+  border-top:3px solid #7c3aed !important;
+}
+
+.category-card b,
+.benefit-card b{
+  font-weight:900 !important;
+  color:#101828 !important;
+}
+
+.category-card small,
+.benefit-card small{
+  color:#667085 !important;
+}
+
+
+/* =========================================================
+   3) BUZLU TALEP VİTRİNİ — GERÇEK BUZLU CAM HİSSİ
+========================================================= */
+
+.demand-teaser{
+  background:
+    radial-gradient(circle at 80% 5%,rgba(255,196,0,.09),transparent 28%),
+    linear-gradient(145deg,
+      rgba(255,255,255,.13),
+      rgba(255,255,255,.045)
+    ) !important;
+
+  backdrop-filter:blur(22px) saturate(125%) !important;
+  -webkit-backdrop-filter:blur(22px) saturate(125%) !important;
+
+  border:1px solid rgba(255,255,255,.22) !important;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.10) !important;
+}
+
+.teaser-window{
+  background:rgba(3,13,25,.39) !important;
+
+  backdrop-filter:blur(10px) !important;
+  -webkit-backdrop-filter:blur(10px) !important;
+
+  border:1px solid rgba(255,255,255,.14) !important;
+}
+
+.teaser-item{
+  background:rgba(255,255,255,.095) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+
+  filter:blur(.75px) !important;
+  opacity:.78 !important;
+
+  box-shadow:0 8px 18px rgba(0,0,0,.08) !important;
+}
+
+.teaser-frost{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(7,20,38,.08),
+      rgba(7,20,38,.23),
+      rgba(7,20,38,.38)
+    ) !important;
+
+  backdrop-filter:blur(2.4px) !important;
+  -webkit-backdrop-filter:blur(2.4px) !important;
+}
+
+/* Akışı biraz daha sakin */
+.teaser-rail{
+  animation-duration:52s !important;
+}
+
+
+/* =========================================================
+   4) NASIL ÇALIŞIR — DAHA TEMİZ KARTLAR
+========================================================= */
+
+.step-card{
+  border:1px solid #dce5ef !important;
+  box-shadow:0 8px 25px rgba(8,20,38,.045) !important;
+}
+
+.step-card .num{
+  background:#071426 !important;
+  color:#fff !important;
+}
+
+.safety-step{
+  border:1px solid #f7b7b7 !important;
+  background:
+    linear-gradient(135deg,#fffafa,#fff2f2) !important;
+}
+
+.safety-step .num{
+  background:#b42318 !important;
+  color:white !important;
+}
+
+.safety-step h3{
+  color:#a51d15 !important;
+  font-weight:950 !important;
+}
+
+.safety-step p{
+  color:#55383b !important;
+  font-weight:650 !important;
+  line-height:1.65 !important;
+}
+
+
+/* =========================================================
+   5) ÜYELİK ALANI — KOYU MAVİ / SARI
+========================================================= */
+
+.membership-section{
+  background:
+    radial-gradient(circle at 90% 5%,rgba(37,99,235,.32),transparent 30%),
+    linear-gradient(145deg,#061426,#0b2848) !important;
+
+  border:1px solid rgba(255,255,255,.08) !important;
+
+  box-shadow:0 25px 60px rgba(6,20,38,.17) !important;
+}
+
+.verified-pill{
+  background:rgba(255,196,0,.12) !important;
+  border-color:rgba(255,196,0,.28) !important;
+  color:#ffe073 !important;
+}
+
+.membership-section h2{
+  color:#fff !important;
+}
+
+.membership-section p{
+  color:#cdd9e6 !important;
+}
+
+.member-check{
+  background:rgba(255,255,255,.07) !important;
+  border-color:rgba(255,255,255,.11) !important;
+}
+
+
+/* =========================================================
+   6) ARAÇ / ARAZİ / DAİRE FOTOĞRAF KARTLARI
+========================================================= */
+
+.discovery-card{
+  border-radius:21px !important;
+  overflow:hidden !important;
+  box-shadow:0 14px 38px rgba(8,20,38,.08) !important;
+}
+
+.discovery-visual{
+  height:220px !important;
+}
+
+.discovery-visual img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+}
+
+.discovery-card h3{
+  font-weight:950 !important;
+  color:#101828 !important;
+}
+
+
+/* =========================================================
+   7) ANDROID
+========================================================= */
+
+@media(max-width:700px){
+
+  .demand-teaser{
+    min-height:370px !important;
+    border-radius:22px !important;
+  }
+
+  .teaser-window{
+    left:14px !important;
+    right:14px !important;
+  }
+
+  .category-grid,
+  .benefit-grid{
+    gap:8px !important;
+  }
+
+  .category-card,
+  .benefit-card{
+    min-height:75px !important;
+  }
+
+  #hakkimizda .about-card:last-child{
+    padding:21px !important;
+  }
+
+  #hakkimizda .founder-photo{
+    width:105px !important;
+    height:128px !important;
+    margin-right:14px !important;
+    margin-bottom:9px !important;
+  }
+
+  #hakkimizda .founder-bio{
+    font-size:13px !important;
+    line-height:1.68 !important;
+  }
+
+  #hakkimizda .contact-lines{
+    clear:both;
+    padding-top:15px !important;
+  }
+
+  .discovery-visual{
+    height:195px !important;
+  }
+
+}
+
+</style>
+
+
+<script>
+(function(){
+
+/* =========================================================
+   KURUCU YAZISI
+========================================================= */
+
+function bulutVideoDuzeltmeleri(){
+
+  const founderBio =
+    document.querySelector("#hakkimizda .founder-bio");
+
+  if(founderBio){
+    founderBio.textContent =
+      "25 yaşında genç bir girişimci olarak gayrimenkul, teknoloji ve " +
+      "yapay zekâ destekli dijital iş modelleri üzerine çalışıyorum. " +
+      "BULUT.com'u, insanların ihtiyaç duydukları daire, arazi veya araca " +
+      "daha hızlı ulaşmasını; bireysel kullanıcılarla profesyonellerin " +
+      "gerçek talepler üzerinden buluşmasını sağlayan yeni bir hizmet " +
+      "oluşturmak amacıyla geliştiriyorum. Hedefim zaman kaybını azaltan, " +
+      "güvenli, kullanışlı ve büyüyebilen bir sistem ortaya çıkarmak.";
+  }
+
+
+  /* =======================================================
+     ARAÇ FOTOĞRAF KARTI YOKSA GERİ GETİR
+  ======================================================= */
+
+  const grid =
+    document.querySelector(".discovery-grid");
+
+  if(grid){
+
+    const cards =
+      [...grid.querySelectorAll(".discovery-card")];
+
+    const aracVar =
+      cards.some(x =>
+        x.textContent
+          .toLocaleLowerCase("tr-TR")
+          .includes("araç seni bulsun")
+      );
+
+    if(!aracVar){
+
+      grid.insertAdjacentHTML(
+        "afterbegin",
+        `
+        <article class="discovery-card">
+
+          <div class="discovery-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=82"
+              alt="Modern otomobil"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+          </div>
+
+          <h3>Aradığın araç seni bulsun.</h3>
+
+          <p>
+            Marka, model, yıl, kilometre ve bütçe
+            kriterlerini belirt; uygun aracı olanlar
+            sana ulaşsın.
+          </p>
+
+        </article>
+        `
+      );
+
+    }
+
+  }
+
+}
+
+
+/* İlk açılış */
+if(document.readyState === "loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    bulutVideoDuzeltmeleri,
+    {once:true}
+  );
+
+}else{
+
+  bulutVideoDuzeltmeleri();
+
+}
+
+/* Eski JS sonradan DOM değiştirirse tekrar uygula */
+setTimeout(bulutVideoDuzeltmeleri,400);
+setTimeout(bulutVideoDuzeltmeleri,1000);
+
+})();
+</script>
+<!-- ======================================================
+     BULUT.com — SON GÖRSEL DOKUNUŞ PAKETİ
+     </body> ÜSTÜNE YAPIŞTIR
+======================================================= -->
+
+<style>
+:root{
+  --bulut-navy:#081426;
+  --bulut-navy2:#0d2948;
+  --bulut-blue:#2563eb;
+  --bulut-yellow:#ffc400;
+  --bulut-white:#ffffff;
+}
+
+/* ======================================================
+   1. BULUT LOGOSU — SARI BULUT
+====================================================== */
+
+header .logo svg path,
+header .brand svg path,
+.navbar .logo svg path,
+.navbar .brand svg path{
+  fill:var(--bulut-yellow) !important;
+  stroke:var(--bulut-yellow) !important;
+}
+
+header .logo img,
+header .brand img{
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(78%)
+    sepia(91%)
+    saturate(1484%)
+    hue-rotate(358deg)
+    brightness(104%)
+    contrast(105%);
+}
+
+
+/* ======================================================
+   2. HERO — NASIL ÇALIŞIR BUTONU
+====================================================== */
+
+.hero a[href="#nasil-calisir"],
+.hero button[data-target="nasil-calisir"],
+.hero .secondary-btn,
+.hero .btn-secondary{
+  background:rgba(255,196,0,.12) !important;
+  color:#fff !important;
+  border:1.5px solid var(--bulut-yellow) !important;
+  box-shadow:0 8px 25px rgba(255,196,0,.12) !important;
+  font-weight:850 !important;
+}
+
+.hero a[href="#nasil-calisir"]:hover,
+.hero .secondary-btn:hover,
+.hero .btn-secondary:hover{
+  background:var(--bulut-yellow) !important;
+  color:var(--bulut-navy) !important;
+  transform:translateY(-2px);
+}
+
+
+/* ======================================================
+   3. BULUTTAN YAĞMUR + İPLE SALLANAN
+      DAİRE / ARAZİ / ARAÇ
+====================================================== */
+
+.bulut-rain-show{
+  width:300px;
+  height:150px;
+  position:relative;
+  margin:8px auto 2px;
+  pointer-events:none;
+}
+
+.bulut-rain-cloud{
+  position:absolute;
+  left:50%;
+  top:3px;
+  transform:translateX(-50%);
+  width:124px;
+  height:51px;
+  border-radius:40px;
+  background:linear-gradient(145deg,#ffd84d,#ffc400);
+  box-shadow:
+    0 12px 30px rgba(255,196,0,.23),
+    inset 0 2px 7px rgba(255,255,255,.46);
+}
+
+.bulut-rain-cloud:before,
+.bulut-rain-cloud:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  background:#ffc400;
+}
+
+.bulut-rain-cloud:before{
+  width:57px;
+  height:57px;
+  left:17px;
+  top:-28px;
+}
+
+.bulut-rain-cloud:after{
+  width:72px;
+  height:72px;
+  right:14px;
+  top:-39px;
+}
+
+.bulut-drop{
+  position:absolute;
+  top:56px;
+  width:3px;
+  height:13px;
+  border-radius:5px;
+  background:#60a5fa;
+  opacity:.7;
+  animation:bulutRain 1.65s linear infinite;
+}
+
+.bulut-drop.d1{left:101px;animation-delay:0s}
+.bulut-drop.d2{left:128px;animation-delay:.45s}
+.bulut-drop.d3{left:156px;animation-delay:.85s}
+.bulut-drop.d4{left:183px;animation-delay:.25s}
+
+@keyframes bulutRain{
+  0%{transform:translateY(0);opacity:0}
+  20%{opacity:.8}
+  100%{transform:translateY(33px);opacity:0}
+}
+
+.bulut-hanging{
+  position:absolute;
+  top:68px;
+  transform-origin:top center;
+}
+
+.bulut-hanging:before{
+  content:"";
+  display:block;
+  width:1px;
+  height:31px;
+  background:rgba(255,255,255,.38);
+  margin:auto;
+}
+
+.bulut-hanging span{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  font-size:24px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.bulut-house{
+  left:52px;
+  animation:swingOne 3.8s ease-in-out infinite;
+}
+
+.bulut-land{
+  left:125px;
+  animation:swingTwo 4.2s ease-in-out infinite;
+}
+
+.bulut-car{
+  right:52px;
+  animation:swingOne 4.5s ease-in-out infinite reverse;
+}
+
+@keyframes swingOne{
+  0%,100%{transform:rotate(-5deg)}
+  50%{transform:rotate(5deg)}
+}
+
+@keyframes swingTwo{
+  0%,100%{transform:rotate(4deg)}
+  50%{transform:rotate(-4deg)}
+}
+
+
+/* ======================================================
+   4. NASIL ÇALIŞIR — 1 / 2 / 3 / 4 RENKLENDİR
+====================================================== */
+
+#nasil-calisir .step-card:nth-child(1) .num,
+#nasil-calisir .step:nth-child(1) .num{
+  background:#2563eb !important;
+  color:#fff !important;
+  box-shadow:0 7px 18px rgba(37,99,235,.22);
+}
+
+#nasil-calisir .step-card:nth-child(2) .num,
+#nasil-calisir .step:nth-child(2) .num{
+  background:#7c3aed !important;
+  color:#fff !important;
+  box-shadow:0 7px 18px rgba(124,58,237,.22);
+}
+
+#nasil-calisir .step-card:nth-child(3) .num,
+#nasil-calisir .step:nth-child(3) .num{
+  background:#0891b2 !important;
+  color:#fff !important;
+  box-shadow:0 7px 18px rgba(8,145,178,.22);
+}
+
+#nasil-calisir .step-card:nth-child(4) .num,
+#nasil-calisir .step:nth-child(4) .num{
+  background:#16a34a !important;
+  color:#fff !important;
+  box-shadow:0 7px 18px rgba(22,163,74,.22);
+}
+
+
+/* kartların üstüne çok hafif renk */
+#nasil-calisir .step-card{
+  border-top:3px solid rgba(37,99,235,.55) !important;
+  box-shadow:0 10px 28px rgba(8,20,38,.055) !important;
+}
+
+
+/* ======================================================
+   5. BULUT.com'DA NE VAR?
+====================================================== */
+
+.bulut-what-card{
+  min-height:100% !important;
+  height:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:space-between !important;
+}
+
+.bulut-what-card p{
+  line-height:1.75 !important;
+  font-size:15px !important;
+  color:#526174 !important;
+  margin-bottom:0 !important;
+}
+
+
+/* ======================================================
+   6. KURUCU — "KURUCU" BÜYÜK SARI KUTU
+====================================================== */
+
+#hakkimizda .founder-kicker,
+#hakkimizda .founder-label{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background:var(--bulut-yellow) !important;
+  color:var(--bulut-navy) !important;
+
+  padding:8px 14px !important;
+  border-radius:10px !important;
+
+  font-size:13px !important;
+  font-weight:950 !important;
+  letter-spacing:.12em !important;
+
+  box-shadow:0 7px 18px rgba(255,196,0,.18) !important;
+}
+
+
+/* ======================================================
+   7. KURUCU İLETİŞİM İKONLARI
+====================================================== */
+
+.founder-contact-row{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin:10px 0;
+  color:#e7eef7;
+}
+
+.founder-contact-icon{
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:10px;
+
+  background:rgba(255,196,0,.11);
+  border:1px solid rgba(255,196,0,.23);
+}
+
+.founder-contact-icon svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:#ffc400;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.founder-contact-row a{
+  color:#ffc400 !important;
+  font-weight:850 !important;
+  text-decoration:none;
+}
+
+
+/* ======================================================
+   8. YENİ PROFESYONEL FOOTER
+====================================================== */
+
+.bulut-final-footer{
+  margin-top:55px;
+  background:
+    radial-gradient(circle at 90% 5%,rgba(37,99,235,.22),transparent 28%),
+    linear-gradient(145deg,#061426,#0a223d);
+  color:white;
+}
+
+.bulut-footer-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:48px 24px 27px;
+}
+
+.bulut-footer-top{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:42px;
+}
+
+.bulut-footer-brand{
+  font-size:28px;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+
+.bulut-footer-brand .cloud-word{
+  color:#ffc400;
+}
+
+.bulut-footer-desc{
+  max-width:500px;
+  color:#bfcbd8;
+  line-height:1.75;
+  margin-top:13px;
+}
+
+.bulut-footer-title{
+  color:#ffc400;
+  font-size:13px;
+  font-weight:950;
+  letter-spacing:.08em;
+  margin-bottom:13px;
+}
+
+.bulut-footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.bulut-footer-links a,
+.bulut-footer-links button{
+  appearance:none;
+  border:none;
+  background:none;
+  padding:0;
+  color:#dce5ee;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.bulut-footer-links a:hover,
+.bulut-footer-links button:hover{
+  color:#ffc400;
+}
+
+.bulut-footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-top:38px;
+  padding-top:21px;
+  border-top:1px solid rgba(255,255,255,.11);
+  color:#94a3b8;
+  font-size:12px;
+}
+
+
+/* ======================================================
+   MOBİL
+====================================================== */
+
+@media(max-width:700px){
+
+  .bulut-rain-show{
+    transform:scale(.86);
+    margin-top:-2px;
+    margin-bottom:-8px;
+  }
+
+  .bulut-footer-top{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .bulut-footer-inner{
+    padding:38px 20px 24px;
+  }
+
+  .bulut-footer-bottom{
+    display:block;
+    line-height:1.8;
+  }
+
+}
+</style>
+
+
+<script>
+(function(){
+
+/* ======================================================
+   A) HERO'YA BULUT ANİMASYONU
+====================================================== */
+
+function addBulutAnimation(){
+
+  if(document.querySelector(".bulut-rain-show")) return;
+
+  const hero =
+    document.querySelector(".hero .hero-content") ||
+    document.querySelector(".hero-content") ||
+    document.querySelector(".hero");
+
+  if(!hero) return;
+
+  const box=document.createElement("div");
+
+  box.className="bulut-rain-show";
+
+  box.innerHTML=`
+    <div class="bulut-rain-cloud"></div>
+
+    <i class="bulut-drop d1"></i>
+    <i class="bulut-drop d2"></i>
+    <i class="bulut-drop d3"></i>
+    <i class="bulut-drop d4"></i>
+
+    <div class="bulut-hanging bulut-house">
+      <span title="Daire">🏠</span>
+    </div>
+
+    <div class="bulut-hanging bulut-land">
+      <span title="Arazi">🌿</span>
+    </div>
+
+    <div class="bulut-hanging bulut-car">
+      <span title="Araç">🚘</span>
+    </div>
+  `;
+
+  const buttons =
+    hero.querySelector(".hero-actions") ||
+    hero.querySelector(".actions");
+
+  if(buttons){
+    buttons.insertAdjacentElement("afterend",box);
+  }else{
+    hero.appendChild(box);
+  }
+}
+
+
+/* ======================================================
+   B) BULUT.com'DA NE VAR METNİNİ DOLDUR
+====================================================== */
+
+function fillWhatSection(){
+
+  const headings=[...document.querySelectorAll("h1,h2,h3,h4")];
+
+  const title=headings.find(el =>
+    el.textContent
+      .toLocaleLowerCase("tr-TR")
+      .includes("bulut.com'da ne var")
+  );
+
+  if(!title) return;
+
+  const card =
+    title.closest(".card") ||
+    title.closest(".about-card") ||
+    title.parentElement;
+
+  if(!card) return;
+
+  card.classList.add("bulut-what-card");
+
+  const p=card.querySelector("p");
+
+  if(p){
+    p.textContent =
+      "BULUT.com klasik ilan arama sistemini tersine çevirir. " +
+      "Aradığınız daireyi, araziyi veya aracı günlerce ilan ilan dolaşmak " +
+      "yerine ihtiyacınızı birkaç adımda talep olarak yayınlarsınız. " +
+      "Kriterlerinize uygun seçeneği bulunan bireysel kullanıcılar ve " +
+      "profesyoneller talebinize karşılık verebilir. Böylece zaman kaybı " +
+      "azalır, gerçek ihtiyaç ile uygun seçenek daha hızlı buluşur.";
+  }
+}
+
+
+/* ======================================================
+   C) KURUCU İLETİŞİM SATIRLARINI GÜZELLEŞTİR
+====================================================== */
+
+function beautifyFounder(){
+
+  const area=document.querySelector("#hakkimizda");
+  if(!area) return;
+
+  const container=
+    area.querySelector(".contact-lines");
+
+  if(!container) return;
+
+  if(container.dataset.pretty==="1") return;
+
+  container.dataset.pretty="1";
+
+  const phoneIcon=`
+    <span class="founder-contact-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+        19.79 19.79 0 0 1-8.63-3.07
+        19.5 19.5 0 0 1-6-6
+        19.79 19.79 0 0 1-3.07-8.67
+        A2 2 0 0 1 4.11 2h3
+        a2 2 0 0 1 2 1.72
+        c.12.9.33 1.78.62 2.63
+        a2 2 0 0 1-.45 2.11L8 9.73
+        a16 16 0 0 0 6 6l1.27-1.27
+        a2 2 0 0 1 2.11-.45
+        c.85.29 1.73.5 2.63.62
+        A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    </span>`;
+
+  const mailIcon=`
+    <span class="founder-contact-icon">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </svg>
+    </span>`;
+
+  const locationIcon=`
+    <span class="founder-contact-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </svg>
+    </span>`;
+
+  [...container.children].forEach(row=>{
+
+    if(row.querySelector(".founder-contact-icon")) return;
+
+    const txt=row.textContent.toLowerCase();
+
+    row.classList.add("founder-contact-row");
+
+    if(txt.includes("@")){
+      row.insertAdjacentHTML("afterbegin",mailIcon);
+    }
+    else if(txt.includes("0553") || txt.includes("+90")){
+      row.insertAdjacentHTML("afterbegin",phoneIcon);
+    }
+    else{
+      row.insertAdjacentHTML("afterbegin",locationIcon);
+    }
+
+  });
+
+}
+
+
+/* ======================================================
+   D) FOOTER
+====================================================== */
+
+function addFooter(){
+
+  if(document.querySelector(".bulut-final-footer")) return;
+
+  /* eski footer varsa gizle */
+  const old=document.querySelector("body > footer");
+  if(old) old.style.display="none";
+
+  document.body.insertAdjacentHTML("beforeend",`
+
+    <footer class="bulut-final-footer">
+
+      <div class="bulut-footer-inner">
+
+        <div class="bulut-footer-top">
+
+          <div>
+
+            <div class="bulut-footer-brand">
+              <span class="cloud-word">BULUT</span>.com
+            </div>
+
+            <div class="bulut-footer-desc">
+              Artık aramak yok, aranmak var.
+              İhtiyacını talep olarak yayınla;
+              uygun seçeneği olanlar seni bulsun.
+              Daire, arazi ve araç taleplerini daha
+              düzenli, hızlı ve kontrollü biçimde buluşturan
+              yeni nesil talep platformu.
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="bulut-footer-title">
+              BULUT.com
+            </div>
+
+            <div class="bulut-footer-links">
+
+              <a href="#hakkimizda">
+                Hakkımızda
+              </a>
+
+              <a href="#iletisim">
+                İletişim
+              </a>
+
+              <a href="mailto:yusufakmercan1@gmail.com?subject=BULUT.com%20Soru%20ve%20Öneri">
+                Soru ve Öneri
+              </a>
+
+              <a href="mailto:yusufakmercan1@gmail.com?subject=BULUT.com%20Şikayet">
+                Şikayet
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="bulut-footer-title">
+              YASAL
+            </div>
+
+            <div class="bulut-footer-links">
+
+              <button type="button"
+                onclick="window.bulutOpenTerms && window.bulutOpenTerms()">
+                Kullanım Koşulları
+              </button>
+
+              <button type="button"
+                onclick="window.bulutOpenKvkk && window.bulutOpenKvkk()">
+                KVKK Aydınlatma Metni
+              </button>
+
+              <span style="
+                color:#94a3b8;
+                line-height:1.65;
+                font-size:12px;
+              ">
+                Güvenliğiniz için taşınmazı veya ürünü
+                görmeden kapora ya da ön ödeme göndermeyin.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="bulut-footer-bottom">
+
+          <span>
+            © 2026 BULUT.com — Tüm hakları saklıdır.
+          </span>
+
+          <span>
+            Gerçek talepler • Kontrollü iletişim • Yeni nesil eşleşme
+          </span>
+
+        </div>
+
+      </div>
+
+    </footer>
+  `);
+
+}
+
+
+/* ======================================================
+   E) MEVCUT KVKK / KOŞULLAR MODALLARINI BUL
+====================================================== */
+
+window.bulutOpenTerms=function(){
+
+  const modal=
+    document.getElementById("termsModal") ||
+    document.getElementById("terms-modal") ||
+    document.querySelector('[data-modal="terms"]');
+
+  if(modal){
+    modal.classList.add("open");
+    modal.style.display="";
+    return;
+  }
+
+  const consent=document.getElementById("consentModal");
+
+  if(consent){
+    consent.classList.add("open");
+  }
+
+};
+
+
+window.bulutOpenKvkk=function(){
+
+  const modal=
+    document.getElementById("kvkkModal") ||
+    document.getElementById("kvkk-modal") ||
+    document.querySelector('[data-modal="kvkk"]');
+
+  if(modal){
+    modal.classList.add("open");
+    modal.style.display="";
+    return;
+  }
+
+  const consent=document.getElementById("consentModal");
+
+  if(consent){
+    consent.classList.add("open");
+  }
+
+};
+
+
+/* ======================================================
+   ÇALIŞTIR
+====================================================== */
+
+function bulutFinalTouch(){
+
+  addBulutAnimation();
+  fillWhatSection();
+  beautifyFounder();
+  addFooter();
+
+}
+
+if(document.readyState==="loading"){
+  document.addEventListener(
+    "DOMContentLoaded",
+    bulutFinalTouch,
+    {once:true}
+  );
+}else{
+  bulutFinalTouch();
+}
+
+setTimeout(bulutFinalTouch,400);
+setTimeout(bulutFinalTouch,900);
+
+})();
+</script>
+<!-- =====================================================
+     BULUT.com — SON RÖTUŞ
+     SADECE İSTENEN 4 ALANI DEĞİŞTİRİR
+====================================================== -->
+
+<style>
+
+/* -----------------------------------------------------
+   1) YANLIŞLIKLA HERO ALTINA EKLENEN BÜYÜK BULUTU KALDIR
+------------------------------------------------------ */
+.hero .bulut-rain-show{
+  display:none !important;
+}
+
+
+/* -----------------------------------------------------
+   2) ÜST SOL BULUT.com LOGOSU
+------------------------------------------------------ */
+
+.bulut-top-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  overflow:visible !important;
+}
+
+.bulut-mini-logo{
+  position:relative;
+  width:72px;
+  height:48px;
+  flex:0 0 72px;
+  overflow:visible;
+}
+
+/* içi boş sarı bulut */
+.bulut-mini-cloud{
+  position:absolute;
+  top:0;
+  left:10px;
+  width:51px;
+  height:25px;
+  z-index:5;
+}
+
+.bulut-mini-cloud svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* ipler */
+.bulut-mini-string{
+  position:absolute;
+  top:20px;
+  width:1px;
+  height:14px;
+  background:rgba(255,196,0,.65);
+  transform-origin:top center;
+}
+
+.bulut-mini-string.s1{left:18px;}
+.bulut-mini-string.s2{left:35px;}
+.bulut-mini-string.s3{left:52px;}
+
+
+/* alttaki minik ikonlar */
+.bulut-mini-item{
+  position:absolute;
+  top:32px;
+
+  width:17px;
+  height:17px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:5px;
+
+  background:rgba(255,196,0,.11);
+  border:1px solid rgba(255,196,0,.48);
+
+  transform-origin:50% -13px;
+}
+
+.bulut-mini-item svg{
+  width:12px;
+  height:12px;
+  fill:none;
+  stroke:#ffc400;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+
+/* Daire */
+.bulut-mini-home{
+  left:10px;
+  animation:bulutMiniSwing1 3.2s ease-in-out infinite;
+}
+
+/* Arazi */
+.bulut-mini-land{
+  left:27px;
+  animation:bulutMiniSwing2 3.7s ease-in-out infinite;
+}
+
+/* Araç */
+.bulut-mini-car{
+  left:44px;
+  animation:bulutMiniSwing3 3.4s ease-in-out infinite;
+}
+
+
+@keyframes bulutMiniSwing1{
+  0%,100%{transform:rotate(-7deg)}
+  50%{transform:rotate(7deg)}
+}
+
+@keyframes bulutMiniSwing2{
+  0%,100%{transform:rotate(6deg)}
+  50%{transform:rotate(-6deg)}
+}
+
+@keyframes bulutMiniSwing3{
+  0%,100%{transform:rotate(-5deg)}
+  50%{transform:rotate(6deg)}
+}
+
+
+/* BULUT.com yazısı */
+.bulut-top-brand .bulut-brand-name{
+  color:#fff;
+  font-weight:950;
+  letter-spacing:-.5px;
+  white-space:nowrap;
+}
+
+.bulut-top-brand .bulut-brand-name strong{
+  color:#ffc400;
+}
+
+
+/* -----------------------------------------------------
+   3) HERO'DAKİ NASIL ÇALIŞIR BUTONU
+------------------------------------------------------ */
+
+.hero a[href="#nasil-calisir"]{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;
+  color:#ffffff !important;
+
+  border:1px solid rgba(255,255,255,.16) !important;
+
+  box-shadow:
+    0 9px 23px rgba(37,99,235,.28) !important;
+
+  font-weight:900 !important;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease !important;
+}
+
+.hero a[href="#nasil-calisir"]:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 13px 28px rgba(37,99,235,.37) !important;
+}
+
+
+/* -----------------------------------------------------
+   4) BULUT.com'DA NE VAR? KUTUSUNU DOLDUR
+------------------------------------------------------ */
+
+.bulut-what-final{
+  height:100% !important;
+  min-height:100% !important;
+}
+
+.bulut-what-final p{
+  color:#536174 !important;
+  font-size:15px !important;
+  line-height:1.78 !important;
+}
+
+.bulut-what-final .bulut-extra-text{
+  margin-top:14px !important;
+}
+
+
+/* -----------------------------------------------------
+   5) KURUCU — YENİ İKONLAR KALSIN,
+      ESKİ DANDİK İŞARETLER GİTSİN
+------------------------------------------------------ */
+
+.founder-contact-row{
+  display:flex !important;
+  align-items:center !important;
+  gap:11px !important;
+}
+
+/* yeni güzel ikon */
+.founder-contact-icon{
+  flex:0 0 34px !important;
+}
+
+
+/* MOBİL */
+@media(max-width:700px){
+
+  .bulut-mini-logo{
+    width:63px;
+    flex-basis:63px;
+    transform:scale(.90);
+    transform-origin:left center;
+  }
+
+  .bulut-top-brand{
+    gap:4px !important;
+  }
+
+}
+</style>
+
+
+<script>
+(function(){
+
+/* =====================================================
+   A) HERO ALTINDAKİ ESKİ BÜYÜK ANİMASYONU KALDIR
+===================================================== */
+
+function removeWrongHeroCloud(){
+
+  document
+    .querySelectorAll(".hero .bulut-rain-show")
+    .forEach(function(el){
+      el.remove();
+    });
+
+}
+
+
+/* =====================================================
+   B) ÜSTTEKİ BULUT.com LOGOSUNU BUL VE DEĞİŞTİR
+===================================================== */
+
+function buildTopLogo(){
+
+  if(document.querySelector(".bulut-mini-logo")) return;
+
+  const header=document.querySelector("header");
+  if(!header) return;
+
+  let brand=
+    header.querySelector(".brand") ||
+    header.querySelector(".logo") ||
+    header.querySelector("a.logo") ||
+    header.querySelector("a.brand");
+
+  /* sınıf bulunamazsa BULUT.com yazan en küçük linki ara */
+  if(!brand){
+
+    const links=[...header.querySelectorAll("a")];
+
+    brand=links.find(function(a){
+      return a.textContent
+        .replace(/\s+/g,"")
+        .toLocaleLowerCase("tr-TR")
+        .includes("bulut.com");
+    });
+
+  }
+
+  if(!brand) return;
+
+  brand.classList.add("bulut-top-brand");
+
+  /*
+     Eski logo görüntüsünü tamamen kaldırıyoruz.
+     Linkin kendisini kaldırmadığımız için ana sayfa bağlantısı bozulmaz.
+  */
+  brand.innerHTML=`
+
+    <span class="bulut-mini-logo">
+
+      <!-- İÇİ BOŞ SARI BULUT -->
+      <span class="bulut-mini-cloud">
+        <svg viewBox="0 0 64 32">
+          <path
+            d="M17 27
+               H49
+               C56 27 61 23 61 17
+               C61 11 56 7 50 7
+               C48 3 44 1 39 1
+               C33 1 28 4 26 9
+               C23 7 20 6 17 6
+               C10 6 5 11 5 17
+               C5 23 10 27 17 27Z"
+            fill="none"
+            stroke="#ffc400"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
+      </span>
+
+
+      <!-- İPLER -->
+      <span class="bulut-mini-string s1"></span>
+      <span class="bulut-mini-string s2"></span>
+      <span class="bulut-mini-string s3"></span>
+
+
+      <!-- DAİRE -->
+      <span class="bulut-mini-item bulut-mini-home"
+            title="Daire">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M3 11 12 4l9 7"/>
+          <path d="M5 10v10h14V10"/>
+          <path d="M9 20v-6h6v6"/>
+        </svg>
+
+      </span>
+
+
+      <!-- ARAZİ — GERÇEK ARAZİ / PARSEL SİMGESİ -->
+      <span class="bulut-mini-item bulut-mini-land"
+            title="Arazi">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M3 18 8 9l4 5 3-4 6 8"/>
+          <path d="M3 19h18"/>
+          <path d="M17 5v6"/>
+          <path d="M14.5 7.5 17 5l2.5 2.5"/>
+        </svg>
+
+      </span>
+
+
+      <!-- ARAÇ -->
+      <span class="bulut-mini-item bulut-mini-car"
+            title="Araç">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M4 15v-3l2-5h12l2 5v3"/>
+          <path d="M3 15h18v4H3z"/>
+          <circle cx="7" cy="19" r="1.5"/>
+          <circle cx="17" cy="19" r="1.5"/>
+        </svg>
+
+      </span>
+
+    </span>
+
+
+    <span class="bulut-brand-name">
+      <strong>BULUT</strong>.com
+    </span>
+  `;
+
+}
+
+
+/* =====================================================
+   C) BULUT.com'DA NE VAR? YAZISINI DOLDUR
+===================================================== */
+
+function fillBulutWhat(){
+
+  const titles=
+    [...document.querySelectorAll("h1,h2,h3,h4")];
+
+  const title=titles.find(function(el){
+
+    const txt=el.textContent
+      .toLocaleLowerCase("tr-TR")
+      .replace(/\s+/g," ");
+
+    return (
+      txt.includes("bulut.com'da ne var") ||
+      txt.includes("bulut.com’da ne var")
+    );
+
+  });
+
+  if(!title) return;
+
+  const box=
+    title.closest(".about-card") ||
+    title.closest(".card") ||
+    title.parentElement;
+
+  if(!box) return;
+
+  box.classList.add("bulut-what-final");
+
+  let p=box.querySelector("p");
+
+  if(!p){
+    p=document.createElement("p");
+    title.insertAdjacentElement("afterend",p);
+  }
+
+  p.innerHTML=`
+    <strong>BULUT.com</strong>, klasik ilan arama sistemini
+    tersine çeviren yeni nesil bir talep platformudur.
+    Kullanıcılar günlerce ilan ilan dolaşmak yerine ne
+    aradıklarını birkaç adımda talep olarak yayınlar.
+
+    <br><br>
+
+    Daire, arazi veya araç için bölge, bütçe ve ihtiyaç
+    kriterleri belirtilir. Uygun seçeneği bulunan bireysel
+    kullanıcılar veya profesyoneller bu gerçek taleplere
+    karşılık verebilir.
+
+    <br><br>
+
+    Böylece arayan kişi daha az zaman kaybeder; elinde
+    uygun seçenek bulunan kişi ise gerçekten o ürünü veya
+    taşınmazı arayan kullanıcıya ulaşır.
+
+    <br><br>
+
+    BULUT.com'un amacı; <strong>gerçek ihtiyaçları,
+    uygun seçenekleri ve kontrollü iletişimi</strong>
+    aynı noktada buluşturarak daha hızlı, daha düzenli
+    ve daha güvenli bir eşleşme deneyimi oluşturmaktır.
+
+    <br><br>
+
+    <strong>Artık aramak yok, aranmak var.</strong>
+  `;
+
+}
+
+
+/* =====================================================
+   D) KURUCU KISMINDAKİ ESKİ İKONLARI TEMİZLE
+===================================================== */
+
+function removeOldFounderIcons(){
+
+  const founder=document.querySelector("#hakkimizda");
+  if(!founder) return;
+
+  const rows=
+    founder.querySelectorAll(".founder-contact-row");
+
+  rows.forEach(function(row){
+
+    /*
+       Yeni SVG ikonuna dokunmuyoruz.
+       Sadece eski metin başındaki:
+       telefon / zarf / konum emojilerini siliyoruz.
+    */
+
+    [...row.childNodes].forEach(function(node){
+
+      if(node.nodeType !== Node.TEXT_NODE) return;
+
+      node.nodeValue=node.nodeValue.replace(
+        /^[\s☎☏📞📱✉📧📨📩📍📌🗺️🧭]+/u,
+        ""
+      );
+
+    });
+
+
+    /*
+       Eski ikon ayrı span/i olarak duruyorsa
+       ve bizim yeni ikonumuz değilse temizle.
+    */
+    [...row.children].forEach(function(el){
+
+      if(el.classList.contains("founder-contact-icon")) return;
+
+      if(
+        el.tagName==="I" ||
+        (
+          el.tagName==="SPAN" &&
+          !el.querySelector("a") &&
+          !el.closest("a") &&
+          el.textContent.trim().length <= 3
+        )
+      ){
+        el.remove();
+      }
+
+    });
+
+  });
+
+}
+
+
+/* =====================================================
+   ÇALIŞTIR
+===================================================== */
+
+function bulutFinalFix(){
+
+  removeWrongHeroCloud();
+  buildTopLogo();
+  fillBulutWhat();
+  removeOldFounderIcons();
+
+}
+
+if(document.readyState==="loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    bulutFinalFix,
+    {once:true}
+  );
+
+}else{
+
+  bulutFinalFix();
+
+}
+
+
+/*
+  Önceki yama 400 / 900 ms'de yeniden büyük bulut
+  eklemeye çalışırsa onu da sonradan temizliyoruz.
+*/
+setTimeout(bulutFinalFix,250);
+setTimeout(bulutFinalFix,650);
+setTimeout(bulutFinalFix,1100);
+setTimeout(removeWrongHeroCloud,1500);
+
+})();
+</script>
 </body>
 </html>
