@@ -64,6 +64,112 @@ footer{background:#050d18;color:#94a3b8;padding:31px 22px}.footer-inner{max-widt
 @media(max-width:980px){.main-nav{display:none}.hero-inner{grid-template-columns:1fr}.demand-teaser{min-height:360px}.category-grid,.benefit-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.membership-section{grid-template-columns:1fr}.discovery-grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.detail-layout{grid-template-columns:1fr}}
 @media(max-width:620px){.header-inner{padding:0 12px;min-height:66px}.brand{font-size:18px}.brand svg{width:40px;height:32px}.header-actions{margin-left:auto}.top-join{padding:10px 11px;font-size:10px}.google-btn{padding:8px 9px}.google-btn span:last-child{display:none}.user-chip b,.user-chip small{display:none}.hero{padding:48px 14px 28px}.hero h1{font-size:44px;letter-spacing:-2px}.hero-lead{font-size:14px}.hero-actions>button{flex:1}.category-zone{padding:0 12px 12px}.category-grid,.benefit-grid{grid-template-columns:1fr 1fr;gap:7px}.category-card,.benefit-card{min-height:72px;padding:10px}.cat-icon,.benefit-icon{width:37px;height:37px;flex-basis:37px}.category-card small,.benefit-card small{font-size:8.6px}.section{padding:45px 14px}.section-head h2{font-size:28px}.steps{grid-template-columns:1fr}.membership-section{padding:23px;border-radius:21px}.discovery-grid{grid-template-columns:1fr}.about-card{padding:20px}.founder-wrap{display:block}.founder-photo{width:100px;height:120px;float:left;margin:0 14px 8px 0}.footer-inner{display:block}.member-choice-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.overlay{padding:6px}.modal-card{max-height:calc(100dvh - 12px);border-radius:18px}.modal-head{padding:16px}.modal-body{padding:14px}.modal-footer{padding:10px 14px calc(10px + env(safe-area-inset-bottom))}.filters{grid-template-columns:1fr}.vitrin-shell{padding:12px 10px 28px}.vitrin-head{padding:10px}.vitrin-create{margin-left:0}.detail-grid{grid-template-columns:1fr}.chat-actions .preset-grid{grid-template-columns:1fr}}
 </style>
+<style>
+/* ===== TAM’DA.com SABİT MARKA — İLK KAREDE BİLE BULUT GÖRÜNMEZ ===== */
+
+/* ÜST MARKANIN İÇİNDEKİ TÜM ESKİ LOGO/YAZILARI GİZLE */
+header .header-inner > a:first-child > *{
+  display:none !important;
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+header .header-inner > a:first-child{
+  display:flex !important;
+  align-items:center !important;
+  min-width:145px !important;
+  min-height:48px !important;
+  padding:6px 10px !important;
+  text-decoration:none !important;
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+/* SADECE TAM’DA.com GÖRÜNSÜN */
+header .header-inner > a:first-child::before{
+  content:"TAM’DA";
+  color:#ffc400;
+  font-family:Inter,Arial,sans-serif;
+  font-size:25px;
+  font-weight:950;
+  letter-spacing:-.8px;
+  white-space:nowrap;
+}
+
+header .header-inner > a:first-child::after{
+  content:".com";
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
+  font-size:22px;
+  font-weight:900;
+  margin-left:4px;
+  white-space:nowrap;
+}
+
+
+/* ALTTAKİ MARKADA DA BULUT ASLA GÖRÜNMEYECEK */
+footer .footer-brand,
+footer .bulut-footer-brand{
+  font-size:0 !important;
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+footer .footer-brand > *,
+footer .bulut-footer-brand > *{
+  display:none !important;
+}
+
+footer .footer-brand::after,
+footer .bulut-footer-brand::after{
+  content:"TAM’DA.com" !important;
+  display:inline-block !important;
+  color:#ffc400 !important;
+  font-size:25px !important;
+  font-weight:950 !important;
+}
+
+
+/* ESKİ LOGO SINIFLARININ HİÇBİRİ GÖRÜNMESİN */
+.bulut-logo-mark,
+.bulut-mini-logo,
+.bulut-rain-show,
+.logo-rain,
+.tamda-logo-mark,
+.tamda-fist-logo,
+.tamda-photo-logo,
+.tamda-fixed-logo,
+.tamda-final-logo-box,
+.tamda-logo-frame,
+.tamda-top-brand-logo{
+  display:none !important;
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+@media(max-width:700px){
+  header .header-inner > a:first-child{
+    min-width:115px !important;
+    padding-left:2px !important;
+  }
+
+  header .header-inner > a:first-child::before{
+    font-size:20px !important;
+  }
+
+  header .header-inner > a:first-child::after{
+    font-size:18px !important;
+  }
+}
+</style>
+
+<script>
+document.title="TAM’DA.com | Artık aramak yok, aranmak var.";
+</script>
 </head>
 <body>
 <header class="site-header"><div class="header-inner">
@@ -4526,6 +4632,552 @@ setTimeout(tamdaLogoVeKutular,1800);
   setTimeout(runTamdaFix, 300);
   setTimeout(runTamdaFix, 900);
   setTimeout(runTamdaFix, 1600);
+
+})();
+</script>
+<!-- ===== TAM’DA.com LOGO ÇAKIŞMA TEMİZLİĞİ ===== -->
+
+<style>
+
+/* ÜST LOGODA ESKİ TÜM HAREKETLERİ DURDUR */
+header .brand *,
+header .logo *,
+header a.brand *,
+header a.logo *,
+.tamda-final-brand *,
+.tamda-new-header-brand *,
+.tamda-top-brand *{
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+/* SON LOGO */
+.tamda-fixed-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  padding:5px 12px !important;
+  text-decoration:none !important;
+  overflow:visible !important;
+}
+
+.tamda-fixed-logo{
+  width:92px !important;
+  height:68px !important;
+  flex:0 0 92px !important;
+
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center !important;
+
+  background:#fff !important;
+
+  border:2px solid #ffc400 !important;
+  border-radius:14px !important;
+
+  box-shadow:
+    0 7px 20px rgba(0,0,0,.22) !important;
+
+  animation:none !important;
+  transform:none !important;
+}
+
+.tamda-fixed-name{
+  display:flex !important;
+  align-items:baseline !important;
+  white-space:nowrap !important;
+
+  font-weight:950 !important;
+  line-height:1 !important;
+
+  animation:none !important;
+  transform:none !important;
+}
+
+.tamda-fixed-name .name{
+  color:#ffc400 !important;
+  font-size:27px !important;
+}
+
+.tamda-fixed-name .com{
+  color:#fff !important;
+  font-size:24px !important;
+  margin-left:5px !important;
+}
+
+
+/* TELEFON */
+@media(max-width:700px){
+
+  .tamda-fixed-brand{
+    gap:7px !important;
+    padding-left:7px !important;
+  }
+
+  .tamda-fixed-logo{
+    width:75px !important;
+    height:56px !important;
+    flex-basis:75px !important;
+  }
+
+  .tamda-fixed-name .name{
+    font-size:21px !important;
+  }
+
+  .tamda-fixed-name .com{
+    font-size:19px !important;
+  }
+}
+
+</style>
+
+
+<script>
+(function(){
+
+function TAMDA_LOGO_SABITLE(){
+
+  const header = document.querySelector("header");
+  if(!header) return;
+
+  let brand =
+    header.querySelector(".tamda-fixed-brand") ||
+    header.querySelector(".brand") ||
+    header.querySelector(".logo") ||
+    header.querySelector("a.brand") ||
+    header.querySelector("a.logo") ||
+    header.querySelector(".tamda-final-brand") ||
+    header.querySelector(".tamda-new-header-brand") ||
+    header.querySelector(".tamda-top-brand");
+
+
+  if(!brand){
+
+    brand = [...header.querySelectorAll("a")].find(function(a){
+
+      const t = (a.textContent || "")
+        .replace(/\s+/g,"")
+        .toLocaleLowerCase("tr-TR");
+
+      return (
+        t.includes("tam’da") ||
+        t.includes("tam'da") ||
+        t.includes("bulut")
+      );
+
+    });
+
+  }
+
+  if(!brand) return;
+
+
+  /* ZATEN DOĞRUYSA ELLEME */
+  if(
+    brand.classList.contains("tamda-fixed-brand") &&
+    brand.querySelector(".tamda-fixed-logo")
+  ){
+    return;
+  }
+
+
+  /*
+    ESKİ SARİ SVG, BULUT, YUMRUK ÇİZİMİ,
+    SALLANAN NESNELERİN HEPSİNİ SİLER.
+  */
+  brand.className = "tamda-fixed-brand";
+
+
+  brand.innerHTML = `
+
+    <img
+      class="tamda-fixed-logo"
+      src="./tamda-logo-final.png?v=3"
+      alt="TAM’DA.com logo"
+    >
+
+    <span class="tamda-fixed-name">
+
+      <span class="name">
+        TAM’DA
+      </span>
+
+      <span class="com">
+        .com
+      </span>
+
+    </span>
+  `;
+
+}
+
+
+/* İLK ÇALIŞTIR */
+if(document.readyState === "loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    TAMDA_LOGO_SABITLE,
+    {once:true}
+  );
+
+}else{
+
+  TAMDA_LOGO_SABITLE();
+
+}
+
+
+/*
+  ESKİ KODLAR SONRADAN LOGOYU GERİ KOYMAYA
+  ÇALIŞIRSA BU SON KOD ÜSTÜNE GEÇSİN.
+*/
+[
+  300,
+  800,
+  1500,
+  2500,
+  4000,
+  6000
+].forEach(function(ms){
+
+  setTimeout(
+    TAMDA_LOGO_SABITLE,
+    ms
+  );
+
+});
+
+})();
+</script>
+<style>
+/* TAM’DA.com — LOGOYU TAMAMEN KAPAT */
+
+header .tamda-fixed-logo,
+header .tamda-final-logo-box,
+header .tamda-photo-logo,
+header .tamda-fist-logo,
+header .tamda-mini-logo,
+header .tamda-logo-frame,
+header .bulut-mini-logo,
+header .bulut-rain-show,
+header svg,
+header img{
+  display:none !important;
+}
+
+/* Marka yazısı düzgün kalsın */
+header .tamda-fixed-brand,
+header .tamda-final-brand,
+header .tamda-new-header-brand,
+header .tamda-top-brand,
+header .brand,
+header .logo{
+  display:flex !important;
+  align-items:center !important;
+  gap:0 !important;
+  padding-left:14px !important;
+  animation:none !important;
+  transform:none !important;
+}
+
+header .tamda-fixed-name,
+header .tamda-final-name,
+header .tamda-new-name,
+header .tamda-brand-text{
+  display:flex !important;
+  align-items:baseline !important;
+  white-space:nowrap !important;
+  animation:none !important;
+  transform:none !important;
+}
+
+header .tamda-fixed-name .name,
+header .tamda-final-name .tam,
+header .tamda-new-name .tamda-word,
+header .tamda-brand-main{
+  color:#ffc400 !important;
+  font-weight:950 !important;
+}
+
+header .tamda-fixed-name .com,
+header .tamda-final-name .com,
+header .tamda-new-name .tamda-com,
+header .tamda-brand-com{
+  color:#ffffff !important;
+  font-weight:900 !important;
+}
+
+@media(max-width:700px){
+  header .tamda-fixed-brand,
+  header .tamda-final-brand,
+  header .tamda-new-header-brand,
+  header .tamda-top-brand,
+  header .brand,
+  header .logo{
+    padding-left:8px !important;
+  }
+}
+</style>
+
+<script>
+(function(){
+
+function sadeceTamdaYazisi(){
+
+  const header = document.querySelector("header");
+  if(!header) return;
+
+  let brand =
+    header.querySelector(".tamda-fixed-brand") ||
+    header.querySelector(".tamda-final-brand") ||
+    header.querySelector(".tamda-new-header-brand") ||
+    header.querySelector(".tamda-top-brand") ||
+    header.querySelector(".brand") ||
+    header.querySelector(".logo") ||
+    header.querySelector("a.brand") ||
+    header.querySelector("a.logo");
+
+  if(!brand) return;
+
+  brand.className = "tamda-fixed-brand";
+
+  brand.innerHTML = `
+    <span class="tamda-fixed-name">
+      <span class="name">TAM’DA</span>
+      <span class="com">.com</span>
+    </span>
+  `;
+}
+
+if(document.readyState === "loading"){
+  document.addEventListener(
+    "DOMContentLoaded",
+    sadeceTamdaYazisi,
+    {once:true}
+  );
+}else{
+  sadeceTamdaYazisi();
+}
+
+/* Eski logo yamaları sonradan tekrar çalışırsa bastır */
+[300,800,1500,2500,4000,6000].forEach(function(ms){
+  setTimeout(sadeceTamdaYazisi,ms);
+});
+
+})();
+</script>
+<style>
+/* ==================================================
+   TAM’DA.com — ESKİ BULUT MARKASINI KİLİTLE
+================================================== */
+
+/* ALT FOOTER: eski BULUT.com artık hiçbir an görünmesin */
+footer .footer-brand,
+footer .bulut-footer-brand{
+  font-size:0 !important;
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+footer .footer-brand::after,
+footer .bulut-footer-brand::after{
+  content:"TAM’DA.com" !important;
+  display:inline-block !important;
+  font-size:27px !important;
+  font-weight:950 !important;
+  color:#ffc400 !important;
+  letter-spacing:-.5px !important;
+  animation:none !important;
+  transform:none !important;
+}
+
+/* Footer içindeki eski özel BULUT yazısını gizle */
+footer .cloud-word{
+  display:none !important;
+}
+
+/* Eski logo/yağmur hareketlerini tamamen durdur */
+.logo-rain,
+.bulut-logo-mark,
+.bulut-rain-show,
+.bulut-mini-logo{
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+}
+
+/* Üstte şimdilik logo istemediğimiz için eski logo da görünmesin */
+header .bulut-logo-mark,
+header .bulut-mini-logo,
+header .tamda-fixed-logo,
+header .tamda-final-logo-box,
+header .tamda-photo-logo,
+header .tamda-fist-logo,
+header .tamda-logo-frame{
+  display:none !important;
+}
+</style>
+
+<script>
+(function(){
+
+  const YENI_AD = "TAM’DA.com";
+
+  function bulutYazilariniTemizle(kok){
+
+    const root = kok || document.body;
+    if(!root) return;
+
+    /* Sadece görünen yazıları değiştir.
+       Script/style kodlarına dokunmaz. */
+    const walker = document.createTreeWalker(
+      root,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const nodes = [];
+
+    while(walker.nextNode()){
+      nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach(function(node){
+
+      const parent = node.parentElement;
+      if(!parent) return;
+
+      if(
+        parent.closest("script") ||
+        parent.closest("style")
+      ){
+        return;
+      }
+
+      const eski = node.nodeValue;
+
+      const yeni = eski
+        .replace(/BULUT\.com/g, YENI_AD)
+        .replace(/Bulut\.com/g, YENI_AD)
+        .replace(/bulut\.com/g, YENI_AD);
+
+      if(yeni !== eski){
+        node.nodeValue = yeni;
+      }
+
+    });
+
+    /* Tarayıcı sekmesi */
+    if(document.title){
+      document.title = document.title
+        .replace(/BULUT\.com/gi, YENI_AD);
+    }
+  }
+
+
+  function footerKilitle(){
+
+    document
+      .querySelectorAll("footer .footer-brand, footer .bulut-footer-brand")
+      .forEach(function(el){
+
+        el.style.animation = "none";
+        el.style.transition = "none";
+        el.style.transform = "none";
+
+      });
+
+  }
+
+
+  function tamdaSonKilidi(){
+
+    bulutYazilariniTemizle(document.body);
+    footerKilitle();
+
+  }
+
+
+  /* İlk açılış */
+  if(document.readyState === "loading"){
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      tamdaSonKilidi,
+      {once:true}
+    );
+
+  }else{
+
+    tamdaSonKilidi();
+
+  }
+
+
+  /*
+     Eski yamalardan biri sonradan tekrar BULUT.com
+     yazarsa anında TAM’DA.com'a çevir.
+  */
+  const observer = new MutationObserver(function(mutations){
+
+    mutations.forEach(function(mutation){
+
+      if(mutation.type === "characterData"){
+
+        const node = mutation.target;
+
+        if(
+          node.nodeValue &&
+          /bulut\.com/i.test(node.nodeValue)
+        ){
+          node.nodeValue = node.nodeValue
+            .replace(/BULUT\.com/gi, YENI_AD);
+        }
+
+      }
+
+      mutation.addedNodes.forEach(function(node){
+
+        if(node.nodeType === Node.ELEMENT_NODE){
+          bulutYazilariniTemizle(node);
+        }
+
+        if(
+          node.nodeType === Node.TEXT_NODE &&
+          /bulut\.com/i.test(node.nodeValue || "")
+        ){
+          node.nodeValue = node.nodeValue
+            .replace(/BULUT\.com/gi, YENI_AD);
+        }
+
+      });
+
+    });
+
+  });
+
+
+  observer.observe(
+    document.body,
+    {
+      childList:true,
+      subtree:true,
+      characterData:true
+    }
+  );
+
+
+  /* Eski gecikmeli yamalara karşı son temizlik */
+  [100,300,700,1200,2000,3500,6000].forEach(function(ms){
+
+    setTimeout(
+      tamdaSonKilidi,
+      ms
+    );
+
+  });
 
 })();
 </script>
